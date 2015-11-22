@@ -1,0 +1,11 @@
+<wot
+  mid="SPOTMESSW"
+  hid="0071"
+  title="22ACU SpotMessanger Config"
+  author="woe2you"
+  version="0.1"
+  info="Config for SpotMessanger. Messages 'Spotted @ $mapref', no ping, no Help."
+  requires="SPOTMESS"
+>
+
+</wot>
