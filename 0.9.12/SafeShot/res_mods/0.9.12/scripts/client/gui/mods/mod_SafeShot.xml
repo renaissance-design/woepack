@@ -1,0 +1,30 @@
+<safeShotSetting>
+
+    <!-- Автор: Skino88 -->
+	<!-- Официальная тема: http://forum.worldoftanks.ru/index.php?/topic/1075087- -->
+	
+	<!-- Клавиша для отключения мода. -->
+	<disableKey>KEY_LALT</disableKey>
+	
+	<!-- Режим "залипания" горячей клавиши. -->
+	<toggledDisableKey>false</toggledDisableKey>
+	
+	<!-- Переключатель блокировки выстрела по союзникам. -->
+	<teamShot>true</teamShot>
+	
+		<!-- Переключатель сообщения при попытке выстрелить по союзнику. -->
+		<toggleMessage>true</toggleMessage>
+		
+			<!-- Текст сообщения при попытке выстрелить по союзнику. -->
+			<textMessage>{playerName}, не мешай стрелять!</textMessage>
+	
+	<!-- Переключатель блокировки выстрела по уничтоженным танкам. -->
+	<deadShot>true</deadShot>
+	
+		<!-- Длительность блокировки выстрела по уничтоженным танкам. (0.5 - 4.0) -->
+		<deadShotTime>2.0</deadShotTime>
+		
+		<!-- Переключатель блокировки выстрела по уничтоженным танкам, которые находятся вне видимости. -->
+		<deadShotDisappeared>true</deadShotDisappeared>
+	
+</safeShotSetting>
