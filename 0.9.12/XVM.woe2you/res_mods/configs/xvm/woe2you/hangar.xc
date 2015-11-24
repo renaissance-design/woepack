@@ -7,6 +7,13 @@
     // true - Show XWN8 instead of XEFF in company windows
     // true - показывать XWN8 вместо XEFF в окнах рот
     "xwnInCompany": true,
+    "enableGoldLocker": false,
+    // true - enable locker for free XP
+    // true - включить замок для свободного опыта
+    "enableFreeXpLocker": false,
+    // true - Use credits instead of gold as default currency for ammo and equipment
+    // true - Использовать кредиты, а не золото как валюту по умолчанию для снарядов и снаряжения
+    "defaultBoughtForCredits": true,
     // true - Show mastery mark in tech tree
     // true - Показывать знак мастерства в дереве исследований
     "masteryMarkInTechTree": true,
