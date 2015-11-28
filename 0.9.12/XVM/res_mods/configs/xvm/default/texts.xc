@@ -67,8 +67,6 @@
       "tutorial": "",
       // Командный бой.
       "cybersport": "cybersport",
-      // Исторический бой.
-      "historical": "",
       // Бой спецрежима (гонки, футбол и т.п.).
       "event_battles": "",
       // Вылазка.
@@ -76,7 +74,19 @@
       // Бой за укрепрайон.
       "fort_battle": "fort_battle",
       // Командный бой: ладдер.
-      "rated_cybersport": "rated_cybersport"
+      "rated_cybersport": "rated_cybersport",
+      // Глобальная карта (ГК)
+      "global_map": "global_map",
+      // Регулярный турнир (ивент) ГК
+      "tournament_regular": "tournament_regular",
+      // Периодический турнир (ивент) ГК
+      "tournament_clan": "tournament_clan",
+      // Песочный PVE, <10 боев
+      "rated_sandbox": "",
+      // Песочный PVE, >10 боев
+      "sandbox": "",
+      // Бой до последнего
+      "fallout": ""
     },
     // Text for {{topclan}} macro.
     // Текст для макроса {{topclan}}

@@ -114,7 +114,7 @@
     "(sec)": "(sek)",
     "(m)": "(m)",
     "Squad battle tiers": "Bojový tier",
-    "Squad tanks battle tiers difference": "Differenza Livelli in plotone",
+    "Squad tanks battle tiers difference": "Bojový tier",
     "Vehicle": "Vozidlo",
     "Battle tiers": "MM",
     "Type": "Typ",
@@ -175,7 +175,7 @@
     "Not ready": "Nepřipraven",
     "Hide with honors": "Skýt s vyznamenáním",
     "Started": "Spuštěno",
-    "Incomplete": "Non completato",
+    "Incomplete": "Nedokončeno",
     "XVM config reloaded": "Konfigurace XVM byla znovu načtena",
     "Config file xvm.xc was not found, using the built-in config": "Konfigurační soubor xvm.xc nenalezen, bude použita zabudovaná konfigurace",
     "Error loading XVM config": "Chyba v nahrávání konfigurace XVM"

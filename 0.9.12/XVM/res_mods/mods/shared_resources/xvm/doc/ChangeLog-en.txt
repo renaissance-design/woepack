@@ -1,4 +1,15 @@
-﻿XVM-6.1.6:
+﻿XVM-6.1.6.1:
+  * removed minimap square
+  * added global macros:
+      {{my-veh-id}}, {{my-vehicle}}, {{my-vehiclename}}, {{my-vehicle-short}}, {{my-vtype}},
+      {{my-vtype-l}}, {{my-vtype-key}}, {{c:my-vtype}}, {{my-battletier-min}},
+      {{my-battletier-max}}, {{my-nation}}, {{my-level}}, {{my-rlevel}}
+  * allow global macros usage in the minimap circles and lines
+  * added config section "battle"/"camera" for camera settings (zoom)
+  * new option "sounds"/"sixthSenseRudy" - sixth sense sound for Rudy
+  * bugs fixed
+
+XVM-6.1.6:
   * adaptation to WoT 0.9.12
   * added options:
       "carousel"/"scrollingSpeed" - carousel scrolling speed

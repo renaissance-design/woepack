@@ -1,4 +1,15 @@
-﻿XVM-6.1.6:
+﻿XVM-6.1.6.1:
+  * удален квадрат на миникарте
+  * добавлены глобальные макросы:
+      {{my-veh-id}}, {{my-vehicle}}, {{my-vehiclename}}, {{my-vehicle-short}}, {{my-vtype}},
+      {{my-vtype-l}}, {{my-vtype-key}}, {{c:my-vtype}}, {{my-battletier-min}},
+      {{my-battletier-max}}, {{my-nation}}, {{my-level}}, {{my-rlevel}}
+  * разрешено использование глобальных макросов в кругах и линиях на миникарте
+  * добавлена секция конфига "battle"/"camera" для настроек камеры (zoom)
+  * новая опция "sounds"/"sixthSenseRudy" - звук шестого чувства для Rudy
+  * исправлены ошибки
+
+XVM-6.1.6:
   * адаптация к WoT 0.9.12
   * добавлены опции:
       "carousel"/"scrollingSpeed" - скорость прокрутки карусели
