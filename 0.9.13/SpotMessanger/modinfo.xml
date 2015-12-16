@@ -1,0 +1,13 @@
+<wot
+  mid="SPOTMESS"
+  hid="0070"
+  title="SpotMessanger"
+  author="BirrettaMalefica"
+  info="Sends a chat message to your teammates when you're spotted. Requires the Sixth Sense perk."
+  notes="https://github.com/jstar88/wotmods/"
+  version="0.9.9"
+  client-version="0.9.13"
+  visible="true"
+  colorblind="true"
+>
+</wot>

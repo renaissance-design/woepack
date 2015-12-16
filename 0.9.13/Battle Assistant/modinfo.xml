@@ -1,0 +1,13 @@
+<wot
+  mid="BATASS"
+  hid="0080"
+  title="Battle Assistant"
+  author="reven86"
+  info="An alternative viewpoint for aiming artillery."
+  notes="http://forum.worldoftanks.com/index.php?/topic/409817-0910-battle-assistant/"
+  version="1.3.4"
+  client-version="0.9.13"
+  visible="true"
+  colorblind="true"
+>
+</wot>
