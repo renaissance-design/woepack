@@ -57,7 +57,7 @@
     "EFF": "EEF",
     "WGR": "WGR",
     "updated": "Sudah diupdate",
-    "to": "ke",
+    "toWithSpaces": "ke",
     "avg": "Rata-rata",
     "top": "top",
     "draws": "Seri",

@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "WGR",
     "updated": "mis-à-jour",
-    "to": " à ",
+    "toWithSpaces": " à ",
     "avg": "moyenne",
     "top": "top",
     "draws": "égalités",

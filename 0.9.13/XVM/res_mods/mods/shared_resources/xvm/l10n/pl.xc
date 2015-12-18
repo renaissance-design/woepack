@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "WGR",
     "updated": "zaktualizowano",
-    "to": " do ",
+    "toWithSpaces": " do ",
     "avg": "średnie",
     "top": "najlepsze",
     "draws": "remisy",

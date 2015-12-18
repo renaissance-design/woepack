@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "WGR",
     "updated": "đã cập nhật",
-    "to": " đạt ",
+    "toWithSpaces": " đạt ",
     "avg": "thấp",
     "top": "cao",
     "draws": "hòa",

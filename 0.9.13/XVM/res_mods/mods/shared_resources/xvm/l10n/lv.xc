@@ -57,7 +57,7 @@
     "EFF": "ER",
     "WGR": "WGR",
     "updated": "atjaunots",
-    "to": " līdz ",
+    "toWithSpaces": " līdz ",
     "avg": "vid.",
     "top": "top",
     "draws": "neizšķirti",

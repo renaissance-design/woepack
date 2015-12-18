@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "WGR",
     "updated": "ažurirano",
-    "to": "do",
+    "toWithSpaces": "do",
     "avg": "srednje",
     "top": "top",
     "draws": "nerješenih",

@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "WGR",
     "updated": "обновено",
-    "to": " до ",
+    "toWithSpaces": " до ",
     "avg": "средно",
     "top": "максимално",
     "draws": "равенства",

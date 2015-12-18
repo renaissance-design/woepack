@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "",
     "updated": "telah dikemaskini",
-    "to": " ke ",
+    "toWithSpaces": " ke ",
     "avg": "prt",
     "top": "atas",
     "draws": "seri",

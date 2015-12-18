@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "",
     "updated": "uppdaterat",
-    "to": " till ",
+    "toWithSpaces": " till ",
     "avg": "genomsn.",
     "top": "topp",
     "draws": "oavgjorda",

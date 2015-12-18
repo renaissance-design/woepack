@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "WGR",
     "updated": "frissítve",
-    "to": " -> ",
+    "toWithSpaces": " -> ",
     "avg": "átl.",
     "top": "csúcs",
     "draws": "döntetlen",

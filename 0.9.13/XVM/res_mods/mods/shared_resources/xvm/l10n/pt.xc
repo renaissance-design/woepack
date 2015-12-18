@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "WGR",
     "updated": "actualizado",
-    "to": " para ",
+    "toWithSpaces": " para ",
     "avg": "méd",
     "top": "topo",
     "draws": "empates",

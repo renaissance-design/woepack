@@ -57,7 +57,7 @@
     "EFF": "능률",
     "WGR": "WGR",
     "updated": "업데이트 일자",
-    "to": " 승 뒤 ",
+    "toWithSpaces": " 승 뒤 ",
     "avg": "평균",
     "top": "최고",
     "draws": "무승부",

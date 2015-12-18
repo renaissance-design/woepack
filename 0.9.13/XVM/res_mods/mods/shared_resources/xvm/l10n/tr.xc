@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "",
     "updated": "güncellendi",
-    "to": " to ",
+    "toWithSpaces": " to ",
     "avg": "",
     "top": "",
     "draws": "",

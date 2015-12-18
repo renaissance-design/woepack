@@ -57,7 +57,7 @@
     "EFF": "EFI",
     "WGR": "WGR",
     "updated": "actualizado",
-    "to": " a ",
+    "toWithSpaces": " a ",
     "avg": "pro",
     "top": "sup",
     "draws": "empates",

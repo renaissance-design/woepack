@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "WGR",
     "updated": "päivitetty",
-    "to": " to ",
+    "toWithSpaces": " to ",
     "avg": "keskim.",
     "top": "ylin",
     "draws": "tasapelit",

@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "WGR",
     "updated": "oppdatert",
-    "to": " til ",
+    "toWithSpaces": " til ",
     "avg": "gj.sn.",
     "top": "topp",
     "draws": "Uavgjorte",

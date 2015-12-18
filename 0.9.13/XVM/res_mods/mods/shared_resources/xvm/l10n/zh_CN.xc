@@ -57,7 +57,7 @@
     "EFF": "效率",
     "WGR": "",
     "updated": "更新",
-    "to": " 至 ",
+    "toWithSpaces": " 至 ",
     "avg": "平均",
     "top": "最高",
     "draws": "平局",

@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "パーソナルレーティング",
     "updated": "更新された",
-    "to": " ～ ",
+    "toWithSpaces": " ～ ",
     "avg": "平均",
     "top": "トップ",
     "draws": "引き分け",

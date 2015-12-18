@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "WGR",
     "updated": "Ενημερώθηκε",
-    "to": " to ",
+    "toWithSpaces": " to ",
     "avg": "avg",
     "top": "top",
     "draws": "Ισοπαλίες",

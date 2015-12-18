@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "WGR",
     "updated": "atnaujinta",
-    "to": " iki ",
+    "toWithSpaces": " iki ",
     "avg": "vid",
     "top": "top",
     "draws": "lygiosios",

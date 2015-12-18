@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "",
     "updated": "aktualizované",
-    "to": " do ",
+    "toWithSpaces": " do ",
     "avg": "priem",
     "top": "naj",
     "draws": "remízy",

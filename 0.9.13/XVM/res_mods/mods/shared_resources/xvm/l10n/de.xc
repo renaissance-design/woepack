@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "Persönliche Wertung",
     "updated": "aktualisiert",
-    "to": " zu ",
+    "toWithSpaces": " zu ",
     "avg": "Ø",
     "top": "Max.",
     "draws": "Unents.",

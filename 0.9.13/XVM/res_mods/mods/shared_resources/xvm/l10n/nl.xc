@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "WGR",
     "updated": "geüpdate",
-    "to": " naar ",
+    "toWithSpaces": " naar ",
     "avg": "gem.",
     "top": "beste",
     "draws": "gelijk spel",

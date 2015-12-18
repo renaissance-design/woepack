@@ -57,7 +57,7 @@
     "EFF": "EFF",
     "WGR": "WGR",
     "updated": "uuendatud",
-    "to": " - ",
+    "toWithSpaces": " - ",
     "avg": "keskm",
     "top": "top",
     "draws": "viike",
