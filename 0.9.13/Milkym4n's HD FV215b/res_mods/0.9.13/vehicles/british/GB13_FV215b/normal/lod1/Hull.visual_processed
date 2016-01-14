@@ -1,0 +1,144 @@
+<hull.visual_processed>
+  <node>
+    <identifier>Scene Root</identifier>
+    <transform>
+      <row0>	1.000000 0.000000 0.000000	</row0>
+      <row1>	0.000000 1.000000 0.000000	</row1>
+      <row2>	0.000000 0.000000 1.000000	</row2>
+      <row3>	0.000000 0.000000 0.000000	</row3>
+    </transform>
+    <node>
+      <identifier>HP_Fire_1</identifier>
+      <transform>
+        <row0>	1.000000 0.000000 0.000000	</row0>
+        <row1>	0.000000 1.000000 0.000000	</row1>
+        <row2>	0.000000 0.000000 1.000000	</row2>
+        <row3>	0.086423 0.337697 1.153084	</row3>
+      </transform>
+    </node>
+    <node>
+      <identifier>HP_Fire_2</identifier>
+      <transform>
+        <row0>	1.000000 0.000000 0.000000	</row0>
+        <row1>	0.000000 1.000000 0.000000	</row1>
+        <row2>	0.000000 0.000000 1.000000	</row2>
+        <row3>	-0.448006 0.078096 2.260868	</row3>
+      </transform>
+    </node>
+    <node>
+      <identifier>HP_TrackUp_LFront</identifier>
+      <transform>
+        <row0>	1.000000 0.000000 0.000000	</row0>
+        <row1>	0.000000 0.583866 0.811850	</row1>
+        <row2>	0.000000 -0.811850 0.583866	</row2>
+        <row3>	-1.566909 0.117436 3.846963	</row3>
+      </transform>
+    </node>
+    <node>
+      <identifier>HP_TrackUp_LRear</identifier>
+      <transform>
+        <row0>	-1.000000 0.000000 0.000000	</row0>
+        <row1>	0.000000 0.621328 -0.783551	</row1>
+        <row2>	0.000000 -0.783551 -0.621328	</row2>
+        <row3>	-1.566909 0.105299 -3.676469	</row3>
+      </transform>
+    </node>
+    <node>
+      <identifier>HP_TrackUp_RFront</identifier>
+      <transform>
+        <row0>	1.000000 0.000000 0.000000	</row0>
+        <row1>	0.000000 0.583866 0.811850	</row1>
+        <row2>	0.000000 -0.811850 0.583866	</row2>
+        <row3>	1.566910 0.117436 3.846963	</row3>
+      </transform>
+    </node>
+    <node>
+      <identifier>HP_TrackUp_RRear</identifier>
+      <transform>
+        <row0>	-1.000000 0.000000 0.000000	</row0>
+        <row1>	0.000000 0.621328 -0.783551	</row1>
+        <row2>	0.000000 -0.783551 -0.621328	</row2>
+        <row3>	1.566910 0.105299 -3.676469	</row3>
+      </transform>
+    </node>
+    <node>
+      <identifier>HP_Track_Exhaus_1</identifier>
+      <transform>
+        <row0>	-0.259819 0.000000 0.965657	</row0>
+        <row1>	0.000000 1.000000 0.000000	</row1>
+        <row2>	-0.965657 0.000000 -0.259819	</row2>
+        <row3>	-1.238169 0.518852 0.172176	</row3>
+      </transform>
+    </node>
+    <node>
+      <identifier>HP_Track_Exhaus_2</identifier>
+      <transform>
+        <row0>	-0.258819 0.000000 -0.965926	</row0>
+        <row1>	0.000000 1.000000 0.000000	</row1>
+        <row2>	0.965926 0.000000 -0.258819	</row2>
+        <row3>	1.233148 0.518852 0.172176	</row3>
+      </transform>
+    </node>
+    <node>
+      <identifier>HP_turretJoint</identifier>
+      <transform>
+        <row0>	1.000000 0.000000 0.000000	</row0>
+        <row1>	0.000000 1.000000 0.000000	</row1>
+        <row2>	0.000000 0.000000 1.000000	</row2>
+        <row3>	0.000000 0.886500 -1.166872	</row3>
+      </transform>
+    </node>
+    <node>
+      <identifier>	lod0	</identifier>
+      <transform>
+        <row0>	1.000000 0.000000 0.000000	</row0>
+        <row1>	0.000000 1.000000 0.000000	</row1>
+        <row2>	0.000000 0.000000 1.000000	</row2>
+        <row3>	0.000000 0.000000 0.000000	</row3>
+      </transform>
+      <node>
+        <identifier>	hull	</identifier>
+        <transform>
+          <row0>	1.000000 0.000000 0.000000	</row0>
+          <row1>	0.000000 1.000000 0.000000	</row1>
+          <row2>	0.000000 0.000000 1.000000	</row2>
+          <row3>	0.000000 -0.966577 0.000000	</row3>
+        </transform>
+      </node>
+    </node>
+  </node>
+  <renderSet>
+    <treatAsWorldSpaceObject>	false	</treatAsWorldSpaceObject>
+    <node>Scene Root</node>
+    <geometry>
+      <vertices>	vertices	</vertices>
+      <primitive>indices</primitive>
+      <primitiveGroup>	0	
+		<material>
+			<identifier>tank_mat</identifier>
+			<fx>shaders/std_effects/PBS_tank.fx</fx>
+			<collisionFlags>	0	</collisionFlags>
+			<materialKind>	0	</materialKind>
+			<property>g_detailUVTiling<Vector4>4.20822 4.20822 0.000000 0.000000</Vector4></property>
+			<property>g_detailPowerGloss<Float>0.35</Float></property>
+			<property>g_detailPowerAlbedo<Float>0.11</Float></property>
+			<property>g_maskBias<Float>0.22</Float></property>
+			<property>g_detailPower<Float>	5	</Float></property>
+			<property>metallicDetailMap<Texture>vehicles/russian/Tank_detail/Details_map.dds</Texture></property>
+			<property>g_useDetailMetallic<Bool>	true	</Bool></property>
+			<property>g_useNormalPackDXT1<Bool>	false	</Bool></property>
+			<property>excludeMaskAndAOMap<Texture>vehicles/british/GB13_FV215b/FV215b_AO.dds</Texture></property>
+			<property>	metallicGlossMap	<Texture>vehicles/british/GB13_FV215b/FV215b_GMM.dds</Texture></property>
+			<property>normalMap<Texture>vehicles/british/GB13_FV215b/FV215b_ANM.dds</Texture></property>
+			<property>diffuseMap<Texture>vehicles/british/GB13_FV215b/FV215b_AM.dds</Texture></property>
+		</material>
+		<groupOrigin>	0.000000 0.145504 0.060912	</groupOrigin>
+	  </primitiveGroup>
+      <primitiveGroup>	1	<material><identifier>tank_bottom_mat</identifier><fx>shaders/std_effects/PBS_tank_old.fx</fx><collisionFlags>	0	</collisionFlags><materialKind>	0	</materialKind><property>normalMap<Texture>vehicles/british/bottom/GB_bottoms_NM.dds</Texture></property><property>diffuseMap<Texture>vehicles/british/bottom/GB_bottoms.dds</Texture></property><property>specularMap<Texture>vehicles/british/bottom/GB_bottoms_SM.dds</Texture></property><property>g_defaultPBSConversionParams<Bool>	false	</Bool></property><property>g_albedoConversions<Vector4>0.05 0.588 0.5 0.000000</Vector4></property><property>g_glossConversions<Vector4>0.225 0.441 0.819 0.735</Vector4></property><property>g_metallicConversions<Vector4>0.01 0.317 1 1.618</Vector4></property><property>g_albedoCorrection<Vector4>1 0.945 0.795 1</Vector4></property></material><groupOrigin>	0.000000 -0.519865 -0.072754	</groupOrigin></primitiveGroup>
+    </geometry>
+  </renderSet>
+  <boundingBox>
+    <min>	-1.994000 -0.579910 -3.809888	</min>
+    <max>	1.994000 0.870919 3.931713	</max>
+  </boundingBox>
+</hull.visual_processed>

@@ -1,0 +1,24 @@
+<segment.visual>
+  <node>
+    <identifier>Scene Root</identifier>
+    <transform>
+      <row0>	1.000000 0.000000 0.000000	</row0>
+      <row1>	0.000000 1.000000 0.000000	</row1>
+      <row2>	0.000000 0.000000 1.000000	</row2>
+      <row3>	0.000000 0.000000 0.000000	</row3>
+    </transform>
+  </node>
+  <renderSet>
+    <treatAsWorldSpaceObject>	false	</treatAsWorldSpaceObject>
+    <node>Scene Root</node>
+    <geometry>
+      <vertices>	vertices	</vertices>
+      <primitive>indices</primitive>
+      <primitiveGroup>	0	<material><identifier>tank_track</identifier><fx>shaders/std_effects/PBS_tank_tracks.fx</fx><collisionFlags>	0	</collisionFlags><materialKind>	0	</materialKind><property>g_maskBias<Float>	0.050000	</Float></property><property>g_detailPower<Float>	8.000000	</Float></property><property>g_metallicDetailUVTiling<Vector4>	1.000000 1.000000 0.000000 0.000000	</Vector4></property><property>metallicDetailMap<Texture>vehicles/russian/Tank_detail/Details_map.dds</Texture></property><property>g_useDetailMetallic<Bool>	true	</Bool></property><property>g_useNormalPackDXT1<Bool>	false	</Bool></property><property>	metallicGlossMap	<Texture>vehicles/british/GB32_Tortoise/track/Tortoise_Garage_Track_GMM.dds</Texture></property><property>normalMap<Texture>vehicles/british/GB32_Tortoise/track/Tortoise_Garage_Track_ANM.dds</Texture></property><property>diffuseMap<Texture>vehicles/british/GB13_FV215b/track/Tortoise_Garage_Track_AM.dds</Texture></property><property>alphaReference<Int>	0	</Int></property><property>alphaTestEnable<Bool>	false	</Bool></property><property>doubleSided<Bool>	false	</Bool></property></material></primitiveGroup>
+    </geometry>
+  </renderSet>
+  <boundingBox>
+    <min>	-0.457200 -0.128977 -0.159427	</min>
+    <max>	0.457200 0.036102 0.159427	</max>
+  </boundingBox>
+</segment.visual>

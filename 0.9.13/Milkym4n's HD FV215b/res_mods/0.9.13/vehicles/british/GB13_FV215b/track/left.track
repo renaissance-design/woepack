@@ -1,0 +1,459 @@
+<left.track>
+  <xmlns>http://www.collada.org/2005/11/COLLADASchema</xmlns>
+  <version>1.4.1</version>
+  <asset>
+    <contributor>
+      <author>
+      </author>
+      <authoring_tool>FBX COLLADA exporter</authoring_tool>
+      <comments>
+      </comments>
+    </contributor>
+    <created>2014-03-05T08:25:47Z</created>
+    <keywords>
+    </keywords>
+    <modified>2014-03-05T08:25:47Z</modified>
+    <revision>
+    </revision>
+    <subject>
+    </subject>
+    <title>
+    </title>
+    <unit>
+      <meter>	1.000000	</meter>
+      <name>centimeter</name>
+    </unit>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_visual_scenes>
+    <visual_scene>
+      <id>	left	</id>
+      <name>	left	</name>
+      <node>
+        <name>Lv2</name>
+        <id>Lv2</id>
+        <sid>Lv2</sid>
+        <matrix>0.010000 0.000000 0.000000 0.000000 0.000000 0.010000 0.000000 0.000000 0.000000 0.000000 0.010000 0.000000 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+        <extra>
+          <technique>
+            <profile>	FCOLLADA	</profile>
+            <visibility>	1.000000	</visibility>
+          </technique>
+        </extra>
+        <node>
+          <name>V_loc1</name>
+          <id>V_loc1</id>
+          <sid>V_loc1</sid>
+                                             横向坐标                               高度                                  前后坐标基础+10
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 130.1641 0.000000 0.000000 0.365120 -333.0381 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc2</name>
+          <id>V_loc2</id>
+          <sid>V_loc2</sid>                                                                                              基础+30
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 131.2661 0.000000 0.000000 0.365120 -352.2981 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc3</name>
+          <id>V_loc3</id>
+          <sid>V_loc3</sid>                                                                                                基础+30
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 106.6661 0.000000 0.000000 0.365120 -380.0491 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc4</name>
+          <id>V_loc4</id> 
+          <sid>V_loc4</sid>                                                                                               基础+30
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 72.9831 0.000000 0.000000 0.365120 -383.7871 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc5</name>                                                                                             基础+30
+          <id>V_loc5</id>
+          <sid>V_loc5</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 43.2821 0.000000 0.000000 0.365120 -360.6471 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_VD_L0_loc6</name>
+          <id>Track_VD_L0_loc6</id>
+          <sid>Track_VD_L0_loc6</sid>                                                                                    基础+10
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 16.6581 0.000000 0.000000 0.365120 -297.2951 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_L0_loc7</name>
+          <id>Track_L0_loc7</id>
+          <sid>Track_L0_loc7</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 5.322766 0.000000 0.000000 0.365120 -245.0361 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_L1_loc8</name>
+          <id>Track_L1_loc8</id>
+          <sid>Track_L1_loc8</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 5.207116 0.000000 0.000000 0.365120 -160.570679 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_L2_loc9</name>
+          <id>Track_L2_loc9</id>
+          <sid>Track_L2_loc9</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 5.207116 0.000000 0.000000 0.365120 -107.526459 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_L3_loc10</name>
+          <id>Track_L3_loc10</id>
+          <sid>Track_L3_loc10</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 5.207116 0.000000 0.000000 0.365120 -27.546478 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_L4_loc11</name>
+          <id>Track_L4_loc11</id>
+          <sid>Track_L4_loc11</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 5.207116 0.000000 0.000000 0.365120 25.694809 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_L5_loc12</name>
+          <id>Track_L5_loc12</id>
+          <sid>Track_L5_loc12</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 5.207116 0.000000 0.000000 0.365120 105.674652 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_L6_loc13</name>
+          <id>Track_L6_loc13</id>
+          <sid>Track_L6_loc13</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 5.207116 0.000000 0.000000 0.365120 159.579361 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_L7_loc14</name>
+          <id>Track_L7_loc14</id>
+          <sid>Track_L7_loc14</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 5.207116 0.000000 0.000000 0.365120 236.9091 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_VD_L1_loc15</name>
+          <id>Track_VD_L1_loc15</id>
+          <sid>Track_VD_L1_loc15</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 13.1721 0.000000 0.000000 0.365120 286.7881 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc16</name>
+          <id>V_loc16</id>
+          <sid>V_loc16</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 35.4411 0.000000 0.000000 0.365120 342.651 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc17</name>
+          <id>V_loc17</id>
+          <sid>V_loc17</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 52.9621 0.000000 0.000000 0.365120 366.4751 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc18</name>
+          <id>V_loc18</id>
+          <sid>V_loc18</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 80.0291 0.000000 0.000000 0.365120 374.1131 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc19</name>
+          <id>V_loc19</id>
+          <sid>V_loc19</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 107.9381 0.000000 0.000000 0.365120 364.041 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc20</name>
+          <id>V_loc20</id>
+          <sid>V_loc20</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 123.1231 0.000000 0.000000 0.365120 335.3411 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_VT_L6_loc21</name>
+          <id>Track_VT_L6_loc21</id>
+          <sid>Track_VT_L6_loc21</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 124.4691 0.000000 0.000000 0.365120 260.3861 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc22</name>
+          <id>V_loc22</id>
+          <sid>V_loc22</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 124.721535 0.000000 0.000000 0.365120 140.975601 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_VT_L5_loc23</name>
+          <id>Track_VT_L5_loc23</id>
+          <sid>Track_VT_L5_loc23</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 124.721535 0.000000 0.000000 0.365120 110.130005 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc24</name>
+          <id>V_loc24</id>
+          <sid>V_loc24</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 124.302078 0.000000 0.000000 0.365120 80.278458 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_VT_L4_loc25</name>
+          <id>Track_VT_L4_loc25</id>
+          <sid>Track_VT_L4_loc25</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 124.302078 0.000000 0.000000 0.365120 65.158333 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc26</name>
+          <id>V_loc26</id>
+          <sid>V_loc26</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 124.704292 0.000000 0.000000 0.365120 32.091110 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_VT_L3_loc27</name>
+          <id>Track_VT_L3_loc27</id>
+          <sid>Track_VT_L3_loc27</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 124.704292 0.000000 0.000000 0.365120 -0.160198 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc28</name>
+          <id>V_loc28</id>
+          <sid>V_loc28</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 124.555534 0.000000 0.000000 0.365120 -33.942886 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_VT_L2_loc29</name>
+          <id>Track_VT_L2_loc29</id>
+          <sid>Track_VT_L2_loc29</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 124.555534 0.000000 0.000000 0.365120 -67.739487 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc30</name>
+          <id>V_loc30</id>
+          <sid>V_loc30</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 124.771210 0.000000 0.000000 0.365120 -101.130013 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_VT_L1_loc31</name>
+          <id>Track_VT_L1_loc31</id>
+          <sid>Track_VT_L1_loc31</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 124.771210 0.000000 0.000000 0.365120 -134.374969 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>V_loc32</name>
+          <id>V_loc32</id>
+          <sid>V_loc32</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 124.309883 0.000000 0.000000 0.365120 -166.966965 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+        <node>
+          <name>Track_VT_L0_loc33</name>
+          <id>Track_VT_L0_loc33</id>
+          <sid>Track_VT_L0_loc33</sid>
+          <matrix>0.365120 0.000000 0.000000 -153.124420 0.000000 0.365120 0.000000 124.309883 0.000000 0.000000 0.365120 -233.158081 0.000000 0.000000 0.000000 1.000000<sid>matrix</sid></matrix>
+          <extra>
+            <technique>
+              <profile>	FCOLLADA	</profile>
+              <visibility>	1.000000	</visibility>
+            </technique>
+          </extra>
+        </node>
+      </node>
+      <extra>
+        <technique>
+          <profile>MAX3D</profile>
+          <frame_rate>	24.000000	</frame_rate>
+        </technique>
+        <technique>
+          <profile>	FCOLLADA	</profile>
+          <start_time>	0.041667	</start_time>
+          <end_time>	2.000000	</end_time>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene>
+      <url>#left</url>
+    </instance_visual_scene>
+  </scene>
+</left.track>
