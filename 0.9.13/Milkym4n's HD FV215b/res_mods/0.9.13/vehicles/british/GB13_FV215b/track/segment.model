@@ -1,9 +1,0 @@
-<segment.model>
-  <materialNames>
-  </materialNames>
-  <visibilityBox>
-    <min>	-0.457103 -0.134686 -0.139197	</min>
-    <max>0.457103 0.0309591 0.139197</max>
-  </visibilityBox>
-  <nodelessVisual>vehicles/british/GB13_FV215b/track/segment</nodelessVisual>
-</segment.model>
