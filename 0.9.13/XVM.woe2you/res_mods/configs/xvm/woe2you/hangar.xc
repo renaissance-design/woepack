@@ -5,60 +5,42 @@
 {
   "hangar": {
     // true - Show XWN8 instead of XEFF in company windows
-    // true - показывать XWN8 вместо XEFF в окнах рот
     "xwnInCompany": true,
-    "enableGoldLocker": false,
+    "enableGoldLocker": true,
     // true - enable locker for free XP
-    // true - включить замок для свободного опыта
-    "enableFreeXpLocker": false,
+    "enableFreeXpLocker": true,
     // true - Use credits instead of gold as default currency for ammo and equipment
-    // true - Использовать кредиты, а не золото как валюту по умолчанию для снарядов и снаряжения
     "defaultBoughtForCredits": true,
     // true - Show mastery mark in tech tree
-    // true - Показывать знак мастерства в дереве исследований
     "masteryMarkInTechTree": true,
     // true - Hide price button in tech tree
-    // true - Прятать кнопку с ценой в дереве исследований
     "hidePricesInTechTree": false,
     // true - Enable widgets
-    // true - включить виджеты
     "widgetsEnabled": false,
     // Ping servers
-    // Пинг серверов
     "pingServers": {
       // true - Enable display of ping to the servers
-      // true - показывать пинг до серверов
       "enabled": true,
       // Update interval, in ms
-      // Интервал обновления, в мс
       "updateInterval": 10000,
       // Axis field coordinates
-      // Положение поля по осям
       "x": 3,
       "y": 51,
       // Transparency
-      // Прозрачность от 0 до 100
       "alpha": 80,
       // Server to response time text delimiter
-      // Разделитель сервера от времени отклика
       "delimiter": ": ",
       // Maximum number of column rows
-      // Максимальное количество строк одной колонки
       "maxRows": 2,
       // Gap between columns
-      // Пространство между колонками
       "columnGap": 3,
       // Leading between lines.
-      // Пространство между строками
       "leading": 0,
       // true - place at top of other windows, false - at bottom.
-      // true - отображать поверх остальных окон, false - под.
       "topmost": true,
       // Text style
-      // Стиль текста
       "fontStyle": {
         // Font name
-        // Название шрифта
         "name": "$FieldFont",
         "size": 12,         // Размер
         "bold": false,      // Жирный
