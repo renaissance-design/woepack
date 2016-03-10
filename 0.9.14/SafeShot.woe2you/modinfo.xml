@@ -6,7 +6,7 @@
   info="Default chat message for SafeShot in English."
   notes=""
   version="0.1"
-  client-version="0.9.13"
+  client-version="0.9.14"
   requires="SAFES"
   visible="true"
   colorblind="true"

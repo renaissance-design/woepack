@@ -6,7 +6,7 @@
   info="Prevents friendly fire."
   notes="http://forum.worldoftanks.ru/index.php?/topic/1075087-010-safeshot-v05-?????????-29102015/"
   version="0.5"
-  client-version="0.9.13"
+  client-version="0.9.14"
   visible="true"
   colorblind="true"
 >
