@@ -6,6 +6,6 @@
   info="Provides extended battle session statistics in garage as well as displaying the result or the previous battle while in a new battle."
   version="0.9.13a"
   notes="http://forum.worldoftanks.com/index.php?/topic/445745-"
-  client-version="0.9.13"
+  client-version="0.9.14"
   visible="true"
 />
