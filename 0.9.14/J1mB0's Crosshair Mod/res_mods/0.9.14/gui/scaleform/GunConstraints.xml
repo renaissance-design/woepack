@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<gc>
+
+	<!-- Autor: Shtys -->
+	<!-- Editor: J1mB091 -->
+	
+	<!-- Arcade mode settings -->
+	<arcade>
+		<visible td="true" spg="true" center="true"/>
+		<offset constraints="-81" center="-60"/>
+		<stat scale="20"/>
+	</arcade>
+	
+	<!-- Sniper mode settings -->
+	<sniper>
+		<visible td="true" spg="false" center="true"/>
+		<offset constraints="5" center="20"/>
+		<real enabled="true" scale="18"/>
+		<stat scale="20"/>
+	</sniper>
+	
+	<!-- Artillery mode settings -->
+	<strategic>
+		<visible td="false" spg="true" center="true"/>
+		<offset constraints="0" center="20"/>
+		<real enabled="false" scale="8.5"/>
+		<stat scale="20"/>
+	</strategic>
+	
+	<!-- Side markers settings -->
+	<constraints>
+		<filter size="4" angle="0" distance="0" color="0x000000" alpha="100" strength="100"/>
+		<color normal="0x76CA08" critical="0xF71408"/>
+		<scale x="100" y="100"/>
+		<type>1</type>
+	</constraints>
+	
+	<!-- Center marker settings -->
+	<center>
+		<filter size="4" angle="0" distance="0" color="0x000000" alpha="100" strength="100"/>
+		<color normal="0x76CA08" critical="0xF71408"/>
+		<scale x="100" y="100"/>
+		<type>3</type>
+	</center>
+
+</gc>

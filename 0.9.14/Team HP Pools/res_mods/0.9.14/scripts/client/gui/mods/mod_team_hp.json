@@ -1,0 +1,23 @@
+﻿{
+    "colors": {
+        "alliesHPColor": "#E0E0E0",
+        "alliesHpBarColor": "#6FC605",
+        "damageColor": "#E0E06D",
+        "damagePercentColor": "#E0E0E0",
+        "enemyHPColor": "#E0E0E0",
+        "enemyHpBarColor": "#F30900",
+        "enemyHpBarColorBlind": "#6F6CD3",
+        "mainGunColor": "#E0E06D",
+        "piersiedHits": "#BDE0E0"
+    },
+    "damage": {
+        "damagePercent": false,
+        "enable": true,
+        "piersiedHits": true
+    },
+    "hpBar": {
+        "mainGunDynamic": true,
+        "prebattleTeamNames": false,
+        "showMainGun": false
+    }
+}

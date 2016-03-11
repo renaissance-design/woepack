@@ -1,0 +1,13 @@
+<wot
+  mid="PINGSB"
+  hid="0092"
+  title="Elkano's Minimap Ping Spam Blocker"
+  author="Elkano"
+  info="Blocks repeated minimap pings."
+  notes=""
+  version="1.0"
+  client-version="0.9.14"
+  visible="true"
+  colorblind="true"
+>
+</wot>

@@ -1,0 +1,53 @@
+/*
+	Ангарная часть мода.
+	Hangar part of the mod.
+*/
+{
+	
+	// true - включить модуль.
+	// true - enable the module.
+	"enable": false,
+	
+	// Снятие и одевание сменного оборудования в 1 нажатие кнопки.
+	// Removing and attaching replaceable equipment in 1 click.
+	"autoEquip": {
+		
+		// true - включить функцию.
+		// true - enable function.			
+		"enable": false,
+		
+		// Кнопка при нажатии которой срабатывает функция.
+		// Button by which pressing function is activated.
+		"equipKey": "F3",
+		
+		// Приоритет сменного оборудования.
+		// telescope - стереотруба, mesh - маск. сеть, toolbox - ящик с инструментами
+		// Priority replaceable equipment.
+		"equipPriority": ["telescope", "mesh", "toolbox"]
+	},
+	
+	// Фильтр сообщений в ангаре
+	// Hangar messeges filter
+	"messagesCleaner": {
+		
+		// true - включить функцию.
+		// true - enable function.	
+		"enable": false,
+		
+		// Всплывающие сообщения в ангаре.
+		// Pop-up messages in the hangar.
+		"popUpMessages": false,
+		
+		// Сообщения в системном канале.
+		// Messages in the system channel.
+		"systemLog": false,
+		
+		// Список строк по которым удаляются всплывающие сообщения.
+		// List of strings which delete popup messages.
+		"maskPopUp": ["Вы не меняли пароль", "Добро пожаловать на сервер", "Ремонт", "Куплено"],
+		
+		// Список строк по которым удаляются сообщения в системном канале.
+		// List of strings which delete messages from system channel.
+		"maskSysLog": ["Вы не меняли пароль", "Добро пожаловать на сервер"]
+	}
+}
