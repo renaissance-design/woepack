@@ -4,6 +4,6 @@
   zoomSpeed: 3.0                        # скорость зума
   ignoreObstacles: false                # игнорировать препятствия (true - камера не будет перескакивать на препятствия на пути снаряда)
 expert:
-  enabled: false
+  enabled: true
 gunner:
   enabled: true
