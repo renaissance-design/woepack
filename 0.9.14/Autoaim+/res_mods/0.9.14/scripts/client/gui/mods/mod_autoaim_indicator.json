@@ -1,0 +1,55 @@
+{
+    "autoaim_indicator_panel": {
+        "background": "mod_autoaim_indicator.dds",
+        "color": "#FFFF00",
+        "font": "default_smaller.font",
+        "hcentered": true,
+        "height": 17,
+        "text": "AUTO",
+        "vcentered": true,
+        "visible": true,
+        "width": 75,
+        "x": 0,
+        "y": 0
+    },
+    "debug": true,
+    "enable_panel": true,
+    "max_characters": 15,
+    "no_snap_on_autoaim_off_E": true,
+    "snap_to_nearest": true,
+    "snap_continously": false,
+    "snappingDelay": 0.2,
+    "snapping_angle_degrees": 15.0,
+    "toggleKeyCode": 0,
+    "toggleStateOn": true,
+    "toggledOffMsg": "<font color='#FF0000'>Autoaim indicator/snapping turned OFF</font>",
+    "toggledOnMsg": "<font color='#00FF00'>Autoaim indicator/snapping turned ON</font>",
+    "useDistanceBelowM": 0,
+    "use_target_as_text": true,
+    "follow_me_snapping": true,
+    "addon-auto_announce_reload": {
+        "enabled": false,
+        "clip_reload": false,
+        "reload_longer_than": 0
+    },
+    "addon-repair_with_T": {
+        "enabled": true,
+        "devices": {
+            "engine": ["destroyed"],
+            "leftTrack": ["destroyed"],
+            "rightTrack": ["destroyed"]
+        },
+        "other_forcing_large_kit": {
+            "engine": ["critical"],
+            "ammoBay": ["critical"],
+            "gun": ["critical", "destroyed"],
+            "turretRotator": ["critical", "destroyed"]
+        },
+        "use_large_kit_when_two_damaged": true,
+        "info": ["possible devices: engine, ammoBay, gun, turretRotator, leftTrack, rightTrack, surveyingDevice, radio, fuelTank",
+                 "order of devices in first option matters for small repair kit as it will repair first found!"]
+    },
+    "addon-dead_shot_blocker": true,
+    "addon-ally_shot_blocker": true,
+    "addon-disable_voip_switch": true
+}
