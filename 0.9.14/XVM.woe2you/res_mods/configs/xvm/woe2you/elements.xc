@@ -18,5 +18,6 @@
   "elements": [
     //${"snippet-1.xc"},
     //${"snippet-2.xc"}
+	{ "teamBasesPanel": { "_y": 105 } }
   ]
 }
