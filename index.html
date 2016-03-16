@@ -38,9 +38,15 @@
 <img src="http://i.imgur.com/lMMFukX.jpg" />
 
 <h2>Garage Enhancements</h2>
-<img src="http://i.imgur.com/hgTRFGr.jpg" />
 
-<p>Three-row carousel shows your win rate, games played, average kills per game, average damage per game, WN8 target damage, Mastery badge, xTE and current Mark of Excellence percentage on the carousel for your convenience.</p>
+<div class="twentytwenty-container">
+ <!-- The before image is first -->
+ <img src="images/garage-before.jpg" />
+ <!-- The after image is last -->
+ <img src="images/garage-after.jpg" />
+</div>
+
+<p>A three-row carousel with enhanced filters shows your win rate, games played, average kills per game, average damage per game, WN8 target damage, Mastery badge, xTE and current Mark of Excellence percentage on each tank.</p>
 
 <h2>Install and uninstall with a click</h2>
 <img src="http://i.imgur.com/a5DGlOk.png" />
@@ -70,6 +76,15 @@
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="javascripts/jquery-2.2.1.min.js"><\/script>')</script>
+	<script src="javascripts/jquery.event.move.js"></script>
+	<script src="javascripts/jquery.twentytwenty.js"></script>
+	<script>
+	$(window).load(function() {
+		$(".twentytwenty-container").twentytwenty();
+	});
+	</script>
     
   </body>
 </html>
