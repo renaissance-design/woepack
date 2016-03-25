@@ -10,7 +10,7 @@
     "pingServers": {
       "enabled": true,
       //"y": 70,
-      "ignoredServers": ["RU4", "RU8", "RU9"],
+      "ignoredServers": ["RU4", "RU8", "RU9", "RU10"],
       "showTitle": false,
       "updateInterval": 5000
     },
@@ -41,7 +41,7 @@
     //"skipIntro": false,
     "saveLastServer": true,
     "autologin": true,
-    //"confirmOldReplays": true,
+    "confirmOldReplays": true,
     "pingServers": ${"def.pingServers"},
     "onlineServers": ${"def.onlineServers"}
   },
@@ -227,6 +227,9 @@
   "minimap": ${"sirmax-minimap.xc":"minimap"},
   "minimapAlt": ${"sirmax-minimap.xc":"minimapAlt"},
   "hitLog": {
+    "hpLeft": {
+      "enabled": "{{.battle.allowHpInPanelsAndMinimap=true?false|true}}"
+    },
     "visible": true,
     "x": 235,
     "y": -230,
@@ -309,8 +312,17 @@
     "modMinVersion": "3.0.4"
   },
   "sounds": {
-    //"sixthSense": "/xvm/xvm/sixthsense"
-    "sixthSense": "/GUI/notifications_FX/task_part_complete"
+    //"enabled": false,
+    //"logSoundEvents": true,
+    "soundMapping": {
+      "xvm_sixthSense": "lightbulb",
+      //"xvm_sixthSenseRudy": "",
+      //"xvm_fireAlert": "",
+      //"xvm_ammoBay": "",
+      //"xvm_enemySighted": "enemySighted",      
+      //"carousel": "",
+      "__stub__": null
+    }
   },
   "consts": { "VM_COEFF_VMM_DEAD": 0.75 }
 }

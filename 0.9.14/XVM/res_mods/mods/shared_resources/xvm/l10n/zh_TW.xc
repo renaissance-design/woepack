@@ -84,6 +84,7 @@
     "Average hits received": "平均被擊中數",
     "Average penetrations received": "平均被擊中穿透數",
     "Average ricochets received": "平均被擊中未穿透數",
+    "better than": "",
     "PutOwnCrew": "使用本車成員",
     "PutBestCrew": "使用最佳乘員",
     "PutClassCrew": "使用同類型成員",

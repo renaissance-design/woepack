@@ -84,6 +84,7 @@
     "Average hits received": "Сяр. атрыманых траплянняў",
     "Average penetrations received": "Сяр. атрыманых прабіццяў",
     "Average ricochets received": "Сяр. атрыманых рыкашэтаў",
+    "better than": "лепш за",
     "PutOwnCrew": "Родны экіпаж",
     "PutBestCrew": "Найлепшы экіпаж",
     "PutClassCrew": "Экіпаж таго самага класа",

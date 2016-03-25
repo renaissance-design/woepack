@@ -84,6 +84,7 @@
     "Average hits received": "",
     "Average penetrations received": "",
     "Average ricochets received": "",
+    "better than": "",
     "PutOwnCrew": "",
     "PutBestCrew": "",
     "PutClassCrew": "",

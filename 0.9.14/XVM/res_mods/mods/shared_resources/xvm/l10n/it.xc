@@ -84,6 +84,7 @@
     "Average hits received": "Media colpi ricevuti",
     "Average penetrations received": "Media colpi penetrati ricevuti",
     "Average ricochets received": "Media rimbalzi ricevuti per battaglia",
+    "better than": "",
     "PutOwnCrew": "Carica equipaggio specifico",
     "PutBestCrew": "Carica equipaggio migliore",
     "PutClassCrew": "Carica equipaggio stessa classe",

@@ -84,6 +84,7 @@
     "Average hits received": "Media loviturilor primite",
     "Average penetrations received": "Media penetrarilor primite",
     "Average ricochets received": "Media ricoseelor primite",
+    "better than": "",
     "PutOwnCrew": "Pune echipajul propriu",
     "PutBestCrew": "Pune cel mai bun echipaj",
     "PutClassCrew": "Pune echipajul anterior",

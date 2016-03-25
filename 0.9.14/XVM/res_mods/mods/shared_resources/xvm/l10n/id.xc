@@ -84,6 +84,7 @@
     "Average hits received": "Rata-rata tembakan diterima",
     "Average penetrations received": "Rata-rata penetrasi diterima",
     "Average ricochets received": "Rata-rata richocet diterima",
+    "better than": "",
     "PutOwnCrew": "Masukan krew sendiri",
     "PutBestCrew": "Masukan krew terbaik",
     "PutClassCrew": "Masukan krew dengan klass yang sama",

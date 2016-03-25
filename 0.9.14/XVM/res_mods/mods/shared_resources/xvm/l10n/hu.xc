@@ -84,6 +84,7 @@
     "Average hits received": "Átlagosan kapott találat",
     "Average penetrations received": "Átlagosan kapott páncélátütő találat",
     "Average ricochets received": "Átlagosan kapott lepattanó találat",
+    "better than": "jobb mint",
     "PutOwnCrew": "Saját legénység",
     "PutBestCrew": "Legjobb legénység",
     "PutClassCrew": "Azonos típusú legénység",

@@ -84,6 +84,7 @@
     "Average hits received": "Средно получени попадения",
     "Average penetrations received": "Средно получени пробивания",
     "Average ricochets received": "Средно получени рикошети",
+    "better than": "по-добре от",
     "PutOwnCrew": "Назначи наличен екипаж",
     "PutBestCrew": "Назначи най-добрия екипаж",
     "PutClassCrew": "Назначи екипаж от същия клас",

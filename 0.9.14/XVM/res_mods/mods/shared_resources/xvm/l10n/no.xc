@@ -84,6 +84,7 @@
     "Average hits received": "Treff mottatt",
     "Average penetrations received": "Penetrasjoner mottatt",
     "Average ricochets received": "Rikosjetter mottatt",
+    "better than": "",
     "PutOwnCrew": "Sett egen besetning",
     "PutBestCrew": "Sett beste besetning",
     "PutClassCrew": "Sett besetning av same klasse",

@@ -84,6 +84,7 @@
     "Average hits received": "Bị bắn trúng mỗi trận",
     "Average penetrations received": "Bị bắn xuyên giáp mỗi trận",
     "Average ricochets received": "Bị bắn không xuyên giáp mỗi trận",
+    "better than": "",
     "PutOwnCrew": "Dùng kíp lái của xe",
     "PutBestCrew": "Dùng kíp lái tốt nhất",
     "PutClassCrew": "Dùng kíp lái cùng loại",

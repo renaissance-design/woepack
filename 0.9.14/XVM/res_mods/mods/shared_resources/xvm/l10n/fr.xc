@@ -84,6 +84,7 @@
     "Average hits received": "Nb. moyen de tirs reçus",
     "Average penetrations received": "Nb. moyen de pénétrations reçues",
     "Average ricochets received": "Nb. moyen de ricochets reçus",
+    "better than": "meilleur que",
     "PutOwnCrew": "Mettre l'équipage adéquat",
     "PutBestCrew": "Mettre le meilleur équipage",
     "PutClassCrew": "Mettre un équipage de même classe",

@@ -4,25 +4,62 @@
  * http://www.koreanrandom.com/forum/topic/18955-
  */
 {
-  // To use voice alerts , copy the contents of a folder:
-  // res_mods/mods/shared_resources/xvm/res/audio
-  // xvm.fev and xvm.fsb files to res/audio folder or /res_mods/0.X.X/audio if you are using another sound mods.
-  // -------------------------------------------------------------------------------------
-  // Для работы озвучки оповещений скопируйте содержимое папки:
-  // res_mods/mods/shared_resources/xvm/res/audio
-  // файлы xvm.fev и xvm.fsb в папку res/audio или res_mods/0.X.X/audio если используете другие звуковые моды.
   "sounds": {
-    // Perk SixthSense
-    // Перк Шестое чувство
-    "sixthSense": "/xvm/xvm/sixthsense",
-    // Perk SixthSense (On vehicle Т-34-85 Rudy)
-    // Перк Шестое чувство (На технике Т-34-85 Rudy)
-    "sixthSenseRudy": "/rudy/dog/dog",
-    // Fire alert
-    // Пожар
-    "fireAlert": "/xvm/xvm/fireAlert",
-    // Damage ammoBay
-    // Повреждение боеукладки
-    "ammoBay": "/xvm/xvm/ammoBay"
+    "enabled": true,
+    // List of extra banks to load from folder res_mods/X.Y.Z/audioww.
+    // Use semicolon for multiple values: "bank1.bnk; bank2.bnk;..."
+    // Список дополнительных банков для загрузки из папки res_mods/X.Y.Z/audioww.
+    // Несколько банков необходимо указывать через точку с запятой: "bank1.bnk; bank2.bnk;..."
+    "soundBanks": {
+      "hangar": "xvm.bnk;",
+      "battle": "xvm.bnk;"
+    },
+    // Enable sound events logging in the xvm.log
+    // Включить логгирование звуковых событий в xvm.log
+    "logSoundEvents": false,
+    // Sound events remapping
+    // Переопределение звуковых событий
+    "soundMapping": {
+      // Event mapping
+      // Переопределение события
+      //"originalEventName": "newEventName"
+      // To disable sound event use empty string for value
+      // Для отключения звукового события используйте пустую строку для значения
+      //"originalEventName": ""
+      //
+      // Disable original sixth sense light bulb sound event
+      // Отключить оригинальный звук лампы шестого чувства
+      "lightbulb": "",
+      // Disable original enemy detection event      
+      // Отключить оригинальный звук обнаружения противника
+      //"enemy_sighted_for_team": "",
+      //      
+      // Disable original fire sound event
+      // Отключить оригинальный звук пожара
+      //"vo_fire_started": "",
+      // Disable original ammo bay damaged event
+      // Отключить оригинальный звук повреждения боеукладки
+      //"vo_ammo_bay_damaged": "",
+      //
+      // Sound events added by XVM
+      // Звуковые события, добавленные в XVM
+      //
+      // Perk SixthSense
+      // Перк Шестое чувство
+      "xvm_sixthSense": "sixthsense",
+      // Perk SixthSense (On vehicle Т-34-85 Rudy)
+      // Перк Шестое чувство (На технике Т-34-85 Rudy)
+      "xvm_sixthSenseRudy": "sixthSenseRudy",
+      // Enemy detection (Use in together with disable original enemy detection event) 
+      // Обнаружение противника (Используйте вместе с отключением оригинального звука обнаружения противника)
+      "xvm_enemySighted": "",      
+      //"xvm_enemySighted": "enemySighted",      
+      // Fire alert
+      // Пожар
+      "xvm_fireAlert": "fireAlert",
+      // Damage ammoBay
+      // Повреждение боеукладки
+      "xvm_ammoBay": "ammoBay"
+    }
   }
 }

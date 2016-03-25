@@ -3,7 +3,7 @@
   hid="0000"
   title="eXtended Visualization Mod (XVM)"
   author="XVM Team"
-  version="6.2.1"
+  version="6.2.1.1"
   client-version="0.9.14"
   info="WoT interface modification containing many HUD enhancements. Default configuration is provided. XVM also serves as base for many other mods. XVM must be activated (via XVM web site) with appropriate options set for statistics to work. Please see XVM web site for more details."
   notes="http://www.modxvm.com/en/"

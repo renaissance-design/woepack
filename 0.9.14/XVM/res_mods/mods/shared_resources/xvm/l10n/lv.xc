@@ -84,6 +84,7 @@
     "Average hits received": "Vidēji uzņemti trāpījumi",
     "Average penetrations received": "Vidēji uzņemti cauršāvieni",
     "Average ricochets received": "Vidēji uzņemti rikošeti",
+    "better than": "",
     "PutOwnCrew": "Šī tanka apkalpe",
     "PutBestCrew": "Labākā apkalpe",
     "PutClassCrew": "Tās pašas klases apkalpe",

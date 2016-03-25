@@ -84,6 +84,7 @@
     "Average hits received": "Prosečno hitaca primljeno",
     "Average penetrations received": "Prosečno probojnih hitaca primljeno",
     "Average ricochets received": "Prosečno rikošeja primljeno",
+    "better than": "",
     "PutOwnCrew": "Ubaci odgovarajuću posadu",
     "PutBestCrew": "Ubaci najbolju posadu",
     "PutClassCrew": "Ubaci posadu iste klase",

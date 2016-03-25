@@ -84,6 +84,7 @@
     "Average hits received": "평균 피격 횟수",
     "Average penetrations received": "평균 받은 관통 횟수",
     "Average ricochets received": "평균 받은 도탄 횟수",
+    "better than": "",
     "PutOwnCrew": "해당 전차의 승무원을 넣기",
     "PutBestCrew": "가장 뛰어난 승무원을 넣기",
     "PutClassCrew": "같은 등급의 승무원을 넣기",

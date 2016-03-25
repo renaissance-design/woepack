@@ -84,6 +84,7 @@
     "Average hits received": "平均被弾数",
     "Average penetrations received": "平均被貫通数",
     "Average ricochets received": "平均被跳弾数",
+    "better than": "",
     "PutOwnCrew": "元のクルーを搭乗",
     "PutBestCrew": "最適なクルーを搭乗",
     "PutClassCrew": "同クラスのクルーを搭乗",

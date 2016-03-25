@@ -84,6 +84,7 @@
     "Average hits received": "Μέσος όρος χτυπήματα που έλαβε",
     "Average penetrations received": "Μέσος όρος διεισδύσεων που έλαβε",
     "Average ricochets received": "Μέσος όρος αναπήδησεων που έλαβε",
+    "better than": "",
     "PutOwnCrew": "Βάλτε το δικό σας πλήρωμα",
     "PutBestCrew": "Βάλτε το καλύτερο πλήρωμα",
     "PutClassCrew": "Βάλτε πλήρωμα ίδιας κατηγορίας",

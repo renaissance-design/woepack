@@ -84,6 +84,7 @@
     "Average hits received": "Gennemsnitlige skud modtaget",
     "Average penetrations received": "Gennemsnitlige gennemtrængninger modtaget",
     "Average ricochets received": "Gennemsnitlige rikochetteringer modtaget",
+    "better than": "bedre end",
     "PutOwnCrew": "Put eget mandskab",
     "PutBestCrew": "Put bedste mandskab",
     "PutClassCrew": "Put samme klasse mandskab",

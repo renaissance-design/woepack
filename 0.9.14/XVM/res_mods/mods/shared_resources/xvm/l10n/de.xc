@@ -84,6 +84,7 @@
     "Average hits received": "Ø erhaltene Treffer",
     "Average penetrations received": "    - Wirkungstreffer",
     "Average ricochets received": "    - nicht durchschlagende Treffer",
+    "better than": "",
     "PutOwnCrew": "Eingewiesene Besatzung einsetzen",
     "PutBestCrew": "Beste Besatzung einsetzen",
     "PutClassCrew": "Besatzung der selben Klasse einsetzen",

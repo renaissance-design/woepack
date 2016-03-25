@@ -84,6 +84,7 @@
     "Average hits received": "Śr. otrzymanych trafień",
     "Average penetrations received": "Śr. otrzymanych trafień penetrujących",
     "Average ricochets received": "Śr. otrzymanych rykoszetów",
+    "better than": "",
     "PutOwnCrew": "Obsadź załogę (własna)",
     "PutBestCrew": "Obsadź załogę (najlepsza)",
     "PutClassCrew": "Obsadź członka załogi tej samej klasy",

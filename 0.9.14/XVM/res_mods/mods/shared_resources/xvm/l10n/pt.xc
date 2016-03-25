@@ -84,6 +84,7 @@
     "Average hits received": "Média de impactos recebidos",
     "Average penetrations received": "Média de penetrações recebidas",
     "Average ricochets received": "Média de ricochetes recebidos",
+    "better than": "",
     "PutOwnCrew": "Colocar a própria tripulação",
     "PutBestCrew": "Colocar a melhor tripulação",
     "PutClassCrew": "Colocar tripulação da mesma classe",

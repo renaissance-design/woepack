@@ -84,6 +84,7 @@
     "Average hits received": "საშუალო მიღებული დარტყმა ზიანის გარეშე",
     "Average penetrations received": "საშუალო მიღებული დარტყმა ზიანით",
     "Average ricochets received": "საშუალო მიღებული რიკოშეტი",
+    "better than": "",
     "PutOwnCrew": "მშობლიური ეკიპაჯი",
     "PutBestCrew": "საუკეთესო ეკიპაჯი",
     "PutClassCrew": "იმავე კლასის ეკიპაჯი",

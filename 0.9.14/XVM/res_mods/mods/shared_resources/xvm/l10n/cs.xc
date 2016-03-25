@@ -84,6 +84,7 @@
     "Average hits received": "Průměr obdržených zásahů",
     "Average penetrations received": "Průměr obdržených průstřelů",
     "Average ricochets received": "Průměrně odraženo",
+    "better than": "",
     "PutOwnCrew": "Vlastní posádka",
     "PutBestCrew": "Nejlepší posádka",
     "PutClassCrew": "Posádka stejné třídy",

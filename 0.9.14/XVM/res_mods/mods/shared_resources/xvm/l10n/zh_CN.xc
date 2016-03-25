@@ -84,6 +84,7 @@
     "Average hits received": "平均承受伤害",
     "Average penetrations received": "平均被击穿数",
     "Average ricochets received": "平均跳弹数",
+    "better than": "",
     "PutOwnCrew": "使用本车乘员",
     "PutBestCrew": "使用最佳乘员",
     "PutClassCrew": "使用同类乘员",

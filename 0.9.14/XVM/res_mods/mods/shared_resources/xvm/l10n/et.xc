@@ -84,6 +84,7 @@
     "Average hits received": "Keskmine saadud tabamuste arv",
     "Average penetrations received": "Keskmine saadud läbistamiste arv",
     "Average ricochets received": "Keskmine saadud rikošettide arv",
+    "better than": "",
     "PutOwnCrew": "Pane oma meeskond",
     "PutBestCrew": "Pane parim meeskond",
     "PutClassCrew": "Pane sama klassi meeskond",
