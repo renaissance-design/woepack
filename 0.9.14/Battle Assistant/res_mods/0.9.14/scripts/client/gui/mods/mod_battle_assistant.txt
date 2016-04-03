@@ -1,9 +1,0 @@
-﻿spg:
-  enabled: true                         # false - полностью отключить мод
-  keys: "[Keys.KEY_MOUSE2, Keys.KEY_G]" # список клавиш, кавычки не убирать!
-  zoomSpeed: 3.0                        # скорость зума
-  ignoreObstacles: false                # игнорировать препятствия (true - камера не будет перескакивать на препятствия на пути снаряда)
-expert:
-  enabled: true
-gunner:
-  enabled: true

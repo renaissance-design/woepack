@@ -1,12 +1,12 @@
 ﻿<wmpi>
     <id>WOE2YOU_MODPACK</id>
     <author>woe2you</author>
-    <title>woe2you Modpack</title>
-    <client-version>0.9.14</client-version>
+    <title>woepack</title>
+    <client-version>0.9.14.1</client-version>
     <update-url direct="true"></update-url>
     <pack-file merge="false">wot.mod.tce.pack</pack-file>
-    <version>1.0.0.4</version>
-    <date>2015-12-16</date>
+    <version>1.0.0.5</version>
+    <date>2016-04-02</date>
     <info>Simple, clean interface with XVM, session stats and everything you need to make random and clan play easier.</info>
     <info-url>http://renaissance-design.github.io/woepack/</info-url>
     <min-app-version>1.1.19.0</min-app-version>
