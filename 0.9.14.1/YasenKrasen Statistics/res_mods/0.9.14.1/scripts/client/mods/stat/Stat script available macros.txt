@@ -104,6 +104,7 @@
     XWN8                     WN8 rating in XVM scale (0-100)
 
    Type of battle for "ignoreBattleType" section:
+     0 Unknown
      1 Random Battle
      2 Team Training
      3 Tank Company Battle
@@ -116,6 +117,13 @@
     10 Stronghold Skirmishes
     11 Stronghold Battle
     12 Rated Team Battle
+    13 Global Map
+    14 Tournament Regular
+    15 Tournament Clan
+    16 Sandbox Rated
+    17 Sandbox
+    18 Fallout Classic
+    19 Fallout MultiTeam
 
    Decimal places and right alignment of macros
     :d                       Macro without decimal ({{deathsRate:d}} will be displayed '63')
