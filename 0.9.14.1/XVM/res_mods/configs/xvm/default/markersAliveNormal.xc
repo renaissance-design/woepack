@@ -3,54 +3,54 @@
  * Настройки маркеров для живых без Alt.
  */
 {
-// Definitions
-// Шаблоны
-"def": {
-  // Floating damage values.
-  // Всплывающий урон.
-  "damageText": {
-    // false - disable / не отображать.
-    "visible": true,
-    // Axis field coordinates
-    // Положение поля по осям
-    "x": 0,
-    "y": -67,
-    // Opacity (dynamic transparency allowed, see macros.txt).
-    // Прозрачность (допускается использование динамической прозрачности, см. macros.txt)
-    "alpha": 100,
-    // Color (dynamic colors allowed, see macros.txt).
-    // Цвет (допускается использование динамического цвета, см. macros.txt)
-    "color": null,
-    // Параметры шрифта.
-    "font": {
-      "name": "$FieldFont",           // Font name      / Название
-      "size": 18,                     // Font size      / Размер
-      "align": "center",              // Text alignment (left, center, right) /   Выравнивание текста (left, center, right)
-      "bold": false,                  // True - bold    / Жирный.
-      "italic": false                 // True - italic  / Курсив.
+  // Definitions
+  // Шаблоны
+  "def": {
+    // Floating damage values.
+    // Всплывающий урон.
+    "damageText": {
+      // false - disable / не отображать.
+      "visible": true,
+      // Axis field coordinates
+      // Положение поля по осям
+      "x": 0,
+      "y": -67,
+      // Opacity (dynamic transparency allowed, see macros.txt).
+      // Прозрачность (допускается использование динамической прозрачности, см. macros.txt)
+      "alpha": 100,
+      // Color (dynamic colors allowed, see macros.txt).
+      // Цвет (допускается использование динамического цвета, см. macros.txt)
+      "color": null,
+      // Параметры шрифта.
+      "font": {
+        "name": "$FieldFont",           // Font name      / Название
+        "size": 18,                     // Font size      / Размер
+        "align": "center",              // Text alignment (left, center, right) /   Выравнивание текста (left, center, right)
+        "bold": false,                  // True - bold    / Жирный.
+        "italic": false                 // True - italic  / Курсив.
+      },
+      // Параметры тени.
+      "shadow": {
+        "alpha": 100,                   // Opacity          / Прозрачность.
+        "color": "0x000000",            //                    Цвет.
+        "angle": 45,                    // Offset angle     / Угол смещения.
+        "distance": 0,                  // Offset distance  / Дистанция смещения.
+        "size": 6,                      //                    Размер.
+        "strength": 200                 // Intensity        / Интенсивность.
+      },
+      // Rising speed of displayed damage (float up speed).
+      // Время отображения отлетающего урона.
+      "speed": 2,
+      // Maximum distance of target for which damage rises.
+      // Расстояние, на которое отлетает урон.
+      "maxRange": 40,
+      // Text for normal damage (see description of macros in the macros.txt).
+      // Текст при обычном уроне (см. описание макросов в macros.txt).
+      "damageMessage": "{{dmg}}",
+      // Text for ammo rack explosion (see description of macros in the macros.txt).
+      // Текст при взрыве боеукладки (см. описание макросов в macros.txt).
+      "blowupMessage": "{{l10n:blownUp}}\n{{dmg}}"
     },
-    // Параметры тени.
-    "shadow": {
-      "alpha": 100,                   // Opacity          / Прозрачность.
-      "color": "0x000000",            //                    Цвет.
-      "angle": 45,                    // Offset angle     / Угол смещения.
-      "distance": 0,                  // Offset distance  / Дистанция смещения.
-      "size": 6,                      //                    Размер.
-      "strength": 200                 // Intensity        / Интенсивность.
-    },
-    // Rising speed of displayed damage (float up speed).
-    // Время отображения отлетающего урона.
-    "speed": 2,
-    // Maximum distance of target for which damage rises.
-    // Расстояние, на которое отлетает урон.
-    "maxRange": 40,
-    // Text for normal damage (see description of macros in the macros.txt).
-    // Текст при обычном уроне (см. описание макросов в macros.txt).
-    "damageMessage": "{{dmg}}",
-    // Text for ammo rack explosion (see description of macros in the macros.txt).
-    // Текст при взрыве боеукладки (см. описание макросов в macros.txt).
-    "blowupMessage": "{{l10n:blownUp}}\n{{dmg}}"
-  },
     // Text field with the name of the tank.
     // Текстовое поле с названием танка.
     "tankName": {
@@ -106,7 +106,7 @@
       "format": "<font size='{{battletype?13|{{squad?13|0}}}}'>{{name}}</font>"  // формат текста. См. описание макросов в macros.txt
     },
     // Text field with the remaining / maximum health.
-    // Текстовое поле с оставшимся / максимальным здоровьем
+    // Текстовое поле с оставшимся / максимальным здоровьем.
     "tankHp": {
       "name": "Tank HP",
       "visible": true,
@@ -130,6 +130,32 @@
         "strength": 100
       },
       "format": "{{hp}} / {{hp-max}}"
+    },
+    // Text field with the XMQP event.
+    // Текстовое поле с событием XMQP.
+    "xmqpEvent": {
+      "name": "xmqp event",           //  название текстового поля, ни на что не влияет
+      "visible": true,                //  false - не отображать
+      "x": 0,                         //  положение по оси X
+      "y": -55,                       //  положение по оси Y
+      "alpha": "{{x-overturned?100|{{x-spotted?100|50}}}}",  //  прозрачность (допускается использование динамической прозрачности, см. macros.txt)
+      "color": "{{x-overturned?0xFFBB00|{{x-spotted?0xFFBB00|0xFFFFFF}}}}",  //  цвет (допускается использование динамического цвета, см. macros.txt)
+      "font": {                       //  параметры шрифта
+        "name": "xvm",                //  название
+        "size": 23,                   //  размер
+        "align": "center",            //  выравнивание текста (left, center, right)
+        "bold": false,                //  обычный (false) или жирный (true)
+        "italic": false               //  обычный (false) или курсив (true)
+      },
+      "shadow": {                     //  параметры тени
+        "alpha": 100,                 //  прозрачность
+        "color": "0x000000",          //  цвет
+        "angle": 45,                  //  угол смещения
+        "distance": 0,                //  дистанция смещение
+        "size": 4,                    //  размер
+        "strength": 100               //  интенсивность
+      },
+      "format": "{{x-overturned?&#x112;|{{x-spotted?&#x70;|{{x-enabled?{{x-sense-on?&#x70;}}}}}}}}"  //  формат текста. См. описание макросов в macros.txt
     }
   },
   // Настройки для союзников.
@@ -261,7 +287,8 @@
     "textFields": [
       ${ "def.tankName" },
       ${ "def.playerName" },
-      ${ "def.tankHp" }
+      ${ "def.tankHp" },
+      ${ "def.xmqpEvent" }
     ]
   },
   // Настройки для противников.

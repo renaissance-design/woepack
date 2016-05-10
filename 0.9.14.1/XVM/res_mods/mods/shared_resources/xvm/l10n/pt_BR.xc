@@ -72,7 +72,7 @@
     "Average battle time per day": "Níveis de batalha",
     "Battles after 0.8.8": "Cat",
     "Average experience": "Níveis de batalha",
-    "Average experience without premium": "",
+    "Average experience without premium": "Níveis de batalha",
     "Average distance driven per battle": "Níveis de batalha",
     "Average woodcuts per battle": "Níveis de batalha",
     "Average damage assisted": "Dano (assistência / próprio)",
