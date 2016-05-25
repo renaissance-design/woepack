@@ -1,0 +1,41 @@
+{
+	// Редактировать только в Notepad++ !!! https://notepad-plus-plus.org/
+	"damage" : {
+		// true - показывать нанеснный урон, false - скрыть. 
+		// Основной переключатель, значение false отключит так же piercedHits и damagePercent
+		"enable" : true,
+		// true - показывать процент нанесенного урона, false - скрыть (Эксперементально)
+		"damagePercent" : true,
+		// true - показывать количество пробитий, false - скрыть
+		"piercedHits" : true
+
+	},
+	"hpBar" : {
+		// true - показывать имена команд при отсчете, false - скрыть
+		"prebattleTeamNames" : false,
+		// true - показывать продвижение основного калибра, false - скрыть
+		"showMainGun" : true,
+		// true - динамический расчет оставшегося урона до получения медали "Основной Калибр", false - без расчета
+ 		"mainGunDynamic" : true
+	},
+	"colors" : {
+		// цвет нанесенного урона, дефолт #E0E06D
+		"damageColor" : "#E0E06D",
+		// цвет процента нанесенного урона, дефолт #E0E0E0
+		"damagePercentColor" : "#E0E0E0",
+		// цвет пробитий, дефолт #BDE0E0
+		"piercedHits" : "#BDE0E0",
+		// цвет значения медали "оновной калибр", дефолт #E0E06D		
+		"mainGunColor" : "#E0E06D",
+		// цвет оставшегося хп союзников (не полоса), дефолт #E0E0E0		
+		"alliesHPColor" : "#E0E0E0",
+		// цвет оставшегося хп противника (не полоса), дефолт #E0E0E0
+		"enemyHPColor" : "#E0E0E0",
+		// цвет полос союзников, дефолт #6FC605
+		"alliesHpBarColor" : "#6FC605",
+		// цвет полос противника, дефолт #F30900
+		"enemyHpBarColor" : "#F30900",
+		// цвет полос противника (режим цветовой слепоты), дефолт #6F6CD3
+		"enemyHpBarColorBlind" : "#6F6CD3"
+	}
+}
