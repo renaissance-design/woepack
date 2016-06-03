@@ -1,4 +1,36 @@
-﻿XVM-6.3.0:
+﻿XVM-6.3.1.1:
+  * обновление для микропатча WoT 0.9.15 #30
+  * добавлена опция "tooltips"/"hideSimplifiedVehParams" - спрятать упрощенные ТТХ
+  * tooltips:
+      добавлены параметры:
+        "invisibilityStillFactor" - Незаметность неподвижной машины (%)
+        "invisibilityMovingFactor" - Незаметность машины в движении (%)
+      удален параметр:
+        "camo_coeff"
+
+XVM-6.3.1:
+  * исправление ошибок
+  * индикатор общего HP команд реализован с помощью battleLabels и py_macro
+  * py_macro: изменено определение экспорта функций:
+      было:  @xvm.export('xvm', 'xvm2sup')
+      стало: @xvm.export('xvm.xvm2sup')
+  * py_macro: в определение экспорта добавлен аргумент 'deterministic', помечающий функцию
+      как детерминированную, или нет (по умолчанию deterministic=True)
+  * переделаны фильтры карусели
+
+  [ИСПРАВЛЕНИЯ]
+  * исправлена опция "useStandardLabels"
+
+  [КОНФИГ]
+  * удалены опции:
+      "minimap"/"circles"/"enabled" - дублирует "minimap"/"useStandardCircles"
+      "minimap"/"lines"/"enabled"   - дублирует "minimap"/"useStandardLabels"
+      "minimap"/"labels"/"enabled"  - дублирует "minimap"/"useStandardLines"
+  * перемещена опция настройки цвета для индикатора общего HP команд:
+      "battle"/"totalHP"/"colors" > "colors"/"totalHP"
+  * удалена устаревшая секция конфига "battle"/"totalHP"
+
+XVM-6.3.0:
   * адаптация к WoT 0.9.15
 
   [ВАЖНЫЕ ИЗМЕНЕНИЯ]
@@ -33,7 +65,7 @@ XVM-6.2.2:
     новые макросы:
       {{x-enabled}} - у игрока активирован сервис xmqp
       {{x-sense-on}} - у игрока изучен перк "шестое чувство"
-      {{x-spotted}} - танк игрока обнаружен      
+      {{x-spotted}} - танк игрока обнаружен
       {{x-fire}} - пожар в танке
       {{x-overturned}} - танк игрока перевернут
       {{x-drowning}} - танк игрока тонет

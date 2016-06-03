@@ -55,7 +55,6 @@
     //"enableCrewAutoReturn": false,
     //"crewReturnByDefault": true,
     "enableEquipAutoReturn": true,
-    "showShootRangeTooltip": true,
     "widgetsEnabled": true,
     "pingServers": {
       "$ref": { "path":"def.pingServers" },
@@ -340,6 +339,7 @@
     //"minimapClicksColor": null,
     "minimapClicksTime": 7
   },
+  "battleLabels": ${"sirmax-battleLabels.xc":"."},
   "consts": {
       "VM_COEFF_VMM_DEAD": 0.75
   }

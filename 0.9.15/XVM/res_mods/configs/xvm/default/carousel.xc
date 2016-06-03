@@ -47,9 +47,7 @@
       // false - скрыть фильтр.
       "params":   { "enabled": true },  // main params        / основные параметры
       "bonus":    { "enabled": true },  // x2 bonus           / x2 бонус
-      "favorite": { "enabled": true },  // favorite tanks     / основные танки
-      "gameMode": { "enabled": true },  // fallout mode tanks / танки для "боя до последнего"
-      "prefs":    { "enabled": true }   // other filters      / другие фильтры
+      "favorite": { "enabled": true }   // favorite tanks     / основные танки
     },
     // Spacing between filters cells.
     // Отступ между ячейками фильтров.
