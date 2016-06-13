@@ -6,7 +6,7 @@
   info="Improved autoaim with snapping to nearest enemy and visual indicator."
   notes="http://forum.worldoftanks.eu/index.php?/topic/441413-0914-autoaim-indicationsnappingaddins/"
   version="9.14"
-  client-version="0.9.15"
+  client-version="0.9.15.0.1"
   visible="true"
   colorblind="true"
 >
