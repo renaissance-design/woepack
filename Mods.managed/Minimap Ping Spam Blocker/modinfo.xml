@@ -6,7 +6,7 @@
   info="Blocks repeated minimap pings."
   notes=""
   version="1.0"
-  client-version="0.9.15"
+  client-version="0.9.15.0.1"
   visible="true"
   colorblind="true"
 >
