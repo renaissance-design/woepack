@@ -105,15 +105,15 @@
       },
       "format": "<font size='{{battletype?13|{{squad?13|0}}}}'>{{name}}</font>"  // формат текста. См. описание макросов в macros.txt
     },
-    // Text field with the remaining health.
-    // Текстовое поле с оставшимся здоровьем.
+    // Text field with the remaining / maximum health.
+    // Текстовое поле с оставшимся / максимальным здоровьем.
     "tankHp": {
       "name": "Tank HP",
       "visible": true,
       "x": 0,
       "y": -20,
       "alpha": 100,
-      "color": "0xD9D9D9",
+      "color": "0xFCFCFC",
       "font": {
         "name": "$FieldFont",
         "size": 11,
@@ -129,33 +129,7 @@
         "size": 4,
         "strength": 100
       },
-      "format": "{{hp}}"
-    },
-    // Text field with rating.
-    // Текстовое поле с рейтингом.
-    "rating": {
-      "name": "Rating",
-      "visible": true,
-      "x": -35,
-      "y": -20,
-      "alpha": "{{xvm-stat?100|0}}",
-      "color": "{{c:r|#999999}}",
-      "font": {
-        "name": "xvm",
-        "size": 16,
-        "align": "right",
-        "bold": false,
-        "italic": false
-      },
-      "shadow": {
-        "alpha": 100,
-        "color": "0x000000",
-        "angle": 45,
-        "distance": 0,
-        "size": 1,
-        "strength": 100
-      },
-      "format": "&#x115;"
+      "format": "{{hp}} / {{hp-max}}"
     },
     // Text field with the XMQP event marker.
     // Текстовое поле с маркером события XMQP.
@@ -226,22 +200,22 @@
     // Индикатор здоровья.
     "healthBar": {
       "visible": true,                  //   false - не отображать
-      "x": -36,                         //   положение по оси X
+      "x": -41,                         //   положение по оси X
       "y": -33,                         //   положение по оси Y
       "alpha": 100,                     //   прозрачность (допускается использование динамической прозрачности, см. macros.txt)
       "color": null,                    //   цвет основной (допускается использование динамического цвета, см. macros.txt)
       "lcolor": null,                   //   цвет дополнительный (для градиента)
-      "width": 70,                      //   ширина полосы здоровья
+      "width": 80,                      //   ширина полосы здоровья
       "height": 12,                     //   высота полосы здоровья
       // Параметры подложки и рамки.
       "border": {
-        "alpha": 35,                    //     прозрачность
+        "alpha": 30,                    //     прозрачность
         "color": "0x000000",            //     цвет
         "size": 1                       //     размер рамки
       },
       // Параметры оставшегося здоровья.
       "fill": {
-        "alpha": 45                     //     прозрачность
+        "alpha": 30                     //     прозрачность
       },
       // Параметры анимации отнимаемого здоровья.
       "damage": {
@@ -314,7 +288,6 @@
       ${ "def.tankName" },
       ${ "def.playerName" },
       ${ "def.tankHp" },
-      ${ "def.rating" },
       ${ "def.xmqpEvent" }
     ]
   },
@@ -344,20 +317,20 @@
     // Индикатор здоровья.
     "healthBar": {
       "visible": true,
-      "x": -36,
+      "x": -41,
       "y": -33,
       "alpha": 100,
       "color": null,
       "lcolor": null,
-      "width": 70,
+      "width": 80,
       "height": 12,
       "border": {
-        "alpha": 35,
+        "alpha": 30,
         "color": "0x000000",
         "size": 1
       },
       "fill": {
-        "alpha": 50
+        "alpha": 30
       },
       "damage": {
         "alpha": 100,
@@ -416,8 +389,7 @@
     // Блок текстовых полей.
     "textFields": [
       ${ "def.tankName" },
-      ${ "def.tankHp" },
-      ${ "def.rating" }
+      ${ "def.tankHp" }
     ]
   }
 }

@@ -87,7 +87,7 @@
       "x": 0,
       "y": -20,
       "alpha": 100,
-      "color": "0xD9D9D9",
+      "color": "0xFCFCFC",
       "font": {
         "name": "$FieldFont",
         "size": 11,
@@ -103,22 +103,22 @@
         "size": 4,
         "strength": 100
       },
-      "format": "{{hp-ratio}}% / {{hp-max}}"
+      "format": "{{hp-ratio}}%"
     },
-    // Text field with rating.
-    // Текстовое поле с рейтингом.
-    "rating": {
-      "name": "Rating",
+    // Text field with win ratio.
+    // Текстовое поле с процентом побед.
+    "winRate": {
+      "name": "Win Rate",
       "visible": true,
       "x": 0,
-      "y": -48,
+      "y": -46,
       "alpha": 100,
-      "color": "{{c:r}}",
+      "color": "{{c:winrate}}",
       "font": {
         "name": "$FieldFont",
-        "size": 12,
+        "size": 11,
         "align": "center",
-        "bold": false,
+        "bold": true,
         "italic": false
       },
       "shadow": {
@@ -129,7 +129,7 @@
         "size": 6,
         "strength": 200
       },
-      "format": "{{r}}"
+      "format": "{{winrate%2d~%}}"
     }
   },
   // Настройки для союзников.
@@ -174,22 +174,22 @@
     // Индикатор здоровья.
     "healthBar": {
       "visible": true,                  //   false - не отображать
-      "x": -36,                         //   положение по оси X
+      "x": -41,                         //   положение по оси X
       "y": -33,                         //   положение по оси Y
       "alpha": 100,                     //   прозрачность (допускается использование динамической прозрачности, см. macros.txt)
       "color": null,                    //   цвет основной (допускается использование динамического цвета, см. macros.txt)
       "lcolor": null,                   //   цвет дополнительный (для градиента)
-      "width": 70,                      //   ширина полосы здоровья
+      "width": 80,                      //   ширина полосы здоровья
       "height": 12,                     //   высота полосы здоровья
       // Параметры подложки и рамки.
       "border": {
-        "alpha": 35,                    //     прозрачность
+        "alpha": 30,                    //     прозрачность
         "color": "0x000000",            //     цвет
         "size": 1                       //     размер рамки
       },
       // Параметры оставшегося здоровья.
       "fill": {
-        "alpha": 45                     //     прозрачность
+        "alpha": 30                     //     прозрачность
       },
       // Параметры анимации отнимаемого здоровья.
       "damage": {
@@ -261,7 +261,7 @@
     "textFields": [
       ${ "def.playerName" },
       ${ "def.hpPercent" },
-      ${ "def.rating" }
+      ${ "def.winRate" }
     ]
   },
   // Настройки для противников.
@@ -290,20 +290,20 @@
     // Индикатор здоровья.
     "healthBar": {
       "visible": true,
-      "x": -36,
+      "x": -41,
       "y": -33,
       "alpha": 100,
       "color": null,
       "lcolor": null,
-      "width": 70,
+      "width": 80,
       "height": 12,
       "border": {
-        "alpha": 35,
+        "alpha": 30,
         "color": "0x000000",
         "size": 1
       },
       "fill": {
-        "alpha": 50
+        "alpha": 30
       },
       "damage": {
         "alpha": 80,
@@ -363,7 +363,7 @@
     "textFields": [
       ${ "def.playerName" },
       ${ "def.hpPercent" },
-      ${ "def.rating" }
+      ${ "def.winRate" }
     ]
   }
 }
