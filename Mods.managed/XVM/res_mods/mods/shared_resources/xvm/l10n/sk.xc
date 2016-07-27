@@ -3,7 +3,7 @@
  */
 {
   "locale": {
-    "Warning": "",
+    "Warning": "Upozornenie",
     "Error": "Chyba",
     "Information": "Informácie",
     "OK": "",
@@ -23,7 +23,7 @@
     "global": "",
     "per-vehicle": "Vozidlo",
     "chanceLive": "Live",
-    "chanceBattleTier": "T",
+    "chanceBattleTier": "Úroveň bitky",
     "shot": "",
     "fire": "požiar",
     "ramming": "náraz",
@@ -33,7 +33,6 @@
     "Hits": "Zásahov",
     "Total": "Celkom",
     "Last": "Posledný",
-    "hpLeftTitle": "Zostávajúce HP:",
     "enemyBaseCapture": "",
     "enemyBaseCaptured": "",
     "allyBaseCapture": "",
@@ -126,6 +125,7 @@
     "china": "Čína",
     "japan": "Japonsko",
     "czech": "",
+    "swedish": "",
     "HT": "HT",
     "MT": "MT",
     "LT": "LT",
@@ -134,7 +134,7 @@
     "blownUp": "Munícia!",
     "ver/currentVersion": "",
     "ver/newVersion": "",
-    "xvmsvc/not_connected": "Status:<tab/><font color='#00FF00'>Aktívny</font>",
+    "xvmsvc/not_connected": "",
     "token/services_unavailable": "",
     "token/services_inactive": "",
     "token/blocked": "",
