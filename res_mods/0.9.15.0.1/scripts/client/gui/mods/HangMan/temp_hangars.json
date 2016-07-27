@@ -1,0 +1,68 @@
+// Dynamically generated on startup. Just for debugging/information. Do not edit!
+//
+// List of all installed hangars:
+[
+  "spaces/h10_summer_holiday_2016", 
+  "spaces/h13_bovtankfest_2016", 
+  "spaces/h14_fevent_2016", 
+  "spaces/hangar_premium_1may", 
+  "spaces/hangar_premium_4july", 
+  "spaces/hangar_premium_v2", 
+  "spaces/hangar_v2", 
+  "spaces/hangar_victory_day"
+]
+//
+// Current hangarlist:
+[
+  "spaces/h13_bovtankfest_2016", 
+  "spaces/hangar_premium_v2", 
+  "spaces/hangar_v2", 
+  "spaces/h10_summer_holiday_2016", 
+  "spaces/h14_fevent_2016", 
+  "spaces/hangar_premium_1may", 
+  "spaces/hangar_premium_4july", 
+  "spaces/hangar_victory_day"
+]
+//
+// Hangars on ignorelist:
+[]
+//
+// Alias:
+{
+  "spaces/h10_summer_holiday_2016": "H10 Summer Holiday 2016", 
+  "spaces/hangar_premium_1may": "Hangar Premium 1May", 
+  "spaces/h14_fevent_2016": "H14 Fevent 2016", 
+  "spaces/hangar_v2": "Garage: Standard", 
+  "spaces/hangar_premium_4july": "Hangar Premium 4July", 
+  "spaces/h13_bovtankfest_2016": "Bovington Tankfest 2016", 
+  "spaces/hangar_victory_day": "Hangar Victory Day", 
+  "spaces/hangar_premium_v2": "Garage: Premium"
+}
+//
+// Nationhangars:
+{
+  "usa": [
+    "spaces/hangar_premium_v2"
+  ], 
+  "czech": [
+    "spaces/hangar_premium_v2"
+  ], 
+  "france": [
+    "spaces/hangar_premium_v2"
+  ], 
+  "ussr": [
+    "spaces/hangar_premium_v2"
+  ], 
+  "china": [
+    "spaces/hangar_premium_v2"
+  ], 
+  "uk": [
+    "spaces/hangar_premium_v2"
+  ], 
+  "japan": [
+    "spaces/hangar_premium_v2"
+  ], 
+  "germany": [
+    "spaces/hangar_premium_v2"
+  ]
+}
