@@ -1,0 +1,43 @@
+/*
+   language-settings for HangMan - english
+   Make changes only with UTF-8-capable editor like Notepad++
+*/
+{ 
+  // hint: switch texts off with null (eg.: "loadHangar": null)
+  //
+  // displayed in battle on hangar-creation
+  "hangarSave": "Map and position saved as new hangar. ",
+
+  // textmessage in lobby on hangar-switch, %s is hangar
+  "loadHangar": "<font color = '#ECEC9E'>Switching hangar:\n%s</font>",
+
+  // error-message, %s represents file
+  "errorLoad": "<font color = '#D3443F'>Error while loading:\n%s</font>",
+  
+  // text diplayed on mode-selection, %s is mode
+  "change_mode": "<font color = '#ECEC9E'>Hangar-Selection-Mode:\n</font><font color = '#7BEC37'>&#34;%s&#34;</font>",
+  
+  //
+  // texts in game-greeting
+  // do not use 'null' here!
+  //
+  "basic_settings":	"<font size='12'>Current settings:</font><br>",
+  "selection_mode": "<font color='#ECEC9E' size='12'>Hangarselectionmode: </font>",
+  "change_mode_key": "<font color='#ECEC9E' size='12'>  Change mode:</font>",
+  "switch_garage": "<br><font color='#ECEC9E' size='12'>Switch hangar:</font><br>",
+  "switch_garage_forward_key": "<font color='#ECEC9E' size='12'>  switch forward:</font>",
+  "switch_garage_backward_key": "<font color='#ECEC9E' size='12'>  switch back:</font>",
+  "save_garage_key": "<br><font color='#ECEC9E' size='12'>Save map as hangar:</font>",
+  
+  //
+  // texts for settings-window, no HTML-tags:
+  //
+  "swf_settings": "Keyboard-settings:",
+  "swf_save_garage_key": "Save map as hangar:",
+  "swf_switch_garage_forward_key": "switch forward:",
+  "swf_switch_garage_backward_key": "switch back:",
+  "swf_change_mode_key": "Change mode:",
+  "swf_showpreview": "Show preview-images.",
+  
+  "spaces/h13_bovtankfest_2016": "Bovington Tankfest 2016"
+}
