@@ -125,7 +125,7 @@
     "china": "Kína",
     "japan": "Japán",
     "czech": "Csehszlovák",
-    "swedish": "Svéd",
+    "swedish": "",
     "HT": "HT",
     "MT": "MT",
     "LT": "LT",
