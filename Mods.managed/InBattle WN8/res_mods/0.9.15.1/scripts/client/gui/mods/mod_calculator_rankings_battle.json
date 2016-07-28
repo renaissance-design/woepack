@@ -12,16 +12,16 @@
 	|| {colorEFF}               ||  || динамический цвет по рейтингу эффективности (РЭ)                                     ||
 	|| {colorXWN8}              ||  || динамический цвет по шкале XVM для WN8                                               ||     
 	|| {colorXEFF}              ||  || динамический цвет по шкале XVM для РЭ                                                ||
-    || {colorCOEF}              ||  || динамический цвет по эффективности урона за бой на текущем танке для COEF            ||	
+    || {colorCOEF}              ||  || динамический цвет по эффективность урона за бой на текущем танке для COEF            ||	
 	|| {colorDIFF}              ||  || динамический цвет по среднему урону на сервере за бой на текущем танке для DIFF      ||
 	|| {colorAVGDAMAGE}         ||  || динамический цвет по среднему урону за бой на текущем танке для AVGDAMAGE            ||
 	|| {WN8}                    ||  || рейтинг WN8                                                                          ||
 	|| {EFF}                    ||  || рейтинг эффективности (РЭ) по wot-news.com                                           ||     
 	|| {XWN8}                   ||  || шкала XVM для WN8 (значения 00-99, XX для топовых показателей)                       ||                    
 	|| {XEFF}                   ||  || шкала XVM для РЭ  (значения 00-99, XX для топовых показателей)                       || 
-    || {COEF}                   ||  || эффективности урона за бой на текущем танке                                          ||
+    || {COEF}                   ||  || эффективность урона за бой на текущем танке                                          ||
     || {DIFF}                   ||  || средний нанесенный урон по серверу который вы должны нанести                         ||
-    || {AVGSHOTS}               ||  || средний нанесенный урон за ваше количество выстрелов                                 ||	 
+    || {AVGSHOTS}               ||  || эффективность среднего урона за выстрел                                              ||	 
     || {AVGDAMAGE}              ||	|| средний нанесенный урону за бой на текущем танке	                                    ||	
 	|| {DAMAGE}                 ||  || общий нанесенный урон                                                                ||
 	|| {MAINGUN}                ||  || основной калибр                                                                      ||
@@ -29,49 +29,55 @@
 */
 {
 	    "settings": {
-		    "enable": true,                        // глобальный переключатель выключение и включение мода
+		    "enable": true,
 			"dragEnable": false,                   // глобальный переключатель выключение и включение перемещения мышкой
-			"reloadKey": "KEY_LALT and KEY_2",     // обновление конфига в бою и в ангаре по нажатии клавиш, для сочитания пишем "and"
-		    "hotKeyEnable": "KEY_LALT and KEY_1"   // выключение и включение мода в бою по нажатию клавиш, для сочитания пишем "and"		
+			"reloadKey": "KEY_LALT and KEY_2",
+		    "hotKeyEnable": "KEY_LALT and KEY_1"			
 		},
 		// настройки подложки текста
         "background": {
-		    "enable": false,                       // включение, выключение элемента (true - включен, false - выключен)
+		    "enable": false,
             "alpha": 100,
             "height": 70,
             "image": "gui/maps/bg.png",
             "width": 200,
-            "x": -30,  // координат x (горизонт)
-            "y": 440   // координат y (вертикаль)
+            "x": -30,
+            "y": 440
         },
 		// настройки тени текста 
         "shadow": {
-
+		    "enable": true,
+            "alpha": 100,
+            "angle": 90,
+            "color": "#000000",
+            "distance": 0,
+            "size": 3,
+            "strength": 200
         },
 		// настройки текста
         "text": {
-		    "enable": true,   // включение, выключение элемента (true - включен, false - выключен)
+		    "enable": true,
 			"alignX": "left", // горизонтальное выравнивание [left, center, right]
-            "alignY": "bottom",  // вертикальное выравнивания   [top, center, bottom]
+            "alignY": "top",  // вертикальное выравнивания   [top, center, bottom]
             "format": "<b><font color='#ffffff' size='13' face='$TextFont'>WN8: <font color='{colorWN8}'>{WN8}</font></font></b>", 
-			"x": 125,  // координат x (горизонт)
-            "y": 39    // координат y (вертикаль)
+			"x": 125,
+            "y": 39
         },
 		// динамические цвета для рейтенгов WN8, EFF, XWN8, XEFF, COEF, DIFF, AVGDAMAGE
 		"colors": [
-		    {"type": "WN8",		    "value": 0,             "color": "#FE0E00"}, //    0 - 379  - very bad   (20% of players)			
-	        {"type": "WN8",		    "value": 380,			"color": "#FE7903"}, //  380 - 859  - bad        (better then 20% of players)
-	        {"type": "WN8",		    "value": 860,			"color": "#F8F400"}, //  860 - 1419 - normal     (better then 60% of players)
-	        {"type": "WN8",		    "value": 1420,			"color": "#60FF00"}, // 1420 - 2104 - good       (better then 90% of players)
-	        {"type": "WN8",		    "value": 2105,			"color": "#02C9B3"}, // 2105 - 2769 - very good  (better then 99% of players)
-	        {"type": "WN8",		    "value": 2770,			"color": "#D042F3"}, // 2770 - *    - unique     (better then 99.9% of players)
+		    {"type": "WN8",		    "value": 0,             "color": "#FE0E00"}, //    0 - 400  - very bad   (20% of players)			
+	        {"type": "WN8",		    "value": 400,			"color": "#FE7903"}, //  400 - 900  - bad        (better then 20% of players)
+	        {"type": "WN8",		    "value": 900,			"color": "#F8F400"}, //  900 - 1470 - normal     (better then 60% of players)
+	        {"type": "WN8",		    "value": 1470,			"color": "#60FF00"}, // 1470 - 2180 - good       (better then 90% of players)
+	        {"type": "WN8",		    "value": 2180,			"color": "#02C9B3"}, // 2180 - 2880 - very good  (better then 99% of players)
+	        {"type": "WN8",		    "value": 2880,			"color": "#D042F3"}, // 2880 - *    - unique     (better then 99.9% of players)
 
 	        {"type": "EFF",		    "value": 0,     	    "color": "#FE0E00"}, //    0 - 614  - very bad   (20% of players)			
-	        {"type": "EFF",		    "value": 615,			"color": "#FE7903"}, //  615 - 869  - bad        (better then 20% of players)
-	        {"type": "EFF",		    "value": 870,			"color": "#F8F400"}, //  870 - 1174 - normal     (better then 60% of players)
+	        {"type": "EFF",		    "value": 610,			"color": "#FE7903"}, //  615 - 869  - bad        (better then 20% of players)
+	        {"type": "EFF",		    "value": 875,			"color": "#F8F400"}, //  875 - 1174 - normal     (better then 60% of players)
 	        {"type": "EFF",		    "value": 1175,			"color": "#60FF00"}, // 1175 - 1524 - good       (better then 90% of players) 
-	        {"type": "EFF",	    	"value": 1525,			"color": "#02C9B3"}, // 1525 - 1849 - very good  (better then 99% of players)
-	        {"type": "EFF",	    	"value": 1850,			"color": "#D042F3"}, // 1850 - *    - unique     (better then 99.9% of players)
+	        {"type": "EFF",	    	"value": 1540,			"color": "#02C9B3"}, // 1540 - 1849 - very good  (better then 99% of players)
+	        {"type": "EFF",	    	"value": 1880,			"color": "#D042F3"}, // 1880 - *    - unique     (better then 99.9% of players)
 				
 		    {"type": "XWN8",		"value": 0,	     	    "color": "#FE0E00"}, // 00   - 16.5 - very bad   (20% of players)			
 	        {"type": "XWN8",		"value": 16.5,			"color": "#FE7903"}, // 16.5 - 33.5 - bad        (better then 20% of players)
@@ -94,12 +100,9 @@
      	    {"type": "COEF",        "value": 2.0,			"color": "#02C9B3"},
             {"type": "COEF",        "value": 15,			"color": "#D042F3"},
              
-			{"type": "DIFF",		"value": 500,	        "color": "#FE0E00"},
-			{"type": "DIFF",		"value": 750,	        "color": "#FE7903"},
-			{"type": "DIFF",		"value": 1000,	        "color": "#F8F400"}, 
-			{"type": "DIFF",		"value": 1800,	        "color": "#60FF00"},
-			{"type": "DIFF",		"value": 2500,	        "color": "#02C9B3"},
-            {"type": "DIFF",		"value": 9999,	        "color": "#D042F3"},
+			{"type": "DIFF",        "value": "less",        "color": "#FE0E00"},
+            {"type": "DIFF",        "value": "same",        "color": "#FF9000"},
+            {"type": "DIFF",        "value": "more",        "color": "#26FF26"},
          
 			{"type": "AVGDAMAGE",	"value": "less",	    "color": "#FFFFFF"},
             {"type": "AVGDAMAGE",	"value": "more",	    "color": "#60FF00"}			 
