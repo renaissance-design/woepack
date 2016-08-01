@@ -42,9 +42,6 @@
     "Total": "Total",
     "Last": "Last",
 
-    // Hp Left
-    "hpLeftTitle": "Hitpoints left:",
-
     // Capture
     "enemyBaseCapture": "Base{0} capture by allies!",
     "enemyBaseCaptured": "Base{0} captured by allies!",
@@ -152,6 +149,7 @@
     "china": "China",
     "japan": "Japan",
     "czech": "Сzech",
+    "swedish": "Swedish",
     
     // Vehicle type
     "HT": "HT",
@@ -172,7 +170,7 @@
     // Token
     "token/services_unavailable": "Network services unavailable.&nbsp;&nbsp;<a href='#XVM_SITE_UNAVAILABLE#'><font size='11'>more info</font></a>",
     "token/services_inactive": "Network services inactive.&nbsp;&nbsp;<a href='#XVM_SITE_INACTIVE#'><font size='11'>enable</font></a>",
-    "token/blocked": "Status: <font color='#FF0000'>Blocked</font>&nbsp;&nbsp;<a href='#XVM_SITE_BLOCKED'><font size='11'>more info</font></a>",
+    "token/blocked": "Status: <font color='#FF0000'>Blocked</font>&nbsp;&nbsp;<a href='#XVM_SITE_BLOCKED#'><font size='11'>more info</font></a>",
     "token/active": "Status:<tab/><font color='#00FF00'>Active</font>",
     "token/time_left": "Time left:<tab/><font color='#EEEEEE'>{0}d. {1}h. {2}m.</font>",
     "token/time_left_warn": "Time left:<tab/><font color='#EEEE00'>{0}d. {1}h. {2}m.</font>",
