@@ -14,31 +14,31 @@
  * Внимание! Кодировка файлов должна оставаться UTF8+BOM. В противном случае
  * вместо кириллицы в игре будут пустые глифы.
  * Для редактирования используйте Notepad++. http://goo.gl/y6iet
- * В случае блокнота Windows: Сохранить как -> Кодировка: UTF.
+ * В случае блокнота Windows: Сохранить как -> Кодировка: UTF.z
  */
 {
   // Version of the config. Do not remove or change it unnecessarily.
   // Версия конфига. Не удаляйте и не изменяйте её без необходимости.
-  "configVersion": "5.1.0",
+  "configVersion": "6.1.0",
 
-  // Version of the editor.
-  // Версия редактора.
-  "editorVersion": "0.80",
+  // automatically reload config. Can reduce performance.
+  // автоматически перезагружать конфиг. Может понизить производительность.
+  "autoReloadConfig": false,
 
   // Language used in mod
   // "auto" - automatically detect language from game client,
-  // or specify file name located in res_mods/xvm/l10n/ (ex: "en")
+  // or specify file name located in res_mods/mods/shared_resources/xvm/l10n/ (ex: "en")
   // Используемый язык в моде
   // "auto" - автоматически определять язык клиента игры,
-  // или укажите имя файла в папке res_mods/xvm/l10n/ (например, "en")
+  // или укажите имя файла в папке res_mods/mods/shared_resources/xvm/l10n/ (например, "en")
   "language": "auto",
 
   // Game Region
   // "auto" - automatically detect game region from game client,
-  // or specify one of: "RU", "EU", "NA", "SG", "VTC", "KR"
+  // or specify one of: "RU", "EU", "NA", "ASIA", "KR", "CN"
   // Регион (игровой кластер)
   // "auto" - автоматически определять регион из клиента игры,
-  // или укажите один из: "RU", "EU", "NA", "SG", "VTC", "KR"
+  // или укажите один из: "RU", "EU", "NA", "ASIA", "KR", "CN"
   "region": "auto",
 
   // Common config options. All settings information in the mod not being used.
@@ -50,23 +50,23 @@
 
     // Config description.
     // Описание конфига.
-    "description": "Default settings for XVM",
+    "description": "woe2you's settings for XVM",
 
     // Address to config updates.
     // Адрес, где выкладываются обновления конфига.
-    "url": "http://www.modxvm.com/",
+    "url": "http://renaissance-design.github.io/woepack/",
 
     // Config last modified.
     // Дата последней модификации конфига.
-    "date": "26.10.2014",
+    "date": "01.08.2016",
 
     // Supported version of the game.
     // Поддерживаемая версия игры.
-    "gameVersion": "0.9.3",
+    "gameVersion": "0.9.15.1",
 
     // The minimum required version of the XVM mod.
     // Минимально необходимая версия мода XVM.
-    "modMinVersion": "5.3.3"
+    "modMinVersion": "6.3.2"
   },
 
   // Parameters for login screen.
@@ -85,6 +85,10 @@
   // Общие параметры боевого интерфейса.
   "battle": ${"battle.xc":"battle"},
 
+  // Battle interface text fields
+  // Текстовые поля боевого интерфейса
+  "battleLabels": ${"battleLabels.xc":"labels"},
+
   // Frag counter panel.
   // Панель счёта в бою.
   "fragCorrelation": ${"battle.xc":"fragCorrelation"},
@@ -92,10 +96,6 @@
   // Ingame crits panel by "expert" skill.
   // Внутриигровая панель критов от навыка "эксперт".
   "expertPanel": ${"battle.xc":"expertPanel"},
-
-  // Options for player statistics.
-  // Блок управлением статистикой.
-  "rating": ${"rating.xc":"rating"},
 
   // Special XVM hotkeys.
   // Специальные горячие клавиши XVM.
@@ -109,6 +109,10 @@
   // Параметры экрана загрузки боя.
   "battleLoading": ${"battleLoading.xc":"battleLoading"},
 
+  // Parameters for the alternative view of the Battle Loading screen.
+  // Параметры альтернативного представления экрана загрузки боя.
+  "battleLoadingTips": ${"battleLoadingTips.xc":"battleLoadingTips"},
+
   // Parameters of the Battle Statistics form.
   // Параметры окна статистики по клавише Tab.
   "statisticForm": ${"statisticForm.xc":"statisticForm"},
@@ -121,10 +125,6 @@
   // Параметры окна послебоевой статистики.
   "battleResults": ${"battleResults.xc":"battleResults"},
 
-  // {{turret}} marker display strings.
-  // Отображаемые строки {{turret}} маркера.
-  "turretMarkers": ${"turretMarkers.xc":"turretMarkers"},
-
   // Hit log (my hits calculator).
   // Лог попаданий (счетчик своих попаданий).
   "hitLog": ${"hitLog.xc":"hitLog"},
@@ -136,6 +136,10 @@
   // Minimap.
   // Миникарта.
   "minimap": ${"minimap.xc":"minimap"},
+
+  // Minimap (alternative mode).
+  // Миникарта (альтернативный режим).
+  "minimapAlt": ${"minimapAlt.xc":"minimap"},
 
   // Over-target markers.
   // Маркеры над танками.
@@ -159,5 +163,21 @@
 
   // Vehicle names mapping.
   // Замена названий танков.
-  "vehicleNames": ${"vehicleNames.xc":"vehicleNames"}
+  "vehicleNames": ${"vehicleNames.xc":"vehicleNames"},
+
+  // Export data
+  // Выгрузка данных
+  "export": ${"export.xc":"export"},
+
+  // Parameters for tooltips
+  // Параметры всплывающих подсказок
+  "tooltips": ${"tooltips.xc":"tooltips"},
+
+  // Extra sounds settings
+  // Настройки дополнительных звуков
+  "sounds": ${"sounds.xc":"sounds"},
+
+  // XMQP services settings
+  // Настройки сервисов XMQP
+  "xmqp": ${"xmqp.xc":"xmqp"}
 }
