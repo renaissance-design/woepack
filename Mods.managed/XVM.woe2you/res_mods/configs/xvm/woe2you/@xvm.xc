@@ -23,7 +23,7 @@
 
   // automatically reload config. Can reduce performance.
   // автоматически перезагружать конфиг. Может понизить производительность.
-  "autoReloadConfig": true,
+  "autoReloadConfig": false,
 
   // Language used in mod
   // "auto" - automatically detect language from game client,
