@@ -125,7 +125,7 @@
     "china": "Kina",
     "japan": "Japan",
     "czech": "Češki",
-    "swedish": "",
+    "swedish": "Švedski",
     "HT": "Teški tenk",
     "MT": "Srednji tenk",
     "LT": "Laki tenk",

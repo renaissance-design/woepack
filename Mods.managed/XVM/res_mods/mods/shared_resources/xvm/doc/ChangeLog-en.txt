@@ -52,7 +52,7 @@ XVM-6.4.0-dev:
      "medium2"/"width"
      "large"/"width"
   * camera zoom indicator implemented as extra field with all its options
-  * clock are using php formatting (http://php.net/date)
+  * clock is using php format (http://php.net/date)
   * global macros, including {{py:f()}}, can be used in the "battle"/"elements" section
   * changed "carousel"/"scrollingSpeed" value, now it is multiplier for default scrolling rate
   * option "markers"/"useStandardMarkers" renamed to "markers"/"enabled"
@@ -70,6 +70,12 @@ XVM-6.4.0-dev:
   * added {{comment}} macro to show comment for player from contacts
   * added option "battle"/"sixthSenseDuration" - duration of the sixth sense indicator
   * removed option "hitLog"/"direction" - not required
+  
+  [KNOWN ISSUES]
+  * Minimap is not ready. Some functionality may work incorrectly or may not work at all. (will be fixed in future releases)
+  * Option "carousel"/"rows" does not implemented. (postponed because it may be implemented by WG)
+  * Some functionality may work incorrectly with "autoReloadConfig": true
+  * Service record: List of tanks may scroll to the middle in some configurations
 
 XVM-6.3.2.1:
   * fix for 6th sense sound

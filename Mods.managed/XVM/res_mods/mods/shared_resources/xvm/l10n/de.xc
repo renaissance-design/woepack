@@ -58,7 +58,7 @@
     "toWithSpaces": " zu ",
     "avg": "Ø",
     "top": "Max.",
-    "draws": "Unents.",
+    "draws": "Remis",
     "Maximum damage": "Maximaler Schaden",
     "Specific damage (Avg dmg / HP)": "Verhältnis Ø-Schaden/Lebenspunkte",
     "Capture points": "Eroberungspunkte",
