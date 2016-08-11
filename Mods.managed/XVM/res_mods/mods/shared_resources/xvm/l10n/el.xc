@@ -20,8 +20,6 @@
     "Chance error": "Πιθανότητα σφάλματος",
     "Chance to win": "Ευκαιρία για νίκη",
     "Team strength": "Δύναμη ομάδας",
-    "global": "παγκόσμια",
-    "per-vehicle": "ανά όχημα",
     "chanceLive": "Για ζωντανός",
     "chanceBattleTier": "Βαθμίδα μάχη",
     "shot": "βολή",

@@ -20,8 +20,6 @@
     "Chance error": "Probabilidade de erro",
     "Chance to win": "Probabilidade de vitória",
     "Team strength": "Força da equipa",
-    "global": "global",
-    "per-vehicle": "por veículo",
     "chanceLive": "Em combate",
     "chanceBattleTier": "Nível",
     "shot": "tiro",

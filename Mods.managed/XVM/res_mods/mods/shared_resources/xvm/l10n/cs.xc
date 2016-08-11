@@ -20,8 +20,6 @@
     "Chance error": "Chyba",
     "Chance to win": "Šance na výhru",
     "Team strength": "Síly týmu",
-    "global": "globálně",
-    "per-vehicle": "za vozidlo",
     "chanceLive": "Aktuální",
     "chanceBattleTier": "T",
     "shot": "střelba",

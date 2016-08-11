@@ -20,8 +20,6 @@
     "Chance error": "Fel med vinstchans",
     "Chance to win": "Vinstchans",
     "Team strength": "",
-    "global": "",
-    "per-vehicle": "Fordon",
     "chanceLive": "Live",
     "chanceBattleTier": "T",
     "shot": "",

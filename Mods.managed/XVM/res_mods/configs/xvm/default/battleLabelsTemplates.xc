@@ -195,11 +195,11 @@
       "updateEvent": "ON_VEHICLE_DESTROYED",
       "x": 230,
       "y": 2,
-      "width": 200,
+      "width": 300,
       "height": 20,
       "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 1.5 },
-      "textFormat": { "color": "0xF4EFE8", "size": 15 },
-      "format": "{{xvm-stat?{{l10n:Chance to win}}: {{chancesStatic}}{{chancesStatic? / |}}{{chancesLive}}}}"
+      "textFormat": { "size": 15 },
+      "format": "{{xvm-stat?{{l10n:Team strength}}: {{py:xvm.team_strength('{{allyStrengthStatic}}','{{enemyStrengthStatic}}')}} / {{py:xvm.team_strength('{{allyStrengthLive}}','{{enemyStrengthLive}}')}}}}"
     },
     "test": {
       "enabled": true,

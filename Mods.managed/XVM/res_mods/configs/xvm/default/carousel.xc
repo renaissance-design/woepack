@@ -19,9 +19,9 @@
       "horizontal": 10,   // по горизонтали
       "vertical": 2       // по вертикали
     },
-    // Background transparency (default - 60)
-    // Прозрачность подложки (по умолчанию - 60)
-    "backgroundAlpha": 60,
+    // Background transparency (default - 80)
+    // Прозрачность подложки (по умолчанию - 80)
+    "backgroundAlpha": 80,
     // Mouse wheel scrolling speed multiplier (default - 1)
     // Множитель скорости прокрутки колесом мыши (по умолчанию - 1)
     "scrollingSpeed": 1,
@@ -61,7 +61,9 @@
     "types_order":   ["lightTank", "mediumTank", "heavyTank", "AT-SPG", "SPG"],
     // Tank sorting criteria, available options: (minus = reverse order)
     // Критерии сортировки танков, доступные значения: (минус = в обратном порядке)
-    // "nation", "type", "level", "maxBattleTier", "premium", "winRate", "-level", "-maxBattleTier", "-premium", "-winRate"
+    // "nation", "type", "level", "-level", "maxBattleTier", "-maxBattleTier", "premium", "-premium",
+    // "winRate", "-winRate", "markOfMastery", "-markOfMastery", "xtdb", "-xtdb", "xte", "-xte",
+    // "damageRating", "-damageRating", "marksOnGun", "-marksOnGun"
     "sorting_criteria": ["nation", "type", "level"],
     // Suppress the tooltips for tanks in carousel
     // Убрать подсказки к танкам в карусели

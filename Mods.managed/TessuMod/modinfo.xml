@@ -6,7 +6,7 @@
   info="A modification for integrating TeamSpeak into Wargaming's World of Tanks game. The mod provides visual feedback in-game when a player speaks in TeamSpeak."
   notes="https://github.com/jhakonen/wot-teamspeak-mod"
   version="0.6.3"
-  client-version="0.9.15.1"
+  client-version="0.9.15.1.1"
   visible="true"
   colorblind="true"
 >

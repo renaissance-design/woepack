@@ -20,8 +20,6 @@
     "Chance error": "Feil med vinnersjanse",
     "Chance to win": "Vinnersjanse",
     "Team strength": "Lag Styrke",
-    "global": "",
-    "per-vehicle": "kjøretøy",
     "chanceLive": "Live",
     "chanceBattleTier": "Kampnivå",
     "shot": "skutt",

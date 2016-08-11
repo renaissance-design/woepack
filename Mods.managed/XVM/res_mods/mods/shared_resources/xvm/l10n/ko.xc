@@ -20,8 +20,6 @@
     "Chance error": "확률 에러 발생",
     "Chance to win": "승률",
     "Team strength": "팀 체력",
-    "global": "global",
-    "per-vehicle": "per-vehicle",
     "chanceLive": "실시간 승률",
     "chanceBattleTier": "티어",
     "shot": "사격",

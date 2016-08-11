@@ -20,8 +20,6 @@
     "Chance error": "Tõenäosuse viga",
     "Chance to win": "Võidu tõenäosus",
     "Team strength": "Tiimi tugevus",
-    "global": "globaalne",
-    "per-vehicle": "masina järgi",
     "chanceLive": "Hetkel",
     "chanceBattleTier": "Lahingu järk",
     "shot": "mürsk",

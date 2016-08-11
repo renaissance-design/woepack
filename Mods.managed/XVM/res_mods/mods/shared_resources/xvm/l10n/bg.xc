@@ -20,8 +20,6 @@
     "Chance error": "Вероятностна грешка",
     "Chance to win": "Вероятност за победа",
     "Team strength": "Сила на отбора",
-    "global": "общо",
-    "per-vehicle": "по машини",
     "chanceLive": "За оцеляване",
     "chanceBattleTier": "Ниво на битката",
     "shot": "изстрел",

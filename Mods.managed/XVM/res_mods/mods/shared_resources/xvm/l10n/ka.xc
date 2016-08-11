@@ -20,8 +20,6 @@
     "Chance error": "შეცდომა ალბათობის გათვლისას",
     "Chance to win": "მოგების ალბათობა",
     "Team strength": "გუნდების ძალა",
-    "global": "",
-    "per-vehicle": "ტექნიკა",
     "chanceLive": "ცოცხლებისთვის",
     "chanceBattleTier": "ბრძოლის დონე",
     "shot": "შეტევა",

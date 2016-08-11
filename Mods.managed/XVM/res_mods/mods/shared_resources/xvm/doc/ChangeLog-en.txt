@@ -1,3 +1,20 @@
+XVM-6.4.1.1:
+  * fix minimap
+
+XVM-6.4.1:
+  * adaptation to WoT 0.9.15.1.1
+  * some bugs fixed
+  * statisticForm: extraFields added
+  * carousel: restored multi rows
+  * carousel: added sorting on markOfMastery, xtdb, xte, damageRating and marksOnGun
+  * added option in "battleLoading" and "statisticForm" sections:
+      "vehicleIconAlpha" - opacity percentage of vehicle icon
+  * added macros:
+      {{allyStrengthStatic}} - ally team strength (static)
+      {{enemyStrengthStatic}} - enemy team strength (static)
+      {{allyStrengthLive}} - ally team strength (live)
+      {{enemyStrengthLive}} - enemy team strength (live)
+
 XVM-6.4.0:
   * adaptation to WoT 0.9.15.1
   * complete refactoring of battle mods (AS2->AS3 migration)

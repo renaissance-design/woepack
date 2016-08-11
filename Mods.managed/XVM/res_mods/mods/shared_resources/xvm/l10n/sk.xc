@@ -20,8 +20,6 @@
     "Chance error": "Сhyba výpočtu šancu ",
     "Chance to win": "Šanca na výhru",
     "Team strength": "",
-    "global": "",
-    "per-vehicle": "Vozidlo",
     "chanceLive": "Live",
     "chanceBattleTier": "Úroveň bitky",
     "shot": "",
