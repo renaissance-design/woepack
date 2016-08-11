@@ -20,8 +20,6 @@
     "Chance error": "Kļūda aprēķinos",
     "Chance to win": "Iespēja uzvarēt",
     "Team strength": "Komandas izredzes",
-    "global": "kopējais",
-    "per-vehicle": "pēc tehnikas",
     "chanceLive": "Izdzīvojušie",
     "chanceBattleTier": "Kaujas līmenis",
     "shot": "šāviens",

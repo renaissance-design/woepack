@@ -20,8 +20,6 @@
     "Chance error": "Sai sót",
     "Chance to win": "Cơ hội thắng",
     "Team strength": "Sức mạnh đội",
-    "global": "tổng quát",
-    "per-vehicle": "mỗi xe",
     "chanceLive": "Sống sót",
     "chanceBattleTier": "Cấp trận đấu",
     "shot": "bắn",

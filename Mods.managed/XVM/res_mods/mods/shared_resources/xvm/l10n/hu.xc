@@ -20,8 +20,6 @@
     "Chance error": "Esély lekérdezési hiba",
     "Chance to win": "Esély a győzelemre",
     "Team strength": "Csapat erősség",
-    "global": "globálisan",
-    "per-vehicle": "Járművenként",
     "chanceLive": "Élő",
     "chanceBattleTier": "Csata szint",
     "shot": "lövés",

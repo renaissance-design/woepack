@@ -20,8 +20,6 @@
     "Chance error": "Verlies kans",
     "Chance to win": "Win kans",
     "Team strength": "Team sterkte",
-    "global": "globaal",
-    "per-vehicle": "per-voertuig",
     "chanceLive": "Live",
     "chanceBattleTier": "Tier",
     "shot": "schot",

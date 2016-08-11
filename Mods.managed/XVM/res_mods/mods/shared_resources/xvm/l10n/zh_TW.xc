@@ -20,8 +20,6 @@
     "Chance error": "失敗率",
     "Chance to win": "獲勝率",
     "Team strength": "",
-    "global": "",
-    "per-vehicle": "車輛名稱",
     "chanceLive": "存活率",
     "chanceBattleTier": "分房階級",
     "shot": "",

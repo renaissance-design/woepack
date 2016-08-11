@@ -20,8 +20,6 @@
     "Chance error": "Chance fejl",
     "Chance to win": "Chance for at vinde",
     "Team strength": "Holdstyrke",
-    "global": "global",
-    "per-vehicle": "pr. køretøj",
     "chanceLive": "For i live",
     "chanceBattleTier": "Kampniveauer",
     "shot": "skud",

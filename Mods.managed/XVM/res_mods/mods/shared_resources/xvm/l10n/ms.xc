@@ -20,8 +20,6 @@
     "Chance error": "Ralat kemungkinan",
     "Chance to win": "Kemungkinan untuk menang",
     "Team strength": "",
-    "global": "",
-    "per-vehicle": "Kenderaan",
     "chanceLive": "Live",
     "chanceBattleTier": "T",
     "shot": "",

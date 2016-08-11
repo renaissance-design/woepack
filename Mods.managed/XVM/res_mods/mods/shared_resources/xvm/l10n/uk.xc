@@ -20,8 +20,6 @@
     "Chance error": "Помилка розрахунку шансів",
     "Chance to win": "Шанси на перемогу",
     "Team strength": "Сили команд",
-    "global": "загальний",
-    "per-vehicle": "по техніці",
     "chanceLive": "Для живих",
     "chanceBattleTier": "Рівень бою",
     "shot": "атака",

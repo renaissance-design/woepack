@@ -20,8 +20,6 @@
     "Chance error": "Tikimybės klaida",
     "Chance to win": "Laimėjimo tikimybė",
     "Team strength": "Komandos pajėgumas",
-    "global": "pasaulinis",
-    "per-vehicle": "apie mašiną",
     "chanceLive": "Šiuo metu",
     "chanceBattleTier": "Kovos lygis",
     "shot": "šūvis",

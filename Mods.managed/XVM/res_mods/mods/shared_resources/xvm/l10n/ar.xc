@@ -20,8 +20,6 @@
     "Chance error": "",
     "Chance to win": "",
     "Team strength": "",
-    "global": "",
-    "per-vehicle": "",
     "chanceLive": "",
     "chanceBattleTier": "",
     "shot": "",

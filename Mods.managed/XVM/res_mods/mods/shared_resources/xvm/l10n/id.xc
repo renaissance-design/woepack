@@ -20,8 +20,6 @@
     "Chance error": "Kemungkinan error",
     "Chance to win": "Kemungkinan menang",
     "Team strength": "Kekuatan Tim",
-    "global": "",
-    "per-vehicle": "Kendaraan",
     "chanceLive": "Untuk hidup",
     "chanceBattleTier": "Tier perang",
     "shot": "Tembak",

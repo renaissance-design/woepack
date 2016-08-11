@@ -20,8 +20,6 @@
     "Chance error": "Šansa pogreške",
     "Chance to win": "Šanse za pobjedu",
     "Team strength": "Jačina tima",
-    "global": "globalno",
-    "per-vehicle": "po vozilu",
     "chanceLive": "Za žive igrače",
     "chanceBattleTier": "Razina bitke",
     "shot": "hitac",

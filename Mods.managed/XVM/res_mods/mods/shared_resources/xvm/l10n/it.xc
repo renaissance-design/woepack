@@ -20,8 +20,6 @@
     "Chance error": "Non Calcolabile",
     "Chance to win": "% vittoria iniziale",
     "Team strength": "Forza del team",
-    "global": "globale",
-    "per-vehicle": "per veicolo",
     "chanceLive": "% vittoria attuale",
     "chanceBattleTier": "Livello",
     "shot": "sparo",

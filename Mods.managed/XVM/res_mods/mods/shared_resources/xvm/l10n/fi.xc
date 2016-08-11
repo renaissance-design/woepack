@@ -20,8 +20,6 @@
     "Chance error": "Virhe todennäköisyyslaskennassa",
     "Chance to win": "Voiton todennäköisyys",
     "Team strength": "Joukkueen vahvuus",
-    "global": "yleinen",
-    "per-vehicle": "tankeittain",
     "chanceLive": "Elossa olevien",
     "chanceBattleTier": "T",
     "shot": "ammus",
