@@ -1,11 +1,11 @@
 <wot
   mid="YKST"
   hid="0050"
-  author="soloviyko"
+  author="soloviyko, Dado_Ze"
   title="YasenKrasen Session Statistics"
   info="Provides extended battle session statistics in garage as well as displaying the result or the previous battle while in a new battle."
-  version="9.15.1a"
+  version="9.15.2"
   notes="http://forum.worldoftanks.com/index.php?/topic/445745-"
-  client-version="0.9.15.1.1"
+  client-version="0.9.15.2"
   visible="true"
 />
