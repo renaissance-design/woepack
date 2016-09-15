@@ -29,6 +29,12 @@
      │                            │   ON_MODULE_DESTROYED
      │                            │   ON_MODULE_REPAIRED
      │                            │   ON_DAMAGE_CAUSED
+     │                            │   ON_DAMAGE_CAUSED_ALLY
+     │                            │   ON_TARGET_IN  - aim at the vehicle
+     │                            │   ON_TARGET_OUT - aim not at the vehicle
+     │                            │   ON_PANEL_MODE_CHANGED
+     │                            │   ON_EVERY_FRAME           * can reduce performance
+     │                            │   ON_EVERY_SECOND          * can reduce performance
      ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
      │ "hotKeyCode"               │ keyboard key code (see list in hotkeys.xc), when pressed - switches text field to show and apply configured html in "format", or hide;
      │                            │ when defined, text field will not be shown until key is pressed, to disable define null value or delete parameter
@@ -65,11 +71,11 @@
      │ "scaleY"                   │ scaling axis Y (%, use negative values for mirroring) (default: 100)
      │                            │ масштабирование по оси y (%, используйте отрицательные значения для зеркального отображения) (по-умолчанию: 100)
      ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "align"                    │ horizontal alignment of the text inside the field ("left" [default], "center", "right")
-     │                            │ горизонтальное выравнивание текста внутри поля ("left" [по-умолчанию], "center", "right")
+     │ "align"                    │ horizontal alignment of the field relative to its position ("left" [default], "center", "right")
+     │                            │ горизонтальное выравнивание текстового поля относительно его позиции ("left" [по-умолчанию], "center", "right")
      ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
-     │ "valign"                   │ vertical alignment of the text inside the field ("top" [default], "center", "bottom")
-     │                            │ вертикальное выравнивание текста внутри поля ("top" [по-умолчанию], "center", "bottom")
+     │ "valign"                   │ vertical alignment of the field relative to its position ("top" [default], "center", "bottom")
+     │                            │ вертикальное выравнивание текстового поля относительно его позиции ("top" [по-умолчанию], "center", "bottom")
      ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
      │ "screenHAlign"             │ horizontal alignment of the field on the screen ("left" [default], "center", "right")
      │                            │ горизонтальное выравнивание поля на экране ("left" [по-умолчанию], "center", "right")
@@ -126,7 +132,7 @@
      │                            │ field default styles, defaults:
      │                            │ стандартный стиль поля, значение по умолчанию:
      │                            │
-     │                            │ "textFormat": { "font": "$FieldFont", "color": "0xFFFFFF", "size": 12, "align": "left", "bold": false, "italic": false, "underline": false, "display": "block", "leading": 0, "marginLeft": 0, "marginRight": 0 },
+     │                            │ "textFormat": { "font": "$FieldFont", "color": "0xFFFFFF", "size": 12, "align": "left", "valign": "top", "bold": false, "italic": false, "underline": false, "display": "block", "leading": 0, "marginLeft": 0, "marginRight": 0 },
      │----------------------------│--------------------------------------------------------------------------
      │ "font"                     │ font name (default: "$FieldFont")
      │                            │ наименование шрифта (по-умолчанию: "$FieldFont")
@@ -137,8 +143,11 @@
      │ "size"                     │ font size (default: 12)
      │                            │ размер шрифта (по-умолчанию: 12)
      │----------------------------│--------------------------------------------------------------------------
-     │ "align"                    │ horizontal text alignment of the text inside the field (left [по-умолчанию], center, right) (the same as general "align")
-     │                            │ горизонтальное выравнивание текста текста внутри поля (left [по-умолчанию], center, right) (то же самое, что основной "align")
+     │ "align"                    │ horizontal alignment of the text inside the field (left [default], center, right)
+     │                            │ горизонтальное выравнивание текста текста внутри поля (left [по-умолчанию], center, right)
+     │----------------------------│--------------------------------------------------------------------------
+     │ "valign"                   │ vertical alignment of the text inside the field ("top" [default], "center", "bottom")
+     │                            │ вертикальное выравнивание текста внутри поля ("none" [по-умолчанию], "top", "center", "bottom")
      │----------------------------│--------------------------------------------------------------------------
      │ "bold"                     │ true - bold (default: false)
      │                            │ true - жирный (по-умолчанию: false)
@@ -168,35 +177,67 @@
      │                            │ отображаемые данные в текстовых полях (доступно использование HTML и макросов) (по-умолчанию: "")
      └────────────────────────────┴──────────────────────────────────────────────────────────────────────────
     */
-    "hitlog": {
+    "hitlogHeader": {
       "enabled": true,
-      "updateEvent": "ON_DAMAGE_CAUSED",
-      "x": 270,
-      "y": 40,
+      "updateEvent": "ON_DAMAGE_CAUSED, ON_PANEL_MODE_CHANGED",
+      "x": "{{pp.mode=0?5|{{py:math.sum({{pp.widthLeft}},50)}}}}",
+      "y": "{{pp.mode=0?65|40}}",
       "width": 500,
       "height": 1000,
       "textFormat": { "color": "0xF4EFE8", "size": 15 },
-      "format": "{{hitlog-header}}\n{{hitlog-body}}"
+      "format": "{{hitlog-header}}"
+      // Format of the full hitlog (header and body)
+      // Формат полного хит-лога (шапка и тело)
+      // "format": "{{hitlog-header}}\n{{hitlog-body}}"
+    },
+    "hitlogBody": {
+      "enabled": true,
+      "hotKeyCode": 56, "onHold": "true", "visibleOnHotKey": false,
+      "updateEvent": "ON_DAMAGE_CAUSED, ON_PANEL_MODE_CHANGED",
+      "x": "{{pp.mode=0?5|{{py:math.sum({{pp.widthLeft}},50)}}}}",
+      "y": "{{pp.mode=0?85|60}}",
+      "width": 500,
+      "height": 1000,
+      "textFormat": { "color": "0xF4EFE8", "size": 15 },
+      "format": "{{hitlog-body}}"
     },
     "totalHP": {
       "enabled": true,
       "updateEvent": "ON_PLAYERS_HP_CHANGED",
       "x": 0,
       "y": 30,
-      "width": 200,
-      "height": 40,
       "screenHAlign": "center",
+      "align": "center",
       "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 1.5 },
       "textFormat": { "font": "mono", "size": 18, "align": "center" },
       "format": "{{py:xvm.total_hp.text()}}"
+    },
+    "avgDamage": {
+      "enabled": true,
+      "updateEvent": "ON_DAMAGE_CAUSED",
+      "x": -170,
+      "y": 30,
+      "screenHAlign": "center",
+      "align": "right",
+      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 1.5 },
+      "textFormat": { "size": 15, "align": "center" },
+      "format": "{{py:xvm.total_hp.avgDamage('{{l10n:avgDamage}}: ',{{hitlog.dmg-total}})}}"
+    },
+    "mainGun": {
+      "enabled": true,
+      "updateEvent": "ON_DAMAGE_CAUSED, ON_DAMAGE_CAUSED_ALLY",
+      "x": 170,
+      "y": 30,
+      "screenHAlign": "center",
+      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 1.5 },
+      "textFormat": { "size": 15, "align": "center" },
+      "format": "{{py:xvm.total_hp.mainGun('{{l10n:mainGun}}: ',{{hitlog.dmg-total}})}}"
     },
     "winChance": {
       "enabled": false,
       "updateEvent": "ON_VEHICLE_DESTROYED",
       "x": 230,
       "y": 2,
-      "width": 300,
-      "height": 20,
       "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 1.5 },
       "textFormat": { "size": 15 },
       "format": "{{xvm-stat?{{l10n:Team strength}}: {{py:xvm.team_strength('{{allyStrengthStatic}}','{{enemyStrengthStatic}}')}} / {{py:xvm.team_strength('{{allyStrengthLive}}','{{enemyStrengthLive}}')}}}}"
@@ -216,6 +257,7 @@
     "test2": {
       "enabled": true,
       "hotKeyCode": 36,
+      "updateEvent": "ON_TARGET_IN,ON_TARGET_OUT",
       "y": -70,
       "width": 310,
       "height": 50,
@@ -226,7 +268,7 @@
       "borderColor": "0x101009",
       "shadow": { "distance": 1, "angle": 90, "alpha": 80, "strength": 8},
       "textFormat": { "color": "0x60FF00", "size": 15, "align": "center", "marginLeft": 2, "marginRight": 2},
-      "format": "<font color='#FFFFFF'><b>Info text field (WN8: <font color='{{c:wn8}}'>{{wn8}}</font>)</b></font><br/>Battle tier:<font color='#ff1aff'> {{battletier}}</font> <p align='right'>My vehicle: <font color='#ff1aff'>{{my-vehicle}}</font> (<font color='{{c:t-winrate}}'>{{t-winrate%2d}}%</font>)</p>"
+      "format": "<font color='#FFFFFF'><b>Info text field (XTE: <font color='{{c:xte}}'>{{xte}}</font>)</b></font><br/>Battle tier:<font color='#ff1aff'> {{battletier}}</font> <p align='right'>Vehicle: <font color='#ff1aff'>{{vehicle}}</font> (<font color='{{c:t-winrate}}'>{{t-winrate%2d}}%</font>)</p>"
     }
   }
 }

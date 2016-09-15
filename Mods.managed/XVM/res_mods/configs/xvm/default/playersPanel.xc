@@ -26,14 +26,23 @@
  *   "align" - horizontal alignment ("left", "center", "right")
  *      for left panel default value is "left"
  *      for right panel default value is "right"
+ *   "valign" - vertical alignment ("none", "top", "center", "bottom")
  *   "scaleX", "scaleY" - scaling (use negative values for mirroring)
  *   "hotKeyCode" - keyboard key code (see list in hotkeys.xc), when pressed - switches text field to show and apply configured html in "format", or hide; when defined, text field will not be shown until key is pressed, to disable define null value or delete parameter
  *   "onHold" - take action by key click (false) or while key is remains pressed (true); (default: false)
  *   "visibleOnHotKey" - field visible on hot key pressed (true) or vice versa (false); (default: true)
+ *   "flags": [ "player", "ally", "squadman", "enemy", "teamKiller", "neverSeen", "lost", "spotted", "alive", "dead" ],
+ *      Field visibility flag
+ *      If don't set "ally", "squadman", "player", "enemy", "teamKiller", they are not used.
+ *      If don't set "neverSeen", "lost" and "spotted", it uses all - and "neverSeen", and "lost", and "spotted". Note: "neverSeen" status disabled for the minimap.
+ *      If don't set "alive", "dead", it uses both - and "alive", and "dead"
+ *      -------------------------------------------------------------------------------------
+ *      Флаг видимости поля
+ *      Если не указаны "ally", "squadman", "player", "enemy", "teamKiller", то они не используются.
+ *      Если не указаны "neverSeen", "lost" и "spotted", то используются все - и "neverSeen", и "lost", и "spotted". Примечание: статус "neverSeen" для миникарты отключен.
+ *      Если не указаны "alive", "dead", то используются оба - и "alive", и "dead".
  *
  * fields available for TextField format only:
- *   "valign" - vertical alignment ("top", "center", "bottom")
- *      default value is "top"
  *   "borderColor" - if set, draw border with specified color (macros allowed)
  *   "bgColor" - if set, draw background with specified color (macros allowed)
  *   "antiAliasType" - anti aliasing mode ("advanced" or "normal")
@@ -41,13 +50,13 @@
  * fields available for MovieClip format only:
  *   "highlight" - highlight icon depending on the player state, default false
  *
- * fields available for players panel and statistic form only:
+ * fields available for players panel, statistic form, battle loading and minimap:
  *   "layer": field z-order
  *     values:
- *     "substrate": put field behind all standard fields, x value depends on the players panel width
- *     "bottom": put field behind all standard fields, x value does not depend on the players panel width
- *     "normal": put field above vehicle icon but behind standard text fields (default)
- *     "top": put field above standard fields
+ *     "substrate": put field behind all fields (for the players panel x value depends on the players panel width)
+ *     "bottom": put field behind all standard fields but above substrate fields (for the players panel x value does not depend on the players panel width)
+ *     "normal": put field above bottom fields (for the players panel etc- above vehicle icon but behind standard text fields) (default)
+ *     "top": put field above all fields
  *
  * text format and shadow:
  *   http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/text/TextFormat.html
@@ -59,6 +68,7 @@
  *     "italic"
  *     "underline"
  *     "align"
+ *     "valign"
  *     "leftMargin"
  *     "rightMargin"
  *     "indent"
@@ -114,7 +124,11 @@
     // Шаблон маркера сервиса XMQP.
     "xmqpServiceMarker": {
       "x": 88, "y": 1, "align": "center", "bindToIcon": true,
-      "format": "<font face='xvm' size='23' color='{{alive?{{x-spotted?#FFBB00|{{x-sense-on?#D9D9D9|#BFBFBF}}}}|#FFFFFF}}' alpha='{{alive?#FF|#80}}'>{{alive?{{x-spotted?&#x70;|{{x-sense-on?&#x70;|{{x-enabled?&#x7A;}}}}}}}}</font>",
+      "textFormat": {
+        "font": "xvm",
+        "size": 23
+      },
+      "format": "<font color='{{alive?{{x-spotted?#FFBB00|{{x-sense-on?#D9D9D9|#BFBFBF}}}}|#FFFFFF}}' alpha='{{alive?#FF|#80}}'>{{alive?{{x-spotted?&#x70;|{{x-sense-on?&#x70;|{{x-enabled?&#x7A;}}}}}}}}</font>",
       "shadow": {}
     },
     // Clan icon.
@@ -131,6 +145,21 @@
       "enabled": false,
       "x": 10, "y": 5, "bindToIcon": true,
       "src": "xvm://res/icons/xvm/xvm-user-{{xvm-user|none}}.png"
+    },
+    // HP bar background.
+    // Подложка индикатора HP.
+    "hpBarBg": { "hotKeyCode": 56, "onHold": "true", "visibleOnHotKey": true, "x": 96, "y": 6, "width": 72, "bindToIcon": true, "height": 14, "bgColor": "0x000000", "alpha": "{{alive?35|0}}" },
+    // HP bar.
+    // Индикатор HP.
+    "hpBar": { "hotKeyCode": 56, "onHold": "true", "visibleOnHotKey": true, "x": 97, "y": 7, "bindToIcon": true, "width": "{{hp-ratio:70}}", "height": 12, "bgColor": "{{player?#FFDD33|{{c:system}}}}", "alpha": "{{alive?50|0}}" },
+    // Remaining HP.
+    // Оставшиеся HP.
+    "hp": {
+      "hotKeyCode": 56, "onHold": "true", "visibleOnHotKey": true, "bindToIcon": true, "alpha": "{{alive?100|0}}",
+      "x": 96, "width": 72, "y": 4,
+      "textFormat": { "font": "$FieldFont", "size": 11, "color": "0xD9D9D9", "bold": "true", "align": "center" },
+      "format": "<font alpha='{{alive?{{ready?#FF|#80}}|#80}}'>{{alive?{{hp|{{l10n:No data}}}}|{{l10n:Destroyed}}}}</font>",
+      "shadow": { "enabled": true, "color": "0x000000", "alpha": 100, "blur": 4, "strength": 1, "distance": 0, "angle": 0 }
     }
   },
   // Parameters of the Players Panels ("ears").
@@ -171,6 +200,15 @@
       // true - don't change players positions on dead (default false)
       // true - не изменять позиции игроков при уничтожении (по умолчанию false)
       "fixedPosition": false,
+      // Opacity of dynamic squad invite indicator
+      // Прозрачность индикатора приглашения в динамический взвод
+      "inviteIndicatorAlpha": 100,
+      // X position offset of dynamic squad invite indicator
+      // Позиция X индикатора приглашения в динамический взвод
+      "inviteIndicatorX": 0,
+      // Y position offset of dynamic squad invite indicator
+      // Позиция Y индикатора приглашения в динамический взвод
+      "inviteIndicatorY": 0,
       // Extra fields.
       // Дополнительные поля.
       "extraFields": {
@@ -224,6 +262,9 @@
       // true - disable platoon icons
       // true - убрать отображение иконок взвода
       "removeSquadIcon": false,
+      // transparency of the squad icon
+      // прозрачность иконки взвода
+      "squadIconAlpha": 100,
       // Offset of X value for vehicle icon.
       // Смещение координаты X для иконки танка.
       "vehicleIconXOffsetLeft": 0,
@@ -246,6 +287,10 @@
       // Формат отображения фрагов (допускаются макроподстановки, см. macros.txt).
       "fragsFormatLeft": "{{frags}}",
       "fragsFormatRight": "{{frags}}",
+      // Shadow for frags field (default null = no shadow, as in vanillas client).
+      // Тень для поля фрагов (по умолчанию null = без тени, как в чистом клиенте).
+      "fragsShadowLeft": null,
+      "fragsShadowRight": null,
       // Offset of X value for player name column.
       // Смещение координаты X для поля имени игрока.
       "nickXOffsetLeft": 0,
@@ -256,10 +301,14 @@
       // Maximum width of the player name column. Default is 158.
       // Максимальная ширина поля имени игрока. По умолчанию: 158.
       "nickMaxWidth": 158,
-      // Display format for player nickname (macros allowed, see macros.txt).
+      // Display format for player name (macros allowed, see macros.txt).
       // Формат отображения имени игрока (допускаются макроподстановки, см. macros.txt).
       "nickFormatLeft": "<font face='mono' size='{{xvm-stat?13|0}}' color='{{c:r}}' alpha='{{alive?#FF|#80}}'>{{r}}</font> {{name%.15s~..}}<font alpha='#A0'>{{clan}}</font>",
       "nickFormatRight": "<font alpha='#A0'>{{clan}}</font>{{name%.15s~..}} <font face='mono' size='{{xvm-stat?13|0}}' color='{{c:r}}' alpha='{{alive?#FF|#80}}'>{{r}}</font>",
+      // Shadow for player name field (default null = no shadow, as in vanillas client).
+      // Тень для поля имени игрока (по умолчанию null = без тени, как в чистом клиенте).
+      "nickShadowLeft": null,
+      "nickShadowRight": null,
       // Offset of X value for vehicle name column.
       // Смещение координаты X для поля названия танка.
       "vehicleXOffsetLeft": 0,
@@ -271,6 +320,13 @@
       // Формат отображения названия танка (допускаются макроподстановки, см. macros.txt).
       "vehicleFormatLeft": "{{vehicle}}",
       "vehicleFormatRight": "{{vehicle}}",
+      // Shadow for vehicle name field (default null = no shadow, as in vanillas client).
+      // Тень для поля названия танка (по умолчанию null = без тени, как в чистом клиенте).
+      "vehicleShadowLeft": null,
+      "vehicleShadowRight": null,
+      // true - don't change players positions on dead (default false)
+      // true - не изменять позиции игроков при уничтожении (по умолчанию false)
+      "fixedPosition": false,
       // Extra fields. Each field have default size 350x25.
       // Fields are placed one above the other.
       // Дополнительные поля. Каждое поле имеет размер по умолчанию 350x25.
@@ -278,6 +334,9 @@
       // Set of formats for left panel (extended format supported, see above)
       // Набор форматов для левой панели (поддерживается расширенный формат, см. выше)
       "extraFieldsLeft": [
+        ${"def.hpBarBg"},
+        ${"def.hpBar"},
+        ${"def.hp"},
         ${"def.clanIcon"},
         ${"def.xvmUserMarker"},
         ${"def.xmqpServiceMarker"}
@@ -285,6 +344,9 @@
       // Set of formats for right panel (extended format supported, see above)
       // Набор форматов для правой панели (поддерживается расширенный формат, см. выше)
       "extraFieldsRight": [
+        ${"def.hpBarBg"},
+        ${"def.hpBar"},
+        ${"def.hp"},
         ${"def.clanIcon"},
         ${"def.xvmUserMarker"},
         ${"def.enemySpottedMarker"}
@@ -306,6 +368,9 @@
       // true - disable platoon icons
       // true - убрать отображение иконок взвода
       "removeSquadIcon": false,
+      // transparency of the squad icon
+      // прозрачность иконки взвода
+      "squadIconAlpha": 100,
       // Offset of X value for vehicle icon.
       // Смещение координаты X для иконки танка.
       "vehicleIconXOffsetLeft": 0,
@@ -328,6 +393,10 @@
       // Формат отображения фрагов (допускаются макроподстановки, см. macros.txt).
       "fragsFormatLeft": "{{frags}}",
       "fragsFormatRight": "{{frags}}",
+      // Shadow for frags field (default null = no shadow, as in vanillas client).
+      // Тень для поля фрагов (по умолчанию null = без тени, как в чистом клиенте).
+      "fragsShadowLeft": null,
+      "fragsShadowRight": null,
       // Offset of X value for player name column.
       // Смещение координаты X для поля имени игрока.
       "nickXOffsetLeft": 0,
@@ -342,6 +411,10 @@
       // Формат отображения имени игрока (допускаются макроподстановки, см. macros.txt).
       "nickFormatLeft": "<font color='{{c:r}}' alpha='{{alive?#FF|#80}}'>{{name%.12s~..}}</font> <font alpha='#A0'>{{clan}}</font>",
       "nickFormatRight": "<font alpha='#A0'>{{clan}}</font> <font color='{{c:r}}' alpha='{{alive?#FF|#80}}'>{{name%.12s~..}}</font>",
+      // Shadow for player name field (default null = no shadow, as in vanillas client).
+      // Тень для поля имени игрока (по умолчанию null = без тени, как в чистом клиенте).
+      "nickShadowLeft": null,
+      "nickShadowRight": null,
       // Offset of X value for vehicle name column.
       // Смещение координаты X для поля названия танка.
       "vehicleXOffsetLeft": 0,
@@ -353,11 +426,21 @@
       // Формат отображения названия танка (допускаются макроподстановки, см. macros.txt).
       "vehicleFormatLeft": "<font color='{{c:r}}' alpha='{{alive?#FF|#80}}'>{{vehicle}}</font>",
       "vehicleFormatRight": "<font color='{{c:r}}' alpha='{{alive?#FF|#80}}'>{{vehicle}}</font>",
+      // Shadow for vehicle name field (default null = no shadow, as in vanillas client).
+      // Тень для поля названия танка (по умолчанию null = без тени, как в чистом клиенте).
+      "vehicleShadowLeft": null,
+      "vehicleShadowRight": null,
+      // true - don't change players positions on dead (default false)
+      // true - не изменять позиции игроков при уничтожении (по умолчанию false)
+      "fixedPosition": false,
       // Extra fields. Each field have size 350x25. Fields are placed one above the other.
       // Дополнительные поля. Каждое поле имеет размер 350x25. Поля располагаются друг над другом.
       // Set of formats for left panel (extended format supported, see above)
       // Набор форматов для левой панели (поддерживается расширенный формат, см. выше)
       "extraFieldsLeft": [
+        ${"def.hpBarBg"},
+        ${"def.hpBar"},
+        ${"def.hp"},
         ${"def.clanIcon"},
         ${"def.xvmUserMarker"},
         ${"def.xmqpServiceMarker"}
@@ -365,6 +448,9 @@
       // Set of formats for right panel (extended format supported, see above)
       // Набор форматов для правой панели (поддерживается расширенный формат, см. выше)
       "extraFieldsRight": [
+        ${"def.hpBarBg"},
+        ${"def.hpBar"},
+        ${"def.hp"},
         ${"def.clanIcon"},
         ${"def.xvmUserMarker"},
         ${"def.enemySpottedMarker"}
@@ -386,6 +472,9 @@
       // true - disable platoon icons
       // true - убрать отображение иконок взвода
       "removeSquadIcon": false,
+      // transparency of the squad icon
+      // прозрачность иконки взвода
+      "squadIconAlpha": 100,
       // Offset of X value for vehicle icon.
       // Смещение координаты X для иконки танка.
       "vehicleIconXOffsetLeft": 0,
@@ -408,6 +497,10 @@
       // Формат отображения фрагов (допускаются макроподстановки, см. macros.txt).
       "fragsFormatLeft": "{{frags}}",
       "fragsFormatRight": "{{frags}}",
+      // Shadow for frags field (default null = no shadow, as in vanillas client).
+      // Тень для поля фрагов (по умолчанию null = без тени, как в чистом клиенте).
+      "fragsShadowLeft": null,
+      "fragsShadowRight": null,
       // Offset of X value for player name column.
       // Смещение координаты X для поля имени игрока.
       "nickXOffsetLeft": 0,
@@ -422,6 +515,10 @@
       // Формат отображения имени игрока (допускаются макроподстановки, см. macros.txt).
       "nickFormatLeft": "<font color='{{c:r}}' alpha='{{alive?#FF|#80}}'>{{name%.12s~..}}</font> <font alpha='#A0'>{{clan}}</font>",
       "nickFormatRight": "<font alpha='#A0'>{{clan}}</font> <font color='{{c:r}}' alpha='{{alive?#FF|#80}}'>{{name%.12s~..}}</font>",
+      // Shadow for player name field (default null = no shadow, as in vanillas client).
+      // Тень для поля имени игрока (по умолчанию null = без тени, как в чистом клиенте).
+      "nickShadowLeft": null,
+      "nickShadowRight": null,
       // Offset of X value for vehicle name column.
       // Смещение координаты X для поля названия танка.
       "vehicleXOffsetLeft": 0,
@@ -433,11 +530,21 @@
       // Формат отображения названия танка (допускаются макроподстановки, см. macros.txt).
       "vehicleFormatLeft": "<font color='{{c:r}}' alpha='{{alive?#FF|#80}}'>{{vehicle}}</font>",
       "vehicleFormatRight": "<font color='{{c:r}}' alpha='{{alive?#FF|#80}}'>{{vehicle}}</font>",
+      // Shadow for vehicle name field (default null = no shadow, as in vanillas client).
+      // Тень для поля названия танка (по умолчанию null = без тени, как в чистом клиенте).
+      "vehicleShadowLeft": null,
+      "vehicleShadowRight": null,
+      // true - don't change players positions on dead (default false)
+      // true - не изменять позиции игроков при уничтожении (по умолчанию false)
+      "fixedPosition": false,
       // Extra fields. Each field have size 350x25. Fields are placed one above the other.
       // Дополнительные поля. Каждое поле имеет размер 350x25. Поля располагаются друг над другом.
       // Set of formats for left panel (extended format supported, see above)
       // Набор форматов для левой панели (поддерживается расширенный формат, см. выше)
       "extraFieldsLeft": [
+        ${"def.hpBarBg"},
+        ${"def.hpBar"},
+        ${"def.hp"},
         ${"def.clanIcon"},
         ${"def.xvmUserMarker"},
         ${"def.xmqpServiceMarker"}
@@ -445,6 +552,9 @@
       // Set of formats for right panel (extended format supported, see above)
       // Набор форматов для правой панели (поддерживается расширенный формат, см. выше)
       "extraFieldsRight": [
+        ${"def.hpBarBg"},
+        ${"def.hpBar"},
+        ${"def.hp"},
         ${"def.clanIcon"},
         ${"def.xvmUserMarker"},
         ${"def.enemySpottedMarker"}
@@ -463,6 +573,9 @@
       // true - disable platoon icons
       // true - убрать отображение иконок взвода
       "removeSquadIcon": false,
+      // transparency of the squad icon
+      // прозрачность иконки взвода
+      "squadIconAlpha": 100,
       // Offset of X value for vehicle icon.
       // Смещение координаты X для иконки танка.
       "vehicleIconXOffsetLeft": 0,
@@ -485,6 +598,10 @@
       // Формат отображения фрагов (допускаются макроподстановки, см. macros.txt).
       "fragsFormatLeft": "{{frags}}",
       "fragsFormatRight": "{{frags}}",
+      // Shadow for frags field (default null = no shadow, as in vanillas client).
+      // Тень для поля фрагов (по умолчанию null = без тени, как в чистом клиенте).
+      "fragsShadowLeft": null,
+      "fragsShadowRight": null,
       // Offset of X value for player name column.
       // Смещение координаты X для поля имени игрока.
       "nickXOffsetLeft": 0,
@@ -499,6 +616,10 @@
       // Формат отображения имени игрока (допускаются макроподстановки, см. macros.txt).
       "nickFormatLeft": "<font face='mono' size='{{xvm-stat?13|0}}' color='{{c:r}}' alpha='{{alive?#FF|#80}}'>{{r|--}}</font> {{name%.15s~..}}<font alpha='#A0'>{{clan}}</font>",
       "nickFormatRight": "<font alpha='#A0'>{{clan}}</font>{{name%.15s~..}} <font face='mono' size='{{xvm-stat?13|0}}' color='{{c:r}}' alpha='{{alive?#FF|#80}}'>{{r}}</font>",
+      // Shadow for player name field (default null = no shadow, as in vanillas client).
+      // Тень для поля имени игрока (по умолчанию null = без тени, как в чистом клиенте).
+      "nickShadowLeft": null,
+      "nickShadowRight": null,
       // Offset of X value for vehicle name column.
       // Смещение координаты X для поля названия танка.
       "vehicleXOffsetLeft": 0,
@@ -510,11 +631,21 @@
       // Формат отображения названия танка (допускаются макроподстановки, см. macros.txt).
       "vehicleFormatLeft": "{{vehicle}}",
       "vehicleFormatRight": "{{vehicle}}",
+      // Shadow for vehicle name field (default null = no shadow, as in vanillas client).
+      // Тень для поля названия танка (по умолчанию null = без тени, как в чистом клиенте).
+      "vehicleShadowLeft": null,
+      "vehicleShadowRight": null,
+      // true - don't change players positions on dead (default false)
+      // true - не изменять позиции игроков при уничтожении (по умолчанию false)
+      "fixedPosition": false,
       // Extra fields. Each field have size 350x25. Fields are placed one above the other.
       // Дополнительные поля. Каждое поле имеет размер 350x25. Поля располагаются друг над другом.
       // Set of formats for left panel (extended format supported, see above)
       // Набор форматов для левой панели (поддерживается расширенный формат, см. выше)
       "extraFieldsLeft": [
+        ${"def.hpBarBg"},
+        ${"def.hpBar"},
+        ${"def.hp"},
         ${"def.clanIcon"},
         ${"def.xvmUserMarker"},
         ${"def.xmqpServiceMarker"}
@@ -522,6 +653,9 @@
       // Set of formats for right panel (extended format supported, see above)
       // Набор форматов для правой панели (поддерживается расширенный формат, см. выше)
       "extraFieldsRight": [
+        ${"def.hpBarBg"},
+        ${"def.hpBar"},
+        ${"def.hp"},
         ${"def.clanIcon"},
         ${"def.xvmUserMarker"},
         ${"def.enemySpottedMarker"}

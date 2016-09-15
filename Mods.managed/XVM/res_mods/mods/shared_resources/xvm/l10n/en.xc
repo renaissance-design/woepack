@@ -15,6 +15,7 @@
     "No": "No",
     "Not available short": "n/a",
     "from": "from",
+    "m": "m",
 
     // Ping & Online
     "Initialization": "Initialization",
@@ -45,6 +46,10 @@
     "enemyBaseCaptured": "Base{0} captured by allies!",
     "allyBaseCapture": "Base{0} capture by enemies!",
     "allyBaseCaptured": "Base{0} captured by enemies!",
+
+    // Battle interface labels
+    "avgDamage": "Avg damage",
+    "mainGun": "High caliber",
 
     // BattleResults
     "Hit percent": "Hit percent",
