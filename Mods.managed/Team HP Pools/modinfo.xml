@@ -6,7 +6,7 @@
   info="Replaces &quot;Our Team&quot; and &quot;Enemy Team&quot; interface panel with one that keeps track of and displays current HP pools for both teams nearly in realtime. The enemy update is performed only for spotted tanks."
   notes="http://forum.worldoftanks.ru/index.php?/topic/1385404-"
   version="1.8.1"
-  client-version="0.9.15.1.1"
+  client-version="0.9.15.2"
   visible="true"
   colorblind="true"
 >
