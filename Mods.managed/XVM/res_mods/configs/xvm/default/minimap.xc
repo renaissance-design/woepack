@@ -13,21 +13,24 @@
     // Self icon transparency. White pointing arrow.
     // Прозрачность своей иконки. Белая стрелка.
     "selfIconAlpha": 75,
+    // Self icon scale. White pointing arrow.
+    // Масштаб своей иконки. Белая стрелка.
+    "selfIconScale": 1,
     // Vehicle type icons transparency.
     // Прозрачность иконок типа техники.
     "iconAlpha": 100,
-    // Hide camera direction green triangle (also hides WG camera direction line).
-    // Спрятать зеленый треугольник направления камеры (также скрывает луч направления камеры WG).
-    "hideCameraTriangle": false,
+    // Vehicles icon scale. Does not affect attached geometry and textfields. Floating point allowed: 0.7, 1.4.
+    // Масштаб иконки техники. Не влияет на прикрепленную к геометрию и текстовые поля. Можно дробные: 0.7, 1.4.
+    "iconScale": 1,
+    // Camera direction green triangle transparency.
+    // Прозрачность зеленого треугольника направления камеры.
+    "directionTriangleAlpha": 100,
+    // Standard camera direction line transparency.
+    // Прозрачность стандартного луча направления камеры.
+    "directionLineAlpha": 100,
     // Show camera line after death
     // Отображать линию направления камеры после смерти
-    "showCameraLineAfterDeath": true,
-    // Camera transparency and its attached geometry (green triangle).
-    // Прозрачность камеры и прикрепленной геометрии (зеленый треугольник).
-    "cameraAlpha": 100,
-    // Vehicles icon size. Does not affect attached geometry and textfields. Floating point allowed: 0.7, 1.4.
-    // Размер иконки техники. Не влияет на прикрепленную к геометрию и текстовые поля. Можно дробные: 0.7, 1.4.
-    "iconScale": 1,
+    "showDirectionLineAfterDeath": true,
     // Path to icon for arty aim
     // Путь к иконке для артиллерийского прицела
     "minimapAimIcon": "xvm://res/MinimapAim.png",
@@ -37,9 +40,9 @@
     // Map zoom by key pressing. Key is defined at file "hotkeys.xc".
     // Увеличение миникарты по нажатию кнопки. Кнопка задается в файле "hotkeys.xc".
     "zoom": {
-      // Number of pixels to get back from maximum size (screen height-minimap height).
-      // Число пикселей для уменьшения миникарты от максимального размера (высота экрана-высота миникарты).
-      "pixelsBack": 449,
+      // Zoom index value for minimap zoom key (0..5).
+      // Значение масштаба миникарты при нажатии клавиши масштаба (0..5).
+      "index": 5,
       // false - does not set zoomed minimap at display center.
       // false - не устанавливать увеличенную миникарту по центру экрана.
       "centered": false

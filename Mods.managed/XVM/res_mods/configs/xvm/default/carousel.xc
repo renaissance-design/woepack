@@ -3,6 +3,13 @@
  * Параметры карусели танков
  */
 {
+  // Definitions
+  // Шаблоны
+  "def": {
+    // Text fields shadow.
+    // Тень текстовых полей.
+    "textFieldShadow": { "enabled": true, "color": "0x000000", "alpha": 80, "blur": 2, "strength": 2, "distance": 0, "angle": 0 }
+  },
   "carousel": {
     // false - Disable customizable carousel.
     // false - Отключить настраиваемую карусель.
@@ -108,9 +115,52 @@
     // Extra cell fields (see playersPanel.xc).
     // Дополнительные поля ячеек (см. playersPanel.xc).
     "extraFields": [
+      // Средний урон
+      // Average damage
+      {
+        "enabled": true,
+        "x": 1, "y": 28, "width": 18, "height": 18, "alpha": "{{v.tdb?|0}}", 
+        "src": "xvm://res/icons/carousel/damage.png"
+      },
+      {
+        "enabled": true,
+        "x": 17, "y": 28,
+        "format": "<b><font face='$FieldFont' size='12' color='{{v.c_xtdb|#CFCFCF}}'>{{v.tdb%d}}</font></b>",
+        "shadow": ${ "def.textFieldShadow" }
+      },
       // Sign of mastery.
       // Знак мастерства.
-      { "x": -1, "y": 10, "format": "<img src='img://gui/maps/icons/library/proficiency/class_icons_{{v.mastery}}.png' width='23' height='23'>" }
+      {
+        "enabled": true,
+        "x": -1, "y": 10, "width": 23, "height": 23,
+        "src": "img://gui/maps/icons/library/proficiency/class_icons_{{v.mastery}}.png"
+      },
+      // Количество боёв
+      // Battles count
+      {
+        "enabled": true,
+        "x": 158, "y": 17, "align": "right", "width": 13, "height": 13, "alpha": "{{v.battles?|0}}", 
+        "src": "xvm://res/icons/carousel/battles.png"
+      },
+      {
+        "enabled": true,
+        "x": 145, "y": 14, "align": "right",
+        "format": "<b><font face='$FieldFont' size='12' color='#CFCFCF' alpha='#F0'>{{v.battles}}</font></b>",
+        "shadow": ${ "def.textFieldShadow" }
+      },
+      // Процент побед
+      // Winrate
+      {
+        "enabled": true,
+        "x": 158, "y": 32, "align": "right", "width": 13, "height": 13, "alpha": "{{v.winrate?|0}}", 
+        "src": "xvm://res/icons/carousel/wins.png"
+      },
+      {
+        "enabled": true,
+        "x": 145, "y": 28, "align": "right",
+        "format": "<b><font face='$FieldFont' size='12' color='{{v.c_winrate|#CFCFCF}}'>{{v.winrate%2d~%}}</font></b>",
+        "shadow": ${ "def.textFieldShadow" }
+      }
     ]
   }
 }

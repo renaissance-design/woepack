@@ -15,6 +15,7 @@
     "No": "Нет",
     "Not available short": "н/д",
     "from": "из",
+    "m": "м",
 
     // Ping & Online
     "Initialization": "Инициализация",
@@ -45,6 +46,10 @@
     "enemyBaseCaptured": "База{0} захвачена союзниками!",
     "allyBaseCapture": "Захват базы{0} врагами!",
     "allyBaseCaptured": "База{0} захвачена врагами!",
+
+    // Battle interface labels
+    "avgDamage": "Средний урон",
+    "mainGun": "Основной калибр",
 
     // BattleResults
     "Hit percent": "Процент попаданий",

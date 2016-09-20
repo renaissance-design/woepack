@@ -1,5 +1,61 @@
+XVM-6.4.4:
+  * lines on the minimap implemented (circles are not yet)
+
+XVM-6.4.3:
+  * adaptation to WoT 0.9.15.2
+  * labels on the minimap implemented (circles and lines are not yet)
+  * added new elements in sections "battleLabels" and "battleLabelsTemplates":
+      "avgDamage" - avg damage on current vehicle
+      "mainGun" - threshold necessary for achievements "High caliber"
+  * added options in the "minimap" and "minimapAlt" sections:
+      "selfIconScale" - self icon scale
+      "directionTriangleAlpha" - camera direction green triangle transparency
+      "directionLineAlpha" - standard camera direction line transparency
+      "zoom"/"index" - zoom index value for minimap zoom key
+  * removed options in the "minimap" and "minimapAlt" sections:
+      "hideCameraTriangle"
+      "cameraAlpha"
+      "zoom"/"pixelsBack"
+  * renamed options in the "minimap" and "minimapAlt" sections:
+      "showCameraLineAfterDeath" => "showDirectionLineAfterDeath"
+  * extra fields alignment options behavior changed:
+      "align"               - horizontal alignment of the text field relative to its position
+      "valign"              - vertical alignment of the text field relative to its position
+      "textFormat"/"align"  - horizontal alignment of the text inside the field
+      "textFormat"/"valign" - vertical alignment of the text inside the field
+  * added options in the "playersPanel" modes sections:
+      "squadIconAlpha" - transparency of the squad icon
+
+XVM-6.4.2.1:
+  * fix Alt mode in the standard markers
+
+XVM-6.4.2:
+  * added options in the "playersPanel" modes sections:
+      "fragsShadowLeft", "fragsShadowRight" - shadow for frags field
+      "nickShadowLeft", "nickShadowRight" - shadow for player name field
+      "vehicleShadowLeft", "vehicleShadowRight" - shadow for vehicle name field
+      "fixedPosition" - true - don't change players positions on dead (default false)
+  * added options in the "playersPanel"/"none" mode:
+      "inviteIndicatorAlpha" - opacity of dynamic squad invite indicator
+      "inviteIndicatorX" - X position offset of dynamic squad invite indicator
+      "inviteIndicatorY" - Y position offset of dynamic squad invite indicator
+  * ping: fixed a memory leak on old Windows versions if ping in hangar was enabled
+  * ping: no longer requires additional configuration to work under Wine
+  * battleLoading: extraFields added
+  * battleLabels: added events:
+      ON_DAMAGE_CAUSED_ALLY - damage to ally
+      ON_TARGET_IN  - aim at the vehicle
+      ON_TARGET_OUT - aim not at the vehicle
+      ON_PANEL_MODE_CHANGED
+      ON_EVERY_FRAME           * can reduce performance
+      ON_EVERY_SECOND          * can reduce performance
+  * added global macros:
+      {{pp.mode}}       - current players panel mode (0-none, 1-small, 2-medium, 3-medium2, 4-large)
+      {{pp.widthLeft}}  - current left players panel width
+      {{pp.widthRight}} - current right players panel width
+
 XVM-6.4.1.1:
-  * fix minimap
+  * fix minimap (Only compatibility. Extended functionality not implemented yet.)
 
 XVM-6.4.1:
   * adaptation to WoT 0.9.15.1.1
@@ -87,7 +143,7 @@ XVM-6.4.0:
   * added {{comment}} macro to show comment for player from contacts
   * added option "battle"/"sixthSenseDuration" - duration of the sixth sense indicator
   * removed option "hitLog"/"direction" - not required
-  
+
   [KNOWN ISSUES]
   * Minimap is not ready. Some functionality may work incorrectly or may not work at all. (will be fixed in future releases)
   * Option "carousel"/"rows" does not implemented. (postponed because it may be implemented by WG)
