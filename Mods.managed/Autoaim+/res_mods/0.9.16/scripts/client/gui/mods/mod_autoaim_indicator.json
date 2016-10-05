@@ -12,25 +12,26 @@
         "x": 0,
         "y": 0
     },
-    "debug": true,
+    "debug": false,
     "enable_panel": true,
     "max_characters": 15,
     "no_snap_on_autoaim_off_E": true,
     "snap_to_nearest": true,
     "snap_continously": false,
-    "snappingDelay": 0.2,
-    "snapping_angle_degrees": 15.0,
+    "snappingDelay": 0.25,
+    "snapping_angle_degrees": 7.5,
     "toggleKeyCode": 0,
     "toggleStateOn": true,
     "toggledOffMsg": "<font color='#FF0000'>Autoaim indicator/snapping turned OFF</font>",
     "toggledOnMsg": "<font color='#00FF00'>Autoaim indicator/snapping turned ON</font>",
     "useDistanceBelowM": 0,
     "use_target_as_text": true,
+    "attack_snapping": true,
     "follow_me_snapping": true,
     "addon-auto_announce_reload": {
         "enabled": false,
-        "clip_reload": false,
-        "reload_longer_than": 0
+        "clip_reload": true,
+        "reload_longer_than": 10
     },
     "addon-repair_with_T": {
         "enabled": true,
@@ -50,6 +51,5 @@
                  "order of devices in first option matters for small repair kit as it will repair first found!"]
     },
     "addon-dead_shot_blocker": true,
-    "addon-ally_shot_blocker": true,
-    "addon-disable_voip_switch": true
+    "addon-ally_shot_blocker": true
 }
