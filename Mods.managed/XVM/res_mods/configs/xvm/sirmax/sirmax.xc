@@ -20,7 +20,7 @@
       "y": 80,
       "hAlign": "left",
       "ignoredServers": ["RU4", "RU8", "RU9"],
-      //"topmost": true,
+      "layer": "top",
       "showTitle": false
     },
     "__stub__": null
@@ -54,6 +54,7 @@
     "blockVehicleIfNoAmmo": true,
     //"enableCrewAutoReturn": false,
     //"crewReturnByDefault": true,
+    "crewMaxPerksCount": 10,
     "enableEquipAutoReturn": true,
     "widgetsEnabled": true,
     "pingServers": {
@@ -62,10 +63,13 @@
     },
     "carousel": ${"sirmax-carousel.xc":"carousel"},
     "clock": {
-      //"x": 100,
-      //"y": 5,
+      //"layer": "bottom",
+      //"x": -200,
+      //"y": 70
       //"format": "<font face='$FieldFont'><font size='26'> {{H}}:{{m%02d}} {{AM?a.m.|p.m.}}</font></font>"
     },
+    //"showBuyPremiumButton": false,
+    //"showPremiumShopButton": false,
     "serverInfo": {
       "enabled": false
       //"alpha": 75,
@@ -96,7 +100,7 @@
     "sixthSenseIcon": "cfg://sirmax/img/SixthSense.png",
     "sixthSenseDuration": 3000,
     "elements": ${"elements"},
-    "minimapDeadSwitch": true,
+    //"minimapDeadSwitch": false,
     "camera": {
       "enabled": true,
       "arcade": {

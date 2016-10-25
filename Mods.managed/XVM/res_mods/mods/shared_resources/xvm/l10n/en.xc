@@ -51,6 +51,26 @@
     "avgDamage": "Avg damage",
     "mainGun": "High caliber",
 
+    // DamageLog:
+    "sec": "sec",
+    "reloaded": "reloaded",
+    // Shell kind (macro {{type-shell}})
+    "armor_piercing": "AP",
+    "high_explosive": "HE",
+    "armor_piercing_cr": "APCR",
+    "armor_piercing_he": "HESH",
+    "hollow_charge": "HEAT",
+    // Text at hits no damage (ricochet, no penetration, no damage) (macro {{dmg}})
+    "intermediate_ricochet": "ricochet",
+    "final_ricochet": "ricochet",
+    "armor_not_pierced": "bounce",
+    "armor_pierced_no_damage": "blocked",
+    // Name part of vehicle (macro {{comp-name}})
+    "turret": "turret",
+    "hull": "hull",
+    "chassis": "chassis",
+    "gun": "gun",
+
     // BattleResults
     "Hit percent": "Hit percent",
     "Damage (assisted / own)": "Damage (assisted / own)",
@@ -152,7 +172,7 @@
     "china": "China",
     "japan": "Japan",
     "czech": "Сzech",
-    "swedish": "Swedish",
+    "sweden": "Sweden",
     
     // Vehicle type
     "HT": "HT",

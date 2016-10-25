@@ -29,6 +29,12 @@
       // "alpha"    - transparency                  / прозрачность
       // "scale"    - scale                         / масштаб
       //
+      // Nation flag.
+      // Флаг нации.
+      "flag": { "enabled": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
+      // Vehicle icon.
+      // Иконка танка.
+      "tankIcon": { "enabled": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
       // Vehicle class icon.
       // Иконка типа техники.
       "tankType": { "enabled": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
@@ -40,7 +46,7 @@
       "xp":       { "enabled": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
       // Vehicle name.
       // Название танка.
-      "tankName": { "enabled": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
+      "tankName": { "enabled": false, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
       // Info text (Crew incomplete, Repairs required)
       // Инфо текст (Неполный экипаж, Требуется ремонт).
       "info":     { "enabled": true, "dx": 0, "dy": 0, "alpha": 100, "scale": 1 },
@@ -60,15 +66,31 @@
     // Extra cell fields (see playersPanel.xc).
     // Дополнительные поля ячеек (см. playersPanel.xc).
     "extraFields": [
-      // Подложка слота
       // Slot background
+      // Подложка слота
       { "x": 1, "y": 1, "layer": "substrate", "width": 160, "height": 35, "bgColor": "0x0A0A0A" },
-      // Sign of mastery.
-      // Знак мастерства.
+      // Sign of mastery
+      // Знак мастерства
       {
         "enabled": true,
         "x": 4, "y": 14, "width": 23, "height": 23,
         "src": "img://gui/maps/icons/library/proficiency/class_icons_{{v.mastery}}.png"
+      },
+      // Vehicle name
+      // Название танка
+      { 
+        "enabled": true,
+        "x": 159, "y": 14, "align": "right",
+        "format": "<font face='$FieldFont' size='15' color='{{v.premium?#FFA759|#C8C8B5}}'>{{v.name}}</font>",
+        "shadow": { "$ref": { "path": "def.textFieldShadow" }, "color": "{{v.premium?0xFC3700|0xC8C8B5}}", "alpha": "{{v.premium?85|35}}", "blur": "{{v.premium?10|8}}" }
+      },
+      // Winrate
+      // Процент побед
+      {
+        "enabled": true,
+        "x": 24, "y": 16,
+        "format": "<b><font face='$FieldFont' size='12' color='{{v.c_winrate|#C8C8B5}}'>{{v.winrate%2d~%}}</font></b>",
+        "shadow": ${ "def.textFieldShadow" }
       }
     ]
   }

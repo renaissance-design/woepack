@@ -51,6 +51,26 @@
     "avgDamage": "Средний урон",
     "mainGun": "Основной калибр",
 
+    // DamageLog:
+    "sec": "сек",
+    "reloaded": "перезарядился",
+    // Shell kind (macro {{type-shell}})
+    "armor_piercing": "ББ",
+    "high_explosive": "ОФ",
+    "armor_piercing_cr": "БП",
+    "armor_piercing_he": "ХФ",
+    "hollow_charge": "КС",
+    // Text at hits no damage (ricochet, no penetration, no damage) (macro {{dmg}})
+    "intermediate_ricochet": "рикошет",
+    "final_ricochet": "рикошет",
+    "armor_not_pierced": "не пробито",
+    "armor_pierced_no_damage": "без урона",
+    // Name part of vehicle (macro {{comp-name}})
+    "turret": "башня",
+    "hull": "корпус",
+    "chassis": "шасси",
+    "gun": "орудие",
+
     // BattleResults
     "Hit percent": "Процент попаданий",
     "Damage (assisted / own)": "Урон (с вашей помощью / свой)",
@@ -152,7 +172,7 @@
     "china": "Китай",
     "japan": "Япония",
     "czech": "Чехословакия",
-    "swedish": "Швеция",
+    "sweden": "Швеция",
     
     // Vehicle type
     "HT": "ТТ",

@@ -37,6 +37,23 @@
      │                            │   ON_EVERY_SECOND          * can reduce performance
      │                            │   PY(event_name)  - event from python, sent by as_event(event_name)
      ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
+     │ "mouseEvents"              │ the events handlers must be binded using the function as_callback(event_name)
+     │ {                          │ обработчики событий должны быть привязаны с помощью функции as_callback(event_name)
+     │   "click"                  │ event is sent when the mouse button clicked inside the field
+     │                            │ событие отправляется при клике мышкой внутри поля
+     │   "mouseDown"              │ event is sent when the mouse button pressed inside the field
+     │                            │ событие отправляется при нажатии кнопки мышки внутри поля
+     │   "mouseUp"                │ event is sent when the mouse button released inside the field
+     │                            │ событие отправляется при отжатии кнопки мышки внутри поля
+     │   "mouseOver"              │ event is sent when the mouse pointer enters the field
+     │                            │ событие отправляется при перемещении курсора мыши на поле
+     │   "mouseOut"               │ event is sent when the mouse pointer leaves the field
+     │                            │ событие отправляется при перемещении курсора мыши из поля
+     │   "mouseMove"              │ event is sent when mouse pointer moves inside the field
+     │                            │ событие отправляется при перемещении курсора мыши внутри поля
+     │   "mouseWheel"             │ event is sent when mouse wheel rolled inside the field
+     │ }                          │ событие отправляется при прокручивании колеса мыши внутри поля
+     ├────────────────────────────┼──────────────────────────────────────────────────────────────────────────
      │ "hotKeyCode"               │ keyboard key code (see list in hotkeys.xc), when pressed - switches text field to show and apply configured html in "format", or hide;
      │                            │ when defined, text field will not be shown until key is pressed, to disable define null value or delete parameter
      │                            │ горячие клавиши клавиатуры (список в hotkeys.xc), при нажатии - выводится текстовое поле и применяются параметры html в "format", или скрывается поле;
@@ -211,7 +228,7 @@
       "align": "center",
       "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 1.5 },
       "textFormat": { "font": "mono", "size": 18, "align": "center" },
-      "format": "{{py:xvm.total_hp.text()}}"
+      "format": "{{py:xvm.total_hp.text}}"
     },
     "avgDamage": {
       "enabled": true,
@@ -242,6 +259,57 @@
       "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 1.5 },
       "textFormat": { "size": 15 },
       "format": "{{xvm-stat?{{l10n:Team strength}}: {{py:xvm.team_strength('{{allyStrengthStatic}}','{{enemyStrengthStatic}}')}} / {{py:xvm.team_strength('{{allyStrengthLive}}','{{enemyStrengthLive}}')}}}}"
+    },
+    "damageLog": {
+      "enabled": true,
+      "updateEvent": "PY(ON_HIT)",
+      "x": 240,
+      "y": 0,
+      "width": 300,
+      "height": 233,
+      "screenVAlign": "bottom",
+      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 3 },
+      "textFormat": { "color": "0xF4EFE8", "size": 16 },
+      "format": "{{py:xvm.damageLog.dLog}}"
+    },
+    "timerReload": {
+      "enabled": true,
+      "updateEvent": "PY(ON_TIMER_RELOAD)",
+      "x": 240,
+      "y": 0,
+      "width": 300,
+      "height": 252,
+      "screenVAlign": "bottom",
+      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 3 },
+      "textFormat": { "color": "0xF4EFE8", "size": 16 },
+      "format": "{{py:xvm.damageLog.timerReload}}"
+    },
+    "lastHit": {
+      "enabled": true,
+      "updateEvent": "PY(ON_LAST_HIT)",
+      "x": -120,
+      "y": 200,
+      "width": 200,
+      "height": 100,
+      "screenHAlign": "center",
+      "screenVAlign": "center",
+      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 3 },
+      "textFormat": {"align": "center", "color": "0xF4EFE8", "size": 16 },
+      "format": "{{py:xvm.damageLog.lastHit}}"
+    },
+    "fire": {
+      "enabled": false,
+      "updateEvent": "PY(ON_FIRE)",
+      "x": 120,
+      "y": 200,
+      "width": 200,
+      "height": 100,
+      "alpha": "{{py:xvm.damageLog.fire}}",
+      "screenHAlign": "center",
+      "screenVAlign": "center",
+      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 3 },
+      "textFormat": {"align": "center", "color": "0xF4EFE8", "size": 16 },
+      "format": "ПОЖАР"
     },
     "test": {
       "enabled": true,
