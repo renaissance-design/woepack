@@ -43,7 +43,7 @@
     "armor_piercing": "ББ",
     "high_explosive": "АФ",
     "armor_piercing_cr": "БП",
-    "armor_piercing_he": "БК",
+    "armor_piercing_he": "БФ",
     "hollow_charge": "КС",
     "intermediate_ricochet": "рыкашэт",
     "final_ricochet": "рыкашэт",

@@ -13,7 +13,7 @@
     "Yes": "",
     "No": "Nie",
     "Not available short": "",
-    "from": "",
+    "from": "z",
     "m": "",
     "Initialization": "Inicializácia",
     "Ping": "Ping",
