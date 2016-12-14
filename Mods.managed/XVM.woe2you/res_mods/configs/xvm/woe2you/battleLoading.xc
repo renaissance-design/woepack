@@ -8,7 +8,7 @@
     // Шаблон иконки клана.
     "clanIcon": {
       "enabled": true,
-      "x": 65, "y": 6, "width": 16, "height": 16, "align": "center", "alpha": 90,
+      "x": 65, "y": 6, "width": 16, "height": 16, "align": "center", "alpha": 90, "bindToIcon": true,
       "src": "{{clanicon}}"
     }
   },
@@ -23,6 +23,9 @@
     // true - disable Platoon icons. This blank space can house, for example, clan logos.
     // true - убрать отображение иконки взвода. На пустое поле можно вывести, например, иконку клана.
     "removeSquadIcon": false,
+    // Opacity percentage of vehicle icon. 0 - transparent ... 100 - opaque.
+    // Прозрачность в процентах иконки танка. 0 - прозрачные, 100 - не прозрачные.
+    "vehicleIconAlpha": 100,
     // true - disable vehicle level indicator.
     // true - убрать отображение уровня танка.
     "removeVehicleLevel": false,

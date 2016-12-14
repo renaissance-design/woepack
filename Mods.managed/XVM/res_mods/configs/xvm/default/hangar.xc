@@ -31,6 +31,9 @@
     // true - Return crew check box is selected by default
     // true - Включить галочку возврата экипажа по умолчанию
     "crewReturnByDefault": false,
+    // Number of perks to show without grouping
+    // Количество перков, которые отображаются без группировки
+    "crewMaxPerksCount": 8,
     // true - Show flags in barracks
     // true - Показывать флаги в казарме
     "barracksShowFlags": true,
@@ -60,8 +63,8 @@
       "updateInterval": 10000,
       // Axis field coordinates
       // Положение поля по осям
-      "x": 3,
-      "y": 51,
+      "x": 85,
+      "y": 52,
       // Horizontal alignment of field at screen ("left", "center", "right").
       // Горизонтальное выравнивание поля на экране ("left", "center", "right").
       "hAlign": "left",
@@ -82,10 +85,10 @@
       "columnGap": 3,
       // Leading between lines.
       // Пространство между строками
-      "leading": 0,
-      // true - place at top of other windows, false - at bottom.
-      // true - отображать поверх остальных окон, false - под.
-      "topmost": true,
+      "leading": 2,
+      // layer - "bottom", "normal" (default), "top".
+      // слой - "bottom", "normal" (по-умолчанию), "top".
+      "layer": "normal",
       // true - show title "Ping"
       // true - показывать заголовок "Пинг"
       "showTitle": true,
@@ -186,9 +189,9 @@
       // Leading between lines.
       // Пространство между строками
       "leading": 0,
-      // true - place at top of other windows, false - at bottom.
-      // true - отображать поверх остальных окон, false - под.
-      "topmost": true,
+      // layer - "bottom", "normal" (default), "top".
+      // слой - "bottom", "normal" (по-умолчанию), "top".
+      "layer": "normal",
       // true - show title "Online"
       // true - показывать заголовок "Онлайн"
       "showTitle": true,
@@ -245,7 +248,7 @@
       "shadow": {
         "enabled": true,
         "distance": 0,
-        "angle": 0,        
+        "angle": 0,
         "color": "0x000000",
         "alpha": 70,
         "blur": 4,
@@ -271,6 +274,12 @@
       // Сдвиг по оси Y
       "shiftY": 0
     },
+    // Show "Buy premium" button
+    // Показать кнопку "Купить премиум"
+    "showBuyPremiumButton": true,
+    // Show "Premium shop" button
+    // Показать кнопку "Премиум магазин"
+    "showPremiumShopButton": true,
     // Parameters for tank carousel
     // Параметры карусели танков
     "carousel": ${"carousel.xc":"carousel"},

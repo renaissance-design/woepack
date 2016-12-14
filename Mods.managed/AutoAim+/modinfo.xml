@@ -1,0 +1,13 @@
+<wot
+  mid="AUTOAIMPLUS"
+  hid="0090"
+  title="Autoaim+"
+  author="Krzysztof_Chodak"
+  info="Improved autoaim with visual indicator (new legal version)."
+  notes="http://forum.worldoftanks.eu/index.php?/topic/441413-0914-autoaim-indicationsnappingaddins/"
+  version="9.16-201611108"
+  client-version="0.9.16"
+  visible="true"
+  colorblind="true"
+>
+</wot>
