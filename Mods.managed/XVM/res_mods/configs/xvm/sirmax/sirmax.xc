@@ -56,6 +56,7 @@
     //"crewReturnByDefault": true,
     "crewMaxPerksCount": 10,
     "enableEquipAutoReturn": true,
+    "notificationsButtonType": "blink",
     "widgetsEnabled": true,
     "pingServers": {
       "$ref": { "path":"def.pingServers" },
@@ -222,7 +223,7 @@
     "nameFieldOffsetXRight": -20,
     "nameFieldWidthLeft": 200,
     "nameFieldWidthRight": 200,
-    "vehicleFieldOffsetXLeft": 30,
+    "vehicleFieldOffsetXLeft": 10,
     "vehicleFieldOffsetXRight": 30,
     "vehicleFieldWidthLeft": 200,
     "vehicleFieldWidthRight": 200,
@@ -303,8 +304,8 @@
     ]
   },
   "iconset": {
-    "battleLoadingAlly": "../../../../res/contour/Master_XH",
-    "battleLoadingEnemy": "../../../../res/contour/Master_XH",
+    "battleLoadingAlly": "../../../../res/atlases/BattleAtlasLeft",
+    "battleLoadingEnemy": "../../../../res/atlases/BattleAtlasRight",
     "playersPanelLeftAtlas": "../../../../res/atlases/BattleAtlasLeft",
     "playersPanelRightAtlas": "../../../../res/atlases/BattleAtlasRight",
     "fullStatsLeftAtlas": "../../../../res/atlases/BattleAtlasLeft",

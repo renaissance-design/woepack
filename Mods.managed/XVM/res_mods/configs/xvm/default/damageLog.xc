@@ -12,11 +12,11 @@
     {{vehicle}}           - vehicle name / название техники.
     {{c:vtype}}           - color depending on vehicle type / цвет в зависимости от типа техники.
     {{c:team-dmg}}        - color depending on damage source (ally , enemy, self damage) / цвет в зависимости от источника урона (союзник, противник, урон по себе).
-    {{c:costShell}}       - color depending on shell kind (gold, credits) / цвет в зависимости от типа снаряда (золото, кредиты).
+    {{c:costShell}}       - color depending on cost shell (gold, credits) / цвет в зависимости от стоимости снаряда (золото, кредиты).
     {{name}}              - nickname player who caused the damage / никнейм игрока, нанесшего урон.
     {{critical-hit}}      - critical hit / критическое попадание.
     {{c:hit-effects}}     - color depending on hit kind (with damage, ricochet, not penetrated, no damage) / цвет в зависимости от вида попадания (с уроном, рикошет, не пробито, без урона).
-    {{costShell}}         - text depending on shell kind (gold, credits) / текст в зависимости от типа снаряда (золото, кредиты).
+    {{costShell}}         - text depending on cost shell (gold, credits) / текст в зависимости от стоимости снаряда (золото, кредиты).
     {{comp-name}}         - name part of vehicle that was hit (turret, body, suspension, gun) / название части техники, в которую было попадание (башня, корпус, ходовая, орудие).
     {{clan}}              - clan name with brackets (empty if no clan) / название клана в скобках (пусто, если игрок не в клане).
     {{level}}             - vehicle level / уровень техники.
@@ -27,6 +27,9 @@
     {{dmg-ratio}}         - received damage in percent / полученный урон в процентах.
     {{team-dmg}}          - source of damage (ally , enemy, self damage) / источник урона (союзник, противник, урон по себе).
     {{splash-hit}}        - text when hit by splash damage from shell (HE/HESH) / текст при попадание осколков снаряда (ОФ/ХФ).
+    {{my-alive}}          - TO DO / возвращает 'alive', если я живой, '', если не живой
+    {{reloadGun}}         - TO DO / время перезарядки орудия 
+    {{gun-caliber}}       - TO DO / калибр орудия
 */
 
 {
@@ -40,6 +43,8 @@
     // Log of the received damage.
     // Лог полученного урона.
     "log": {
+      "x": 240,
+      "y": 23,
       // Kind of the received damage (macro {{dmg-kind}}).
       // Вид полученного урона (макрос {{dmg-kind}}).
       "dmg-kind": {
@@ -190,9 +195,23 @@
       // true - суммировать повреждения от тарана, столкновения с объектами, падения.
       //        Урон суммируется, если наносится чаще одного раза в секунду.
       "groupDamagesFromRamming_WorldCollision": true,
+      //TO DO
+      //Настройка тени
+      "shadow": { 
+        "distance": 1,
+        "angle": 90,
+        "color": "#000000",
+        "alpha": 75,
+        "blur": 5,
+        "strength": 3,
+        "hideObject": false,
+        "inner": false,
+        "knockout": false,
+        "quality": 1 
+      },
       // Damage log format.
       // Формат лога повреждений.
-      "formatHistory": "<textformat tabstops='[30,135,170,185]'><font face='mono' size='12'>{{number}}.</font><tab><font color='{{c:dmg-kind}}'>{{hit-effects}}{{critical-hit}}{{splash-hit}}<tab>{{dmg-kind}}</font><tab><font color='{{c:vtype}}'>{{vtype}}</font><tab><font color='{{c:team-dmg}}'>{{vehicle}}</font></textformat>"
+      "formatHistory": "<textformat tabstops='[30,135,170,185]'><font face='mono' size='12'>{{number%2d~.}}</font><tab><font color='{{c:dmg-kind}}'>{{hit-effects}}{{critical-hit}}{{splash-hit}}<tab>{{dmg-kind}}</font><tab><font color='{{c:vtype}}'>{{vtype}}</font><tab><font color='{{c:team-dmg}}'>{{vehicle}}</font></textformat>"
     },
     // Log of the received damage with the left Alt key.
     // Лог полученного урона c нажатой левой клавишей Alt.
@@ -203,35 +222,31 @@
       "showHitNoDamage": true,
       // Damage log format.
       // Формат лога повреждений.
-      "formatHistory": "<textformat tabstops='[30,135,170]'><font face='mono' size='12'>{{number}}.</font><tab><font color='{{c:dmg-kind}}'>{{hit-effects}}{{critical-hit}}{{splash-hit}}<tab>{{dmg-kind}}</font><tab><font color='{{c:team-dmg}}'>{{name}}</font></textformat>"
+      "formatHistory": "<textformat tabstops='[30,135,170]'><font face='mono' size='12'>{{number%2d~.}}</font><tab><font color='{{c:dmg-kind}}'>{{hit-effects}}{{critical-hit}}{{splash-hit}}<tab>{{dmg-kind}}</font><tab><font color='{{c:team-dmg}}'>{{name}}</font></textformat>"
     },
     // Display the last damage (hit).
     // Отображение последнего урона (попадания).
     "lastHit": {
       "$ref": { "path":"damageLog.log" },
+      "x": -120,
+      "y": 200,
       // true - show hits without damage, false - not to show.
       // true - отображать попадания без урона, false - не отображать.
       "showHitNoDamage": true,
       // Display duration (seconds).
       // Продолжительность отображения (секунды).
       "timeDisplayLastHit": 7,
+      //TO DO
+      //Настройка тени
+      "shadow": { 
+        "distance": 0,
+        "blur": 6,
+        "strength": 6,
+        "color": "{{dmg=0?#000000|#770000}}"
+      },
       // Last damage format.
       // Формат последнего урона.
       "formatLastHit": "<font size='36' color='{{c:dmg-kind}}'>{{hit-effects}}</font>"
-    },
-    // Timer reload (value is not accurate, and consistent with the standard characteristics of vehicle).
-    // Таймер перезарядки (значение не точное, и соответствует стандартным характеристикам техники).
-    "timeReload": {
-      "$ref": { "path":"damageLog.log" },
-      // Reload timer format.
-      // Формат таймера перезарядки.
-      "formatTimer": "<font face='xvm'>&#x114;</font>  {{timer}} {{l10n:sec}}.   [ <font color='{{c:team-dmg}}'>{{vehicle}}</font> ]",
-      // Reload timer format (after reload).
-      // Формат таймера перезарядки (после перезарядки).
-      "formatTimerAfterReload": "<font face='xvm'>&#x114;</font>   [ <font color='{{c:team-dmg}}'>{{vehicle}}</font> ]  {{l10n:reloaded}}",
-      // Display duration "formatTimerAfterReload" (seconds).
-      // Продолжительность отображения "formatTimerAfterReload" (секунды).
-      "timeTextAfterReload": 5
     }
   }
 }
