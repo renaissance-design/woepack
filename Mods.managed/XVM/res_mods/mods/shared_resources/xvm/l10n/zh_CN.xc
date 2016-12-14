@@ -157,7 +157,6 @@
     "token/active": "",
     "token/time_left": "",
     "token/time_left_warn": "",
-    "token/cnt": "",
     "token/unknown_status": "未知状态",
     "lobby/header/gold_locked_tooltip": "金币锁定",
     "lobby/header/gold_unlocked_tooltip": "金币解锁",

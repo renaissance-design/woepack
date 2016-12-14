@@ -84,6 +84,7 @@ Legend:
 │ S │ {{battletype}}         │ X │ X │ X │ X │ X │ X │ X │ X │ current battle type (values from texts/battletype section)
 │ S │ {{region}}             │ X │ X │ X │ X │ X │ X │ X │ X │ current game region (RU, EU, NA, ASIA, KR, CN, CT)
 │ S │ {{l10n:ID}}            │ X │ X │ X │ X │ X │ X │ X │ X │ localizated text, see en.xc for id
+│ D │ {{my-alive}}           │   │ X │ X │ X │ X │ X │ X │ X │ is my vehicle alive
 │ D │ {{my-frags}}           │   │ X │ X │ X │ X │ X │ X │ X │ my frags
 │ S │ {{my-veh-id}}          │ X │ X │ X │ X │ X │ X │ X │ X │ my vehicle id
 │ S │ {{my-vehicle}}         │ X │ X │ X │ X │ X │ X │ X │ X │ my vehicle name
@@ -164,6 +165,14 @@ Legend:
 │ S │ {{c:tsb}}          │ X │ X │ X │ X │ X │ X │ dynamic colors for tsb
 └───┴────────────────────┴───┴───┴───┴───┴───┴───┴─────────────────────────────────────────────────
   * Any color macro you can change to transparency macro (e.g. {{a:tdb}}).
+
+  Extra Statistic macros
+┌───┬────────────────────────┬───┬───┬───┬───┬───┬───┬─────────────────────────────────────────────────
+│SDH│ macro                  │ BL│ PP│ SF│ MM│ VM│BLb│ Description
+├───┼────────────────────────┼───┼───┼───┼───┼───┼───┼─────────────────────────────────────────────────
+│ S │ {{top_tankers_rank}}   │ X │ X │ X │ X │ X │ X │ player's rank on current vehicle in the "Top Tankers" game event
+│ S │ {{top_tankers_emblem}} │ X │ X │ X │ X │ X │ X │ emblem for player's rank on current vehicle in the "Top Tankers" game event
+└───┴────────────────────────┴───┴───┴───┴───┴───┴───┴─────────────────────────────────────────────────
 
   XVM services macros (applied for player)
 ┌───┬────────────────────┬───┬───┬───┬───┬───┬───┬─────────────────────────────────────────────────

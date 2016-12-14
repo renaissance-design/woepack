@@ -157,7 +157,6 @@
     "token/active": "",
     "token/time_left": "",
     "token/time_left_warn": "",
-    "token/cnt": "",
     "token/unknown_status": "",
     "lobby/header/gold_locked_tooltip": "",
     "lobby/header/gold_unlocked_tooltip": "",
