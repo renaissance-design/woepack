@@ -84,61 +84,43 @@
     "damageLog": {
       "enabled": true,
       "updateEvent": "PY(ON_HIT)",
-      "x": "{{py:xvm.damageLog.dLog_x}}",
-      "y": "{{py:xvm.damageLog.dLog_y}}",
+      "x": 240,
+      "y": 0,
       "width": 300,
-      "height": 210,
+      "height": 233,
       "screenVAlign": "bottom",
-      "shadow": { 
-        "distance": "{{py:xvm.damageLog.dLog_shadow('distance')}}",
-        "angle": "{{py:xvm.damageLog.dLog_shadow('angle')}}",
-        "color": "{{py:xvm.damageLog.dLog_shadow('color')}}",
-        "alpha": "{{py:xvm.damageLog.dLog_shadow('alpha')}}",
-        "blur": "{{py:xvm.damageLog.dLog_shadow('blur')}}",
-        "strength": "{{py:xvm.damageLog.dLog_shadow('strength')}}",
-        "hideObject": "{{py:xvm.damageLog.dLog_shadow('hideObject')}}",
-        "inner": "{{py:xvm.damageLog.dLog_shadow('inner')}}",
-        "knockout": "{{py:xvm.damageLog.dLog_shadow('knockout')}}",
-        "quality": "{{py:xvm.damageLog.dLog_shadow('quality')}}" 
-      },
-      "textFormat": { "color": "0xF4EFE8", "size": 16},
-      "format": "{{py:xvm.damageLog.dLog}}",
-      "mouseEvents": {
-        "mouseDown": "dLog_mouseDown",
-        "mouseUp": "dLog_mouseUp",
-        "mouseMove": "dLog_mouseMove"
-      }
+      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 3 },
+      "textFormat": { "color": "0xF4EFE8", "size": 16 },
+      "format": "{{py:xvm.damageLog.dLog}}"
+    },
+    // Timer reload (see damageLog.xc).
+    // Таймер перезарядки (см. damageLog.xc).
+    "timerReload": {
+      "enabled": true,
+      "updateEvent": "PY(ON_TIMER_RELOAD)",
+      "x": 240,
+      "y": 0,
+      "width": 300,
+      "height": 252,
+      "screenVAlign": "bottom",
+      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 3 },
+      "textFormat": { "color": "0xF4EFE8", "size": 16 },
+      "format": "{{py:xvm.damageLog.timerReload}}"
     },
     // Display the last damage (hit) (see damageLog.xc).
     // Отображение последнего урона (попадания) (см. damageLog.xc).
     "lastHit": {
       "enabled": true,
       "updateEvent": "PY(ON_LAST_HIT)",
-      "x": "{{py:xvm.damageLog.lastHit_x}}",
-      "y": "{{py:xvm.damageLog.lastHit_y}}",
+      "x": -120,
+      "y": 200,
       "width": 200,
       "height": 100,
       "screenHAlign": "center",
       "screenVAlign": "center",
-      "shadow": { 
-        "distance": "{{py:xvm.damageLog.lastHit_shadow('distance')}}",
-        "angle": "{{py:xvm.damageLog.lastHit_shadow('angle')}}",
-        "color": "{{py:xvm.damageLog.lastHit_shadow('color')}}",
-        "alpha": "{{py:xvm.damageLog.lastHit_shadow('alpha')}}",
-        "blur": "{{py:xvm.damageLog.lastHit_shadow('blur')}}",
-        "strength": "{{py:xvm.damageLog.lastHit_shadow('strength')}}",
-        "hideObject": "{{py:xvm.damageLog.lastHit_shadow('hideObject')}}",
-        "inner": "{{py:xvm.damageLog.lastHit_shadow('inner')}}",
-        "knockout": "{{py:xvm.damageLog.lastHit_shadow('knockout')}}",
-        "quality": "{{py:xvm.damageLog.lastHit_shadow('quality')}}" 
-      },
+      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 3 },
       "textFormat": {"align": "center", "color": "0xF4EFE8", "size": 16 },
-      "format": "{{py:xvm.damageLog.lastHit}}",
-      "mouseEvents": {
-        "mouseDown": "lastHit_mouseDown",
-        "mouseUp": "lastHit_mouseUp",
-        "mouseMove": "lastHit_mouseMove"
-      }
+      "format": "{{py:xvm.damageLog.lastHit}}"
     },
     "fire": {
       "enabled": false,
@@ -153,18 +135,6 @@
       "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 3 },
       "textFormat": {"align": "center", "color": "0xF4EFE8", "size": 16 },
       "format": "ПОЖАР"
-    },
-    "totalEfficiency": {
-      "enabled": true,
-      "updateEvent": "PY(ON_TOTAL_EFFICIENCY)",
-      "x": 240,
-      "y": -2,
-      "width": 300,
-      "height": 22,
-      "screenVAlign": "bottom",
-      "shadow": { "distance": 1, "angle": 90, "alpha": 80, "blur": 5, "strength": 3 },
-      "textFormat": { "color": "0xE3E3E3", "size": 16 },
-      "format": "<textformat tabstops='[65,130,196]' leading='-2' ><img src='xvm://res/icons/Efficiency/damage.png'> {{py:xvm.totalDamage}}<tab><img src='xvm://res/icons/Efficiency/assist.png'> {{py:xvm.totalAssist}}<tab><img src='xvm://res/icons/Efficiency/reflect.png'> {{py:xvm.totalBlocked}}<tab><img src='xvm://res/icons/Efficiency/discover.png'> {{py:xvm.detection}}</textformat>"
     }
   }
 }

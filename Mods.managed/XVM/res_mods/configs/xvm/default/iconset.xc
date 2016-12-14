@@ -4,20 +4,20 @@
  */
 {
   "iconset": {
-    // Path to the atlas with icons for the battle loading screen.
-    // Путь к атласу с иконками для экрана загрузки боя.
-    "battleLoadingAlly": "battleAtlas",
-    "battleLoadingEnemy": "battleAtlas",
-    // Path to the atlas with icons for the players panels.
-    // Путь к атласу с иконками для "ушей".
+    // Folder containing the icon set for Battle Loading Screen.
+    // Набор иконок для экрана загрузки боя.
+    "battleLoadingAlly": "contour/",
+    "battleLoadingEnemy": "contour/",
+    // Folder containing the icon set for the Players Panels.
+    // Набор иконок для "ушей".
     "playersPanelLeftAtlas": "battleAtlas",
     "playersPanelRightAtlas": "battleAtlas",
-    // Path to the atlas with icons for the full stats form (on "Tab" key pressed).
-    // Путь к атласу с иконками для формы подробной статистики (при нажатии клавиши "Tab").
+    // Folder containing the icon set for Full Stats Form (pressing "Tab").
+    // Набор иконок для формы подробной статистики (по Tab).
     "fullStatsLeftAtlas": "battleAtlas",
     "fullStatsRightAtlas": "battleAtlas",
-    // Path to the atlas with icons for the over-target markers.
-    // Путь к атласу с иконками для маркеров над танками.
+    // Folder containing the icon set for the Over-target markers.
+    // Набор иконок для маркеров над танками.
     "vehicleMarkerAllyAtlas": "vehicleMarkerAtlas",
     "vehicleMarkerEnemyAtlas": "vehicleMarkerAtlas"
   }

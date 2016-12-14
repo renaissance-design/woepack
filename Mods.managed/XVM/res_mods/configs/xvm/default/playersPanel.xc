@@ -42,12 +42,6 @@
       "format": "<font color='{{alive?{{x-spotted?#FFBB00|{{x-sense-on?#D9D9D9|#BFBFBF}}}}|#FFFFFF}}' alpha='{{alive?#FF|#80}}'>{{alive?{{x-spotted?&#x70;|{{x-sense-on?&#x70;|{{x-enabled?&#x7A;}}}}}}}}</font>",
       "shadow": {}
     },
-    // "Top tankers" rank definition.
-    // Шаблон позиции в "Танковых асах".
-    "topTankers": {
-      "x": 77, "y": 6, "width": 16, "height": 16, "align": "center", "bindToIcon": true,
-      "src": "{{top_tankers_emblem}}"
-    },
     // Clan icon.
     // Иконка клана.
     "clanIcon": {
@@ -251,7 +245,6 @@
       // Set of formats for left panel (extended format supported, see above)
       // Набор форматов для левой панели (поддерживается расширенный формат, см. выше)
       "extraFieldsLeft": [
-        ${"def.topTankers"},
         ${"def.hpBarBg"},
         ${"def.hpBar"},
         ${"def.hp"},
@@ -262,7 +255,6 @@
       // Set of formats for right panel (extended format supported, see above)
       // Набор форматов для правой панели (поддерживается расширенный формат, см. выше)
       "extraFieldsRight": [
-        ${"def.topTankers"},
         ${"def.hpBarBg"},
         ${"def.hpBar"},
         ${"def.hp"},
@@ -362,8 +354,7 @@
         ${"def.hp"},
         ${"def.clanIcon"},
         ${"def.xvmUserMarker"},
-        ${"def.xmqpServiceMarker"},
-        ${"def.topTankers"}
+        ${"def.xmqpServiceMarker"}
       ],
       // Set of formats for right panel (extended format supported, see above)
       // Набор форматов для правой панели (поддерживается расширенный формат, см. выше)
@@ -373,8 +364,7 @@
         ${"def.hp"},
         ${"def.clanIcon"},
         ${"def.xvmUserMarker"},
-        ${"def.enemySpottedMarker"},
-        ${"def.topTankers"}
+        ${"def.enemySpottedMarker"}
       ]
     },
     // Options for the "medium2" panels - the second of the medium panels.
@@ -468,8 +458,7 @@
         ${"def.hp"},
         ${"def.clanIcon"},
         ${"def.xvmUserMarker"},
-        ${"def.xmqpServiceMarker"},
-        ${"def.topTankers"}
+        ${"def.xmqpServiceMarker"}
       ],
       // Set of formats for right panel (extended format supported, see above)
       // Набор форматов для правой панели (поддерживается расширенный формат, см. выше)
@@ -479,8 +468,7 @@
         ${"def.hp"},
         ${"def.clanIcon"},
         ${"def.xvmUserMarker"},
-        ${"def.enemySpottedMarker"},
-        ${"def.topTankers"}
+        ${"def.enemySpottedMarker"}
       ]
     },
     // Options for the "large" panels - the widest panels.
@@ -571,8 +559,7 @@
         ${"def.hp"},
         ${"def.clanIcon"},
         ${"def.xvmUserMarker"},
-        ${"def.xmqpServiceMarker"},
-        ${"def.topTankers"}
+        ${"def.xmqpServiceMarker"}
       ],
       // Set of formats for right panel (extended format supported, see above)
       // Набор форматов для правой панели (поддерживается расширенный формат, см. выше)
@@ -582,8 +569,7 @@
         ${"def.hp"},
         ${"def.clanIcon"},
         ${"def.xvmUserMarker"},
-        ${"def.enemySpottedMarker"},
-        ${"def.topTankers"}
+        ${"def.enemySpottedMarker"}
       ]
     }
   }
