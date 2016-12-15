@@ -1,0 +1,24 @@
+/*
+   Settings for switch-buttons in lobby
+   
+   Make changes only with UTF-8-capable editor like Notepad++
+*/
+{
+  // switch-button in lobby on (true) or off (false):
+  "enable": true,
+  // image and position for button:
+  "button": {
+	// path to button-image, relative to folder /res_mods/0.x.y
+	"image": "../configs/HangMan/Button.png",
+	// button-alignment, allowed values: "center" "left" and "right"
+	"align": "center",
+	// x-position
+	"pos_x": 290,
+	// y-position	
+	"pos_y": 5,  
+	// alpha for glow-effect, values 0.0 (transparent) to 1.0 (full visible)	
+	"glow_alpha": 1.0,
+	// convert button-image to grey, full colors on mouse-over
+	"grey": false
+  }
+}

@@ -1,0 +1,30 @@
+<prohorovka_defense.xml>
+	<spacepath>	spaces/96_prohorovka_defense	</spacepath>
+	<alias> _(#arenas:96_prohorovka_defense/name) </alias>
+	<previewImage> hangar_defs/prohorovka_defense.jpg </previewImage>
+	<vehicleCamouflageKind>	summer	</vehicleCamouflageKind>
+	<audio>
+		<wwmusic>music_rus_vilage</wwmusic>
+		<wwambientSound>ambient_wind_autumn_01</wwambientSound>
+	</audio>
+	<hangarSettings>
+		<v_scale>	1.0	</v_scale>
+		<v_start_angles>	0.0 0.0 2.0	</v_start_angles>
+		<v_start_pos>	61.95 13.6 157	</v_start_pos>
+		<cam_start_target_pos>	61.95 13.6 157	</cam_start_target_pos>
+		<cam_start_dist>	17.5	</cam_start_dist>
+		<cam_start_angles>	130.0 -15.0	</cam_start_angles>
+		<cam_dist_constr>	6.0 50.0	</cam_dist_constr>
+		<cam_pitch_constr>	-70.0 5.0	</cam_pitch_constr>
+		<cam_sens>	0.005	</cam_sens>
+		<cam_pivot_pos>	0.0 1.0 0.0	</cam_pivot_pos>
+		<cam_fluency>	0.05	</cam_fluency>
+		<emblems_alpha_damaged>	0.3	</emblems_alpha_damaged>
+		<emblems_alpha_undamaged>	0.9	</emblems_alpha_undamaged>
+		<shadow_light_dir>	-0.3 -0.5 0.7	</shadow_light_dir>
+		<preview_cam_start_dist>	7.8	</preview_cam_start_dist>
+		<preview_cam_start_angles>	110.0 0.0	</preview_cam_start_angles>
+		<preview_cam_pivot_pos>	-2.0 1.0 0.0	</preview_cam_pivot_pos>
+		<preview_cam_start_target_pos>	61.95 13.6 157	</preview_cam_start_target_pos>
+	</hangarSettings>
+</prohorovka_defense.xml>

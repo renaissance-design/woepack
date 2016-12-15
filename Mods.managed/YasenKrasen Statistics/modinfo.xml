@@ -4,8 +4,8 @@
   author="soloviyko, Dado_Ze"
   title="YasenKrasen Session Statistics"
   info="Provides extended battle session statistics in garage as well as displaying the result or the previous battle while in a new battle."
-  version="9.16b"
-  notes="http://forum.worldoftanks.com/index.php?/topic/445745-"
-  client-version="0.9.16"
+  version="9.17"
+  notes="http://forum.worldoftanks.eu/index.php?/topic/583433-09170-unofficial-yasenkrasen-coloured-messages-session-statistics-eng-14122016/"
+  client-version="0.9.17.0"
   visible="true"
 />

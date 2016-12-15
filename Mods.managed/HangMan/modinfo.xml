@@ -5,8 +5,8 @@
   author="goofy67"
   info="A hangar manager, allowing you to replace your default garage."
   notes="http://www.goofy67-wot.de/hangman-english.php"
-  version="2.9.6"
-  client-version="0.9.16"
+  version="2.10"
+  client-version="0.9.17.0"
   visible="true"
   colorblind="true"
 >

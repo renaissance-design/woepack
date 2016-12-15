@@ -103,27 +103,30 @@
     WN8                      WN8 rating
     XWN8                     WN8 rating in XVM scale (0-100)
 
+    ButtonPage               Button depending of page, used only for ButtonsLayout
+    ButtonReset              Button Reset, used only for ButtonsLayout
+
    Type of battle for "battleType" section:
-     0 Special Battle (Clan War etc.)
-     1 Random Battle
-     2 Team Training
-     3 Tank Company Battle
-     4 Tutorial
-     5 Team Battle
-     6 Fallout
-     7 Event Battle (8-bit, Tank Football, Tank Racing etc.)
-     8 Stronghold Skirmishes
-     9 Stronghold Battle
-    10 Rated Team Battle
-    11 Rated Sandbox
-    12 Sandbox
-    13 Fallout Classic
-    14 Fallout MultiTeam
+     0 UNKNOWN               Special Battle (Clan War, Tournament etc.)
+     1 RANDOM                Random Battle
+     2 TRAINING              Team Training
+     3 COMPANY               Tank Company Battle
+     4 TUTORIAL              Tutorial
+     5 CYBERSPORT            Team Battle (Unranked)
+     6 FALLOUT               Rampage
+     7 EVENT_BATTLES         Event Battle (8-bit, Tank Football etc.)
+     8 SORTIE                Stronghold Skirmishes
+     9 FORT_BATTLE           Stronghold Battle (Attack/Defense)
+    10 RATED_CYBERSPORT      Team Battle (Ranked)
+    11 RATED_SANDBOX         Proving Ground <10 battles
+    12 SANDBOX               Proving Ground >10 battles
+    13 FALLOUT_CLASSIC       Domination
+    14 FALLOUT_MULTITEAM     Steel Hunt
 
    Decimal places and right alignment of macros
     :d                       Macro without decimal ({{deathsRate:d}} will be displayed '63')
     :1f                      Macro with one decimal ({{deathsRate:1f}} will be displayed '63.4')
-    :1-20                    Align macro to the right with a fixed width 1-20 ({{netCredits:6}} will be displayed ' 1 540'
-    :1-20.1f                 Align macro to the right with a fixed width 1-20 and one decimal ({{netCredits:10.1f}} will be displayed '   1 540.0'
-    :1-20.2f                 Align macro to the right with a fixed width 1-20 and two decimal ({{netCredits:10.2f}} will be displayed '  1 540.00'
+    :1-20                    Align macro to the right with a fixed width 1-20 ({{netCredits:6}} will be displayed ' 1 540')
+    :1-20.1f                 Align macro to the right with a fixed width 1-20 and one decimal ({{netCredits:10.1f}} will be displayed '   1 540.0')
+    :1-20.2f                 Align macro to the right with a fixed width 1-20 and two decimal ({{netCredits:10.2f}} will be displayed '  1 540.00')
                             *Note, for the alignment to work properly, you need to use a monospaced font with fixed width! (i.e. Courier New, Consolas or similar font)
