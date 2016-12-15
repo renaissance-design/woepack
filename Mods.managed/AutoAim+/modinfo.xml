@@ -5,8 +5,8 @@
   author="Krzysztof_Chodak"
   info="Improved autoaim with visual indicator (new legal version)."
   notes="http://forum.worldoftanks.eu/index.php?/topic/441413-0914-autoaim-indicationsnappingaddins/"
-  version="9.16-201611108"
-  client-version="0.9.16"
+  version="0.9.17.0-20161215"
+  client-version="0.9.17.0"
   visible="true"
   colorblind="true"
 >

@@ -31,8 +31,9 @@
     "follow_me_snapping": true,
     "addon-auto_announce_reload": {
         "enabled": false,
-        "clip_reload": true,
-        "reload_longer_than": 10
+        "clip_reload": false,
+        "reload_longer_than": 0,
+        "only_with_C": true
     },
     "addon-repair_with_T": {
         "enabled": true,
@@ -52,5 +53,6 @@
                  "order of devices in first option matters for small repair kit as it will repair first found!"]
     },
     "addon-dead_shot_blocker": true,
-    "addon-ally_shot_blocker": true
+    "addon-ally_shot_blocker": true,
+    "addon-help_on_spot": false
 }
