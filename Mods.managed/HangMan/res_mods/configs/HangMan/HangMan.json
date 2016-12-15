@@ -39,6 +39,9 @@
 	// switch Clan-Logo on/off:
 	"ClanLogo": true,
 	//
+	// switch cap-circles of some (not all) maps on ( = true) or off ( = false) 
+	"showCapCircle": false,
+	//
 	// settings for keys (and -combinations)
 	"keys":	{	  
 	  // in battle: safe current map and position as hangar-file:
