@@ -1,5 +1,6 @@
 ﻿/*
 	The name of modification - Calculator_rankings_battle
+	Version of the game client - 0.9.17
 	Modification Author - Ekspoint
 	Config Author - NooBooL
 	Config Editor - WOT_Avenger
@@ -22,71 +23,72 @@
     || {COEF}                   ||  || The effectiveness of the battle damage on the current tank                           ||
     || {DIFF}                   ||  || Average damage caused by the server that you need to apply                           ||
     || {AVGSHOTS}               ||  || Average damage caused for your number of shots                                       ||
-    || {AVGDAMAGE}              ||	|| average damage during the battle	                                                    ||
+    || {AVGDAMAGE}              ||	|| Average damage during the battle	                                                    ||
 	|| {DAMAGE}                 ||  || The total damage caused                                                              ||
+	|| {LASTDAMAGE}             ||  || The damage of last shot                                                              ||
 	|| {MAINGUN}                ||  || High Caliber                                                                         ||
 	--------------------------------------------------------------------------------------------------------------------------
 */
 {
 	    "settings": {
-		    "enable": true,
-			"dragEnable": true,                   // (Ctrl+LClick) and drag the mod wherever you want
-			"reloadKey": "KEY_LALT and KEY_2",
-		    "hotKeyEnable": "KEY_LALT and KEY_1"
+		    "enable": true,                        // Global switch of the mod
+			"dragEnable": true,                    // (Ctrl+LClick) and drag the mod wherever you want
+			"reloadKey": "KEY_LALT and KEY_2",     // Update config in battle and hangar by pressing hotkey
+		    "hotKeyEnable": "KEY_LALT and KEY_1"   // Enable/Disable mod in battle with hotkey
 		},
 		// Background settings
         "background": {
-		    "enable": false,
-            "alpha": 100,
-            "height": 70,
+		    "enable": false,                       // Enable or disable background (true - enabled, false - disabled)
+            "alpha": 40,
+            "height": 20,
             "image": "../../gui/maps/bg.png",
-            "width": 200,
-            "x": -30,
-            "y": 440
+            "width": 70,
+            "x": -3,  // Coordinates x (horizontal)
+            "y": 0   // Coordinates y (vertical)
         },
 		// Shadow Text seetings
         "shadow": {
 		    "enable": true,
             "alpha": 100,
-            "angle": 90,
+            "angle": 0,
             "color": "#000000",
             "distance": 0,
             "size": 3,
-            "strength": 200
+            "strength": 400
         },
 		// Text settings
         "text": {
-		    "enable": true,
+		    "enable": true,   // Text On, off element (true - enabled, false - disabled)
 			"alignX": "left", // Horizontal alignment [left, center, right]
             "alignY": "top",  // Vertical alignment   [top, center, bottom]
-            "format": "<b><font color='#ffffff' size='13' face='$TextFont'>WN8: <font color='{colorWN8}'>{WN8}</font></font></b>",
-			"x": 125,
-            "y": 39
+            "format": "<b><font color='#ffffff' size='13' face='ZurichCondBold'>WN8: <font color='{colorWN8}'>{WN8}</font></font></b>",
+			"x": 120,  // Coordinates x (horizontal)
+            "y": 39    // Coordinates y (vertical)
         },
 		// Dynamic colors for WN8, EFF, XWN8, EFF, COEF, DIFF, AVGDAMAGE
 		"colors": [
-		    {"type": "WN8",		    "value": 0,             "color": "#FE0E00"}, //    0 - 400  - very bad   (20% of players)
+		    {"type": "WN8",		    "value": 0,             "color": "#FE0E00"}, //    0 - 400  - very bad   (20% of players)			
 	        {"type": "WN8",		    "value": 400,			"color": "#FE7903"}, //  400 - 900  - bad        (better then 20% of players)
 	        {"type": "WN8",		    "value": 900,			"color": "#F8F400"}, //  900 - 1470 - normal     (better then 60% of players)
 	        {"type": "WN8",		    "value": 1470,			"color": "#60FF00"}, // 1470 - 2180 - good       (better then 90% of players)
 	        {"type": "WN8",		    "value": 2180,			"color": "#02C9B3"}, // 2180 - 2880 - very good  (better then 99% of players)
 	        {"type": "WN8",		    "value": 2880,			"color": "#D042F3"}, // 2880 - *    - unique     (better then 99.9% of players)
 
-	        {"type": "EFF",		    "value": 0,     	    "color": "#FE0E00"}, //    0 - 614  - very bad   (20% of players)
+	        {"type": "EFF",		    "value": 0,     	    "color": "#FE0E00"}, //    0 - 614  - very bad   (20% of players)			
 	        {"type": "EFF",		    "value": 610,			"color": "#FE7903"}, //  615 - 869  - bad        (better then 20% of players)
 	        {"type": "EFF",		    "value": 875,			"color": "#F8F400"}, //  875 - 1174 - normal     (better then 60% of players)
-	        {"type": "EFF",		    "value": 1175,			"color": "#60FF00"}, // 1175 - 1524 - good       (better then 90% of players)
+	        {"type": "EFF",		    "value": 1175,			"color": "#60FF00"}, // 1175 - 1524 - good       (better then 90% of players) 
 	        {"type": "EFF",	    	"value": 1540,			"color": "#02C9B3"}, // 1540 - 1849 - very good  (better then 99% of players)
 	        {"type": "EFF",	    	"value": 1880,			"color": "#D042F3"}, // 1880 - *    - unique     (better then 99.9% of players)
 				
-		    {"type": "XWN8",		"value": 0,	     	    "color": "#FE0E00"}, // 00   - 16.5 - very bad   (20% of players)
+		    {"type": "XWN8",		"value": 0,	     	    "color": "#FE0E00"}, // 00   - 16.5 - very bad   (20% of players)			
 	        {"type": "XWN8",		"value": 16.5,			"color": "#FE7903"}, // 16.5 - 33.5 - bad        (better then 20% of players)
 	        {"type": "XWN8",		"value": 33.5,			"color": "#F8F400"}, // 33.5 - 52.5 - normal     (better then 60% of players)
 	        {"type": "XWN8",		"value": 52.5,			"color": "#60FF00"}, // 52.5 - 75.5 - good       (better then 90% of players)
 	        {"type": "XWN8",		"value": 75.5,			"color": "#02C9B3"}, // 75.5 - 92.5 - very good  (better then 99% of players)
 	        {"type": "XWN8",		"value": 92.5,			"color": "#D042F3"}, // 92.5 - XX   - unique     (better then 99.9% of players)
 
-		    {"type": "XEFF",		"value": 0,		        "color": "#FE0E00"}, // 00   - 16.5 - very bad   (20% of players)
+		    {"type": "XEFF",		"value": 0,		        "color": "#FE0E00"}, // 00   - 16.5 - very bad   (20% of players)			
 	        {"type": "XEFF",		"value": 16.5,			"color": "#FE7903"}, // 16.5 - 33.5 - bad        (better then 20% of players)
 	        {"type": "XEFF",		"value": 33.5,			"color": "#F8F400"}, // 33.5 - 52.5 - normal     (better then 60% of players)
 	        {"type": "XEFF",		"value": 52.5,			"color": "#60FF00"}, // 52.5 - 75.5 - good       (better then 90% of players)
