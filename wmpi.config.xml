@@ -2,7 +2,7 @@
     <id>WOE2YOU_MODPACK</id>
     <author>woe2you</author>
     <title>woepack</title>
-    <client-version>0.9.17.0</client-version>
+    <client-version>0.9.17.0.1</client-version>
     <update-url direct="true"></update-url>
     <pack-file merge="false">wot.mod.tce.pack</pack-file>
     <version>1.0.0.6</version>
