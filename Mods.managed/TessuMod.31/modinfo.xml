@@ -1,0 +1,9 @@
+<wot
+  mid="TESSU31"
+  hid="0061"
+  title="TessuMod plugin for TeamSpeak 3.1"
+  author="JHakonen"
+  info="TS3.1 version of TessuMod plugin."
+  requires="TESSU"
+>
+</wot>
