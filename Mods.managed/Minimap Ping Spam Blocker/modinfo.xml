@@ -5,8 +5,8 @@
   author="Elkano"
   info="Blocks repeated minimap pings."
   notes=""
-  version="1.12"
-  client-version="0.9.15.2"
+  version="1.3"
+  client-version="0.9.17.0.1"
   visible="true"
   colorblind="true"
 >
