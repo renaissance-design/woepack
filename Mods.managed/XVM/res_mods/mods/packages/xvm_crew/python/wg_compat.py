@@ -1,4 +1,4 @@
-""" XVM (c) www.modxvm.com 2013-2016 """
+""" XVM (c) www.modxvm.com 2013-2017 """
 
 from CurrentVehicle import g_currentVehicle
 from gui import SystemMessages
@@ -14,7 +14,7 @@ class _WGCompat():
             return
         result = yield TankmanReturn(g_currentVehicle.item).request()
         if len(result.userMsg) and print_message:
-            SystemMessages.g_instance.pushI18nMessage(result.userMsg, type=result.sysMsgType)
+            SystemMessages.pushI18nMessage(result.userMsg, type=result.sysMsgType)
 
 
     @process('crewReturning')

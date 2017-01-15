@@ -4,7 +4,7 @@
   //"language": "pl",
   "def": {
     "formatNick": "{{name%.20s~..}}<font alpha='#A0'>{{clan}}</font>",
-    "formatVehicle": "<font face='Consolas' size='11'><img src='xvm://res/icons/xvm/xvm-user-{{xvm-user|none}}.png'><img src='xvm://res/icons/flags/{{flag|default}}.png' width='16' height='11'><font color='{{c:avglvl|#666666}}'>{{avglvl%d|-}}</font> <font color='{{t-battles>19?{{c:xte|#666666}}|#666666}}'>{{xte|--}}</font>|<font color='{{c:xwgr|#666666}}'>{{xwgr|--}}</font>|<font color='{{c:xeff|#666666}}'>{{xeff|--}}</font>|<font color='{{c:xwn8|#666666}}'>{{xwn8|--}}</font> <font color='{{c:kb|#666666}}'>{{kb%2d~k|--k}}</font></font>",
+    "formatVehicle": "<font face='Consolas' size='11'><img src='xvm://res/icons/xvm/xvm-user-{{xvm-user|none}}.png'><img src='xvm://res/icons/flags/{{flag|default}}.png' width='16' height='13' vspace='-2'><font color='{{c:avglvl|#666666}}'>{{avglvl%d|-}}</font> <font color='{{t-battles>19?{{c:xte|#666666}}|#666666}}'>{{xte|--}}</font>|<font color='{{c:xwgr|#666666}}'>{{xwgr|--}}</font>|<font color='{{c:xeff|#666666}}'>{{xeff|--}}</font>|<font color='{{c:xwn8|#666666}}'>{{xwn8|--}}</font> <font color='{{c:kb|#666666}}'>{{kb%2d~k|--k}}</font></font>",
     //"formatVehicle": "{{vehicle}}",
 
     "pingServers": {
@@ -58,6 +58,7 @@
     "enableEquipAutoReturn": true,
     "notificationsButtonType": "blink",
     "widgetsEnabled": true,
+    "blockVehicleIfLowAmmo": true,
     "pingServers": {
       "$ref": { "path":"def.pingServers" },
       "x": 5
@@ -166,6 +167,7 @@
     "__stub__": null
   },
   "battleLoading": {
+    //"clockFormat": "H:i",
     "showBattleTier": true,
     //"removeSquadIcon": true,
     //"vehicleIconAlpha": 30,
@@ -179,18 +181,27 @@
     //"nameFieldWidthDeltaLeft": 10,
     //"nameFieldOffsetXRight": "{{xvm-stat?-32|0}}",
     //"nameFieldWidthDeltaRight": 10,
-    //"vehicleFieldOffsetXLeft": 10,
-    //"vehicleFieldWidthDeltaLeft": 10,
-    //"vehicleFieldOffsetXRight": 10,
-    //"vehicleFieldWidthDeltaRight": 10,
-    //"vehicleIconOffsetXLeft": 4,
-    //"vehicleIconOffsetXRight": 4,
+    "vehicleFieldOffsetXLeft": 20,
+    //"vehicleFieldWidthDeltaLeft": 50,
+    "vehicleFieldOffsetXRight": 20,
+    //"vehicleFieldWidthDeltaRight": 50,
+    "vehicleIconOffsetXLeft": 4,
+    "vehicleIconOffsetXRight": 4,
+    //"darkenNotReadyIcon": false,
     "formatLeftNick":  ${"def.formatNick"},
     "formatRightNick":  ${"def.formatNick"},
     "formatLeftVehicle":  ${"def.formatVehicle"},
-    "formatRightVehicle": ${"def.formatVehicle"}
+    "formatRightVehicle": ${"def.formatVehicle"},
+    //"extraFieldsLeft": [
+    //  ${"templates.clanIcon"}
+    //],
+    //"extraFieldsRight": [
+    //  ${"templates.clanIcon"}
+    //],
+    "__stub__": {}
   },
   "battleLoadingTips": {
+    //"clockFormat": "H:i",
     "showBattleTier": true,
     //"removeSquadIcon": true,
     //"vehicleIconAlpha": 30,
@@ -198,16 +209,30 @@
     "removeVehicleTypeIcon": true,
     //"nameFieldShowBorder": true,
     //"vehicleFieldShowBorder": true,
-    "squadIconOffsetXLeft": -80,
-    "squadIconOffsetXRight": -80,
-    "nameFieldOffsetXLeft": -80,
-    "nameFieldWidthDeltaLeft": 40,
-    "nameFieldOffsetXRight": -80,
-    "nameFieldWidthDeltaRight": 40,
-    //"vehicleFieldOffsetXLeft": 10,
-    "vehicleFieldWidthDeltaLeft": 10,
-    //"vehicleFieldOffsetXRight": 10,
-    "vehicleFieldWidthDeltaRight": 10
+    "squadIconOffsetXLeft": -100,
+    "squadIconOffsetXRight": -100,
+    "nameFieldOffsetXLeft": -100,
+    "nameFieldWidthDeltaLeft": 70,
+    "nameFieldOffsetXRight": -100,
+    "nameFieldWidthDeltaRight": 70,
+    "vehicleFieldOffsetXLeft": 24,
+    "vehicleFieldWidthDeltaLeft": 50,
+    "vehicleFieldOffsetXRight": 24,
+    "vehicleFieldWidthDeltaRight": 50,
+    "vehicleIconOffsetXLeft": 4,
+    "vehicleIconOffsetXRight": 4,
+    //"darkenNotReadyIcon": false,
+    //"formatLeftNick":  ${"def.formatNick"},
+    //"formatRightNick":  ${"def.formatNick"},
+    //"formatLeftVehicle":  ${"def.formatVehicle"},
+    //"formatRightVehicle": ${"def.formatVehicle"},
+    //"extraFieldsLeft": [
+    //  ${"templates.clanIcon"}
+    //],
+    //"extraFieldsRight": [
+    //  ${"templates.clanIcon"}
+    //],
+    "__stub__": {}
   },
   "statisticForm": {
     "showBattleTier": true,
@@ -223,18 +248,18 @@
     "nameFieldOffsetXRight": -20,
     "nameFieldWidthLeft": 200,
     "nameFieldWidthRight": 200,
-    "vehicleFieldOffsetXLeft": 10,
-    "vehicleFieldOffsetXRight": 30,
+    "vehicleFieldOffsetXLeft": 25,
+    "vehicleFieldOffsetXRight": 25,
     "vehicleFieldWidthLeft": 200,
     "vehicleFieldWidthRight": 200,
     //"fragsFieldOffsetXLeft": 30,
     //"fragsFieldOffsetXRight": 30,
     //"fragsFieldWidthLeft": 100,
     //"fragsFieldWidthRight": 100,
-    "squadIconOffsetXLeft": -18,
-    "squadIconOffsetXRight": -10,
-    //"vehicleIconOffsetXLeft": 4,
-    //"vehicleIconOffsetXRight": 4,
+    "squadIconOffsetXLeft": -15,
+    "squadIconOffsetXRight": -7,
+    //"vehicleIconOffsetXLeft": 20,
+    //"vehicleIconOffsetXRight": 20,
     "formatLeftNick":  ${"def.formatNick"},
     "formatRightNick":  ${"def.formatNick"},
     "formatLeftVehicle":  ${"def.formatVehicle"},
@@ -304,8 +329,8 @@
     ]
   },
   "iconset": {
-    "battleLoadingAlly": "../../../../res/atlases/BattleAtlasLeft",
-    "battleLoadingEnemy": "../../../../res/atlases/BattleAtlasRight",
+    "battleLoadingLeftAtlas": "../../../../res/atlases/BattleAtlasLeft",
+    "battleLoadingRightAtlas": "../../../../res/atlases/BattleAtlasRight",
     "playersPanelLeftAtlas": "../../../../res/atlases/BattleAtlasLeft",
     "playersPanelRightAtlas": "../../../../res/atlases/BattleAtlasRight",
     "fullStatsLeftAtlas": "../../../../res/atlases/BattleAtlasLeft",

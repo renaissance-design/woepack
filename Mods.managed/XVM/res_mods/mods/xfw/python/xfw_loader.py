@@ -1,4 +1,4 @@
-""" XFW loader (c) www.modxvm.com 2013-2016 """
+""" XFW loader (c) www.modxvm.com 2013-2017 """
 
 _XFW_VER = '4.0.0'
 

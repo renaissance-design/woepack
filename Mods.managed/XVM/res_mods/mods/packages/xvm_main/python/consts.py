@@ -1,8 +1,8 @@
-""" XVM (c) www.modxvm.com 2013-2016 """
+""" XVM (c) www.modxvm.com 2013-2017 """
 
 class XVM(object):
-    XVM_VERSION    = '6.5.0'
-    WOT_VERSION    = '0.9.17'
+    XVM_VERSION    = '6.5.2'
+    WOT_VERSION    = '0.9.17.0.1'
     XVM_INTRO      = 'www.modxvm.com'
 
     API_VERSION = '4.0'
@@ -35,6 +35,7 @@ class XVM_EVENT(object):
     RELOAD_CONFIG = 'xvm.reload_config'
     CONFIG_LOADED = 'xvm.config_loaded'
     SYSTEM_MESSAGE = 'xvm.system_message'
+    XVM_SERVICES_INITIALIZED = 'xvm.services_initialized'
 
 # PY<->AS3 commands
 

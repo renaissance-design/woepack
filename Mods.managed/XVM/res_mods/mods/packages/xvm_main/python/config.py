@@ -1,4 +1,4 @@
-""" XVM (c) www.modxvm.com 2013-2016 """
+""" XVM (c) www.modxvm.com 2013-2017 """
 
 __all__ = ['load', 'get', 'config_data', 'lang_data']
 
@@ -327,7 +327,9 @@ class XvmVersionInfo(object):
         #trace('config.verinfo.__init__')
         if data is None:
             data = {}
-        info = data.get('info', {})
+        info = data.get('info', None)
+        if info is None:
+            info = {}
         self.message = info.get('message', None)
         self.wot = info.get('wot', None)
         self.ver = info.get('ver', None)

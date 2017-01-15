@@ -26,10 +26,15 @@
     {{hit-effects}}       - kind of hit / вид попадания.
     {{dmg-ratio}}         - received damage in percent / полученный урон в процентах.
     {{team-dmg}}          - source of damage (ally , enemy, self damage) / источник урона (союзник, противник, урон по себе).
-    {{splash-hit}}        - text when hit by splash damage from shell (HE/HESH) / текст при попадание осколков снаряда (ОФ/ХФ).
-    {{my-alive}}          - TO DO / возвращает 'alive', если я живой, '', если не живой
-    {{reloadGun}}         - TO DO / время перезарядки орудия 
-    {{gun-caliber}}       - TO DO / калибр орудия
+    {{splash-hit}}        - text when hit by splash damage from shell (HE/HESH) / текст при попадании осколков снаряда (ОФ/ХФ).
+    {{my-alive}}          - value 'alive' if my vehicle is alive, '' for dead / возвращает 'alive', если я живой, '', если не живой
+    {{reloadGun}}         - reloading time of a gun / время перезарядки орудия 
+    {{gun-caliber}}       - caliber of a gun / калибр орудия
+    {{wn8}}, {{xwn8}}, {{eff}}, {{xeff}}, {{wgr}}, {{xwgr}}, {{xte}}                - statistics macros (see macros.txt) / макросы статистика (смотрите macros_ru.txt)
+    {{c:wn8}}, {{c:xwn8}}, {{c:eff}}, {{c:xeff}}, {{c:wgr}}, {{c:xwgr}}, {{c:xte}}  - statistics macros (see macros.txt) / макросы статистика (смотрите macros_ru.txt)
+    {{fire-duration}}     - duration of fire ("groupDamagesFromFire" must be enabled to work) / продолжительность пожара (работает только при включенной опции "groupDamagesFromFire")
+    {{diff-masses}}       - vehicles weights difference during collision / разность масс техники при столкновении
+    {{nation}}            - vehicle nation / нация техники
 */
 
 {
@@ -40,11 +45,14 @@
     // true - disable standard summarized damage.
     // true - отключить стандартный суммарный урон.
     "disabledSummaryStats": true,
+    //TO DO
+    //true - запоминать местоположение лога и последенего урона в бою
+    "saveLocationInBattle": false,
     // Log of the received damage.
     // Лог полученного урона.
     "log": {
       "x": 240,
-      "y": 23,
+      "y": -23,
       // Kind of the received damage (macro {{dmg-kind}}).
       // Вид полученного урона (макрос {{dmg-kind}}).
       "dmg-kind": {

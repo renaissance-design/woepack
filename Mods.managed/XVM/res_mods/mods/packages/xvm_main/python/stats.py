@@ -1,4 +1,4 @@
-""" XVM (c) www.modxvm.com 2013-2016 """
+""" XVM (c) www.modxvm.com 2013-2017 """
 
 #############################
 # Command
@@ -362,10 +362,11 @@ class _Stat(object):
             if cacheKey not in self.cacheBattle:
                 all_cached = False
 
-            requestList.append("%d=%d%s" % (
-                pl.accountDBID,
-                pl.vehCD,
-                '=1' if not replay and pl.vehicleID == playerVehicleID else ''))
+            if pl.vehCD != 65281:
+                requestList.append("%d=%d%s" % (
+                    pl.accountDBID,
+                    pl.vehCD,
+                    '=1' if not replay and pl.vehicleID == playerVehicleID else ''))
 
         if all_cached or not requestList:
             return

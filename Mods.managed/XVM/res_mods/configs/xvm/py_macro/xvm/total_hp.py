@@ -1,19 +1,46 @@
 import xvm_battle.python.fragCorrelationPanel as panel
+from xfw import *
 
-def ally():
-    return panel.teams_totalhp[0]
+max_hp_enemy = 0
+max_hp_ally = 0
 
-def enemy():
-    return panel.teams_totalhp[1]
+
+def ally(norm=None):
+    global max_hp_ally
+    if panel.teams_totalhp[0] > max_hp_ally:
+        max_hp_ally = panel.teams_totalhp[0]
+    if (norm is None) or (max_hp_ally == 0):
+        return panel.teams_totalhp[0]
+    else:
+        return int(panel.teams_totalhp[0] * norm / max_hp_ally)
+
+
+def enemy(norm=None):
+    global max_hp_enemy
+    if panel.teams_totalhp[1] > max_hp_enemy:
+        max_hp_enemy = panel.teams_totalhp[1]
+    if (norm is None) or (max_hp_enemy == 0):
+        return panel.teams_totalhp[1]
+    else:
+        return int(panel.teams_totalhp[1] * norm / max_hp_enemy)
+
 
 def color():
     return panel.total_hp_color
 
+
 def sign():
     return '&lt;' if panel.total_hp_sign == '<' else '&gt;' if panel.total_hp_sign == '>' else panel.total_hp_sign
 
+
 def text():
     return "<font color='#%s'>&nbsp;%6s %s %-6s&nbsp;</font>" % (color(), ally(), sign(), enemy())
+
+
+@registerEvent(panel, 'update_hp')
+def update_hp(vehicleID, hp):
+    as_event('ON_UPDATE_HP')
+
 
 # Addons: "avgDamage" and "mainGun"
 # night_dragon_on <http://www.koreanrandom.com/forum/user/14897-night-dragon-on/>
@@ -23,10 +50,10 @@ import BigWorld
 from CurrentVehicle import g_currentVehicle
 from gui.Scaleform.daapi.view.lobby.hangar.Hangar import Hangar
 from gui.shared import g_itemsCache
-from xfw import *
 import traceback
 
 playerAvgDamage = None
+
 
 @registerEvent(Hangar, '_Hangar__updateParams')
 def Hangar__updateParams(self):
@@ -36,6 +63,7 @@ def Hangar__updateParams(self):
         return playerAvgDamage
     except:
         err(traceback.format_exc())
+
 
 def avgDamage(dmg_total):
     global playerAvgDamage
@@ -50,18 +78,22 @@ def avgDamage(dmg_total):
             avgDamage = '<font color="#96FF00">+%s</font>' % (abs(avgDamage))
     return avgDamage
 
+
 from Avatar import PlayerAvatar
 from constants import VEHICLE_HIT_FLAGS
 
 actual_arenaUniqueID = None
-max_hp_enemy = 0
+
 
 class PlayerDamages(object):
     def __init__(self):
         self.teamHits = True
 
     def reset(self):
+        global max_hp_enemy, max_hp_ally
         self.teamHits = True
+        max_hp_enemy = 0
+        max_hp_ally = 0
 
     def showShotResults(self, playerAvatar, results):
         arenaVehicles = playerAvatar.arena.vehicles
@@ -73,24 +105,28 @@ class PlayerDamages(object):
                 if flags & (VHF.IS_ANY_DAMAGE_MASK | VHF.ATTACK_IS_DIRECT_PROJECTILE):
                     self.teamHits = False
 
+
 data = PlayerDamages()
+
 
 @registerEvent(PlayerAvatar, 'showShotResults')
 def showShotResults(self, results):
     data.showShotResults(self, results)
-   
+
+
 @registerEvent(PlayerAvatar, '_PlayerAvatar__destroyGUI')
 def destroyGUI(self):
     data.reset()
 
+
 def mainGun(dmg_total):
     global actual_arenaUniqueID, max_hp_enemy
     arenaUniqueID = BigWorld.player().arenaUniqueID
-    if actual_arenaUniqueID != arenaUniqueID:
-      actual_arenaUniqueID = arenaUniqueID
-      max_hp_enemy = panel.teams_totalhp[1]
+
+    if panel.teams_totalhp[1] > max_hp_enemy:
+        max_hp_enemy = panel.teams_totalhp[1]
     battletype = BigWorld.player().arena.guiType
-    if battletype != 1:
+    if (battletype != 1) or (max_hp_enemy == 0):
         return
     else:
         threshold = max_hp_enemy * 0.2 if max_hp_enemy > 5000 else 1000

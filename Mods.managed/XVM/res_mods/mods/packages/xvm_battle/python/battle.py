@@ -1,4 +1,4 @@
-""" XVM (c) www.modxvm.com 2013-2016 """
+""" XVM (c) www.modxvm.com 2013-2017 """
 
 #####################################################################
 # imports
@@ -24,6 +24,7 @@ from gui.battle_control.battle_constants import VEHICLE_VIEW_STATE
 from gui.battle_control.controllers.dyn_squad_functional import DynSquadFunctional
 from gui.Scaleform.genConsts.BATTLE_VIEW_ALIASES import BATTLE_VIEW_ALIASES
 from gui.Scaleform.daapi.settings.views import VIEW_ALIAS
+from gui.Scaleform.daapi.view.battle.shared import battle_loading
 from gui.Scaleform.daapi.view.battle.shared.damage_panel import DamagePanel
 from gui.Scaleform.daapi.view.battle.shared.markers2d import settings as markers2d_settings
 from gui.Scaleform.daapi.view.battle.shared.minimap import settings as minimap_settings
@@ -45,6 +46,7 @@ import xmqp_events
 
 def start():
     g_eventBus.addListener(XFWCOMMAND.XFW_CMD, g_battle.onXfwCommand)
+    g_eventBus.addListener(XVM_BATTLE_EVENT.VM_INVALIDATE_ARENA_INFO, g_battle.onVMInvalidateArenaInfo)
     g_eventBus.addListener(events.AppLifeCycleEvent.INITIALIZED, g_battle.onAppInitialized)
     g_eventBus.addListener(events.AppLifeCycleEvent.DESTROYED, g_battle.onAppDestroyed)
 
@@ -56,6 +58,7 @@ g_eventBus.addListener(XVM_BATTLE_EVENT.XMQP_MESSAGE, xmqp_events.onXmqpMessage)
 @registerEvent(game, 'fini')
 def fini():
     g_eventBus.removeListener(XFWCOMMAND.XFW_CMD, g_battle.onXfwCommand)
+    g_eventBus.removeListener(XVM_BATTLE_EVENT.VM_INVALIDATE_ARENA_INFO, g_battle.onVMInvalidateArenaInfo)
     g_eventBus.removeListener(events.AppLifeCycleEvent.INITIALIZED, g_battle.onAppInitialized)
     g_eventBus.removeListener(events.AppLifeCycleEvent.DESTROYED, g_battle.onAppDestroyed)
     g_eventBus.removeListener(XVM_BATTLE_EVENT.XMQP_CONNECTED, xmqp_events.onXmqpConnected)
@@ -210,14 +213,17 @@ class Battle(object):
     sessionProvider = dependency.descriptor(IBattleSessionProvider)
 
     def onAppInitialized(self, event):
-        self.xvm_battle_swf_initialized = False
+        #log('onAppInitialized: ' + str(event.ns))
+        if event.ns == APP_NAME_SPACE.SF_BATTLE:
+            self.xvm_battle_swf_initialized = False
         app = g_appLoader.getApp(event.ns)
         if app is not None and app.loaderManager is not None:
             app.loaderManager.onViewLoaded += self.onViewLoaded
 
     def onAppDestroyed(self, event):
-        self.xvm_battle_swf_initialized = False
+        #log('onAppDestroyed: ' + str(event.ns))
         if event.ns == APP_NAME_SPACE.SF_BATTLE:
+            self.xvm_battle_swf_initialized = False
             self.battle_page = None
         app = g_appLoader.getApp(event.ns)
         if app is not None and app.loaderManager is not None:
@@ -345,6 +351,12 @@ class Battle(object):
     def invalidateArenaInfo(self):
         #debug('battle: invalidateArenaInfo')
         if self.battle_page:
+            if battle_loading.isBattleLoadingShowed():
+                if 'battleLoading' in self.battle_page.as_getComponentsVisibilityS():
+                    battleLoading = self.battle_page.getComponent(BATTLE_VIEW_ALIASES.BATTLE_LOADING)
+                    if battleLoading:
+                        battle_loading._setBattleLoading(False)
+                        battleLoading.invalidateArenaInfo()
             ctrl = self.battle_page.getComponent(BATTLE_VIEW_ALIASES.BATTLE_STATISTIC_DATA_CONTROLLER)
             if ctrl:
                 ctrl._BattleStatisticsDataController__setPersonalStatus()
@@ -394,6 +406,9 @@ class Battle(object):
             return (None, True)
 
         return (None, False)
+
+    def onVMInvalidateArenaInfo(self, e=None):
+        self.invalidateArenaInfo()
 
     # misc
 

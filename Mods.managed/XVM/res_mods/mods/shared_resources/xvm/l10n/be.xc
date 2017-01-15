@@ -156,7 +156,7 @@
     "token/blocked": "Стан сэрвісаў: <font color='#FF0000'>Заблакаваны</font>&nbsp;&nbsp;<a href='#XVM_SITE_BLOCKED#'><font size='11'>звесткі</font></a>",
     "token/active": "Стан сэрвісаў:<tab/><font color='#00FF00'>Актыўны</font>",
     "token/time_left": "<tab/><font color='#EEEEEE'>{0}дз {1}г {2}хв</font>",
-    "token/time_left_warn": "<tab/><font color='#EEEEEE'>{0}дз {1}г {2}хв</font>\n<tab/><a href='#XVM_SITE#'>Працягнуць</a>",
+    "token/time_left_warn": "<tab/><font color='#EEEEEE'>{0}дз {1}г {2}хв</font>\n<tab/><a href='#XVM_SITE#'>Прадоўжыць</a>",
     "token/unknown_status": "Невядомы стан",
     "lobby/header/gold_locked_tooltip": "Золата заблакавана",
     "lobby/header/gold_unlocked_tooltip": "Золата разблакавана",

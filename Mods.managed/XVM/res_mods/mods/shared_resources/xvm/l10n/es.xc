@@ -156,7 +156,7 @@
     "token/blocked": "Estado: <font color='#FF0000'>Bloqueado</font>&nbsp;&nbsp;<a href='#XVM_SITE_BLOCKED#'><font size='11'>Más info</font></a>",
     "token/active": "Estado:<tab/><font color='#00FF00'>Activo</font>",
     "token/time_left": "Tiempo restante:<tab/><font color='#EEEEEE'>{0}d. {1}h. {2}m.</font>",
-    "token/time_left_warn": "Tiempo restante:<tab/><font color='#EEEEEE'>{0}d. {1}h. {2}m.</font>",
+    "token/time_left_warn": "<tab/><font color='#EEEEEE'>{0}d. {1}h. {2}m.</font>\n<tab/><a href='#XVM_SITE#'>Prolongar</a>",
     "token/unknown_status": "Estado desconocido",
     "lobby/header/gold_locked_tooltip": "Oro bloqueado",
     "lobby/header/gold_unlocked_tooltip": "Oro desbloqueado",

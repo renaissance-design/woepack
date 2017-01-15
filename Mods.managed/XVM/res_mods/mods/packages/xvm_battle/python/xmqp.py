@@ -1,4 +1,4 @@
-""" XVM (c) www.modxvm.com 2013-2016 """
+""" XVM (c) www.modxvm.com 2013-2017 """
 
 __all__ = ['start', 'stop', 'call']
 
@@ -24,6 +24,7 @@ import xvm_main.python.minimap_circles as minimap_circles
 import xvm_main.python.utils as utils
 
 from xvm_main.python.consts import *
+from xvm_main.python.xvm import g_xvm
 from consts import *
 
 
@@ -40,7 +41,12 @@ def start():
     BigWorld.player().arena.onNewVehicleListReceived -= start
     BigWorld.callback(0, _start)
 
-def _start():
+def _start(e=None):
+    g_eventBus.removeListener(XVM_EVENT.XVM_SERVICES_INITIALIZED, _start)
+    if not g_xvm.xvmServicesInitialized:
+        g_eventBus.addListener(XVM_EVENT.XVM_SERVICES_INITIALIZED, _start)
+        return
+
     if config.networkServicesSettings.xmqp or (isReplay() and XMQP_DEVELOPMENT):
         token = config.token.token
         if token:
@@ -388,7 +394,7 @@ class _XMQP(object):
             'token': config.token.token,
             'players': self._players,
             'capabilities': simplejson.dumps(getCapabilitiesData())})
-        debug(utils.hide_guid(message))
+        debug('[XMQP] %s' % utils.hide_guid(message))
         self._channel.basic_publish(
             exchange=XVM.XMQP_LOBBY_EXCHANGE,
             routing_key=XVM.XMQP_LOBBY_ROUTING_KEY,

@@ -1,4 +1,4 @@
-""" XVM (c) www.modxvm.com 2013-2016 """
+""" XVM (c) www.modxvm.com 2013-2017 """
 
 import traceback
 import simplejson
@@ -39,6 +39,7 @@ def onXmqpConnected(e):
     data = {'event': EVENTS.XMQP_HOLA, 'capabilities': xmqp.getCapabilitiesData()}
     if xmqp.is_active():
         xmqp.call(data)
+    _sendCapabilities()
 
 def onBattleInit():
     _sendCapabilities()

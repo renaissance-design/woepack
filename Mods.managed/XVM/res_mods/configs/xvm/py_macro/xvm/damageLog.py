@@ -9,8 +9,6 @@ import xvm_main.python.config as config
 import xvm_main.python.userprefs as userprefs
 from xvm_main.python.stats import _stat
 import xvm_main.python.stats as stats
-import xvm_main.python.vehinfo as vehinfo
-import xvm_main.python.vehinfo_wn8 as vehinfo_wn8
 from items import vehicles, _xml
 from Avatar import PlayerAvatar
 from Vehicle import Vehicle
@@ -27,6 +25,7 @@ from items import vehicles
 
 
 on_fire = 0
+beginFire = None
 isDownAlt = False
 
 
@@ -59,7 +58,9 @@ HIT_EFFECT_CODES = {
 MACROS_NAME = ['number', 'critical-hit', 'vehicle', 'name', 'vtype', 'c:costShell', 'costShell', 'comp-name', 'clan',
                'dmg-kind', 'c:dmg-kind', 'c:vtype', 'type-shell', 'dmg', 'reloadGun', 'c:team-dmg', 'c:hit-effects',
                'level', 'clanicon', 'clannb', 'marksOnGun', 'squad-num', 'dmg-ratio', 'hit-effects', 'c:type-shell',
-               'splash-hit', 'team-dmg', 'my-alive', 'gun-caliber']
+               'splash-hit', 'team-dmg', 'my-alive', 'gun-caliber', 'wn8', 'xwn8', 'eff', 'xeff', 'wgr', 'xwgr', 'xte',
+               'c:wn8', 'c:xwn8', 'c:eff', 'c:xeff', 'c:wgr', 'c:xwgr', 'c:xte', 'fire-duration', 'diff-masses',
+               'nation']
 
 
 def keyLower(_dict):
@@ -201,7 +202,10 @@ def formatMacro(macro, macroes):
                             fm['suf'] = ''
                     else:
                         fm['suf'] = ''
-            _macro = '{0:{flag}{width}{prec}{type}}{suf}'.format(_macro, **fm)
+            if _macro is None:
+                _macro = ''
+            else:
+                _macro = '{0:{flag}{width}{prec}{type}}{suf}'.format(_macro, **fm)
         # log('_macro = %s' % _macro)
         return str(_macro)
     else:
@@ -266,11 +270,12 @@ class Data(object):
                      'level': 1,
                      'clanicon': '',
                      'squadnum': 0,
-                     'fireStage': -1,
-                     'isBeginFire': False,
                      'number': None,
-                     'reloadGun': 0,
-					 'caliber': None
+                     'reloadGun': 0.0,
+                     'caliber': None,
+                     'fireDuration': None,
+                     'diff-masses': None,
+                     'nation': None
                      }
 
     def reset(self):
@@ -280,10 +285,10 @@ class Data(object):
         player = BigWorld.player()
         self.data['dmgRatio'] = self.data['damage'] * 100 // self.data['maxHealth']
         if self.data['attackerID']:
-            attacker = player.arena.vehicles.get(self.data['attackerID'])
             entity = BigWorld.entity(self.data['attackerID'])
-            statXVM = _stat.players.get(self.data['attackerID'], None)
+            self.data['marksOnGun'] = '_' + str(entity.publicInfo['marksOnGun']) if (entity is not None) else None
             self.data['teamDmg'] = 'unknown'
+            attacker = player.arena.vehicles.get(self.data['attackerID'])
             if attacker is not None:
                 if attacker['team'] != player.team:
                     self.data['teamDmg'] = 'enemy-dmg'
@@ -295,26 +300,49 @@ class Data(object):
                     self.data['attackerVehicleType'] = list(attacker['vehicleType'].type.tags.intersection(VEHICLE_CLASSES))[0].lower()
                     self.data['shortUserString'] = attacker['vehicleType'].type.shortUserString
                     self.data['level'] = attacker['vehicleType'].level
+                    self.data['nation'] = nations.NAMES[attacker['vehicleType'].type.customizationNationID]
+                    if self.data['attackReasonID'] == 2:
+                        self.data['diff-masses'] = (player.vehicleTypeDescriptor.physics['weight'] - attacker['vehicleType'].physics['weight']) / 1000.0
+                    elif self.data['diff-masses'] is not None:
+                        self.data['diff-masses'] = None
                 else:
-                    self.data['attackerVehicleType'] = ''
-                    self.data['shortUserString'] = ''
-                    self.data['level'] = ''
+                    self.data['attackerVehicleType'] = None
+                    self.data['shortUserString'] = None
+                    self.data['level'] = None
+                    self.data['nation'] = None
+                    self.data['diff-masses'] = None
                 self.data['name'] = attacker['name']
+                if attacker['name'] in _stat.resp['players']:
+                    stats = _stat.resp['players'][attacker['name']]
+                    self.data['wn8'] = stats.get('wn8', None)
+                    self.data['xwn8'] = stats.get('xwn8', None)
+                    self.data['eff'] = stats.get('e', None)
+                    self.data['xeff'] = stats.get('xeff', None)
+                    self.data['wgr'] = stats.get('wgr', None)
+                    self.data['xwgr'] = stats.get('xwgr', None)
+                    self.data['xte'] = stats.get('v').get('xte', None)
+                else:
+                    self.data['wn8'] = None
+                    self.data['xwn8'] = None
+                    self.data['eff'] = None
+                    self.data['xeff'] = None
+                    self.data['wgr'] = None
+                    self.data['xwgr'] = None
+                    self.data['xte'] = None
                 self.data['clanAbbrev'] = attacker['clanAbbrev']
             self.data['clanicon'] = _stat.getClanIcon(self.data['attackerID'])
-            if statXVM is not None:
-                self.data['squadnum'] = statXVM.squadnum
-            self.data['marksOnGun'] = '_' + str(entity.publicInfo['marksOnGun']) if entity is not None else ''
+            statXVM = _stat.players.get(self.data['attackerID'], None)
+            self.data['squadnum'] = statXVM.squadnum if statXVM is not None else None
         else:
             self.data['teamDmg'] = 'unknown'
-            self.data['attackerVehicleType'] = ''
-            self.data['shortUserString'] = ''
-            self.data['name'] = ''
-            self.data['clanAbbrev'] = ''
-            self.data['level'] = ''
-            self.data['clanicon'] = ''
-            self.data['squadnum'] = ''
-            self.data['marksOnGun'] = ''
+            self.data['attackerVehicleType'] = None
+            self.data['shortUserString'] = None
+            self.data['name'] = None
+            self.data['clanAbbrev'] = None
+            self.data['level'] = None
+            self.data['clanicon'] = None
+            self.data['squadnum'] = None
+            self.data['marksOnGun'] = None
 
     def typeShell(self, effectsIndex):
         self.data['costShell'] = 'unknown'
@@ -354,11 +382,11 @@ class Data(object):
                     rammer = attacker['vehicleType'].miscAttrs['gunReloadTimeFactor']
                 else:
                     rammer = 1
-                return reload_orig * crew * rammer
+                return float(reload_orig * crew * rammer)
             else:
-                return 0
+                return 0.0
         else:
-            return 0
+            return 0.0
 
     def hitShell(self, attackerID, effectsIndex, damageFactor):
         self.data['isDamage'] = damageFactor > 0
@@ -386,6 +414,7 @@ class Data(object):
         self.data['criticalHit'] = (maxHitEffectCode == 5)
         if damageFactor == 0:
             self.data['hitEffect'] = HIT_EFFECT_CODES[min(3, maxHitEffectCode)]
+            self.data['isAlive'] = bool(vehicle.isCrewActive)
         self.hitShell(attackerID, effectsIndex, damageFactor)
 
     def showDamageFromExplosion(self, vehicle, attackerID, center, effectsIndex, damageFactor):
@@ -393,6 +422,7 @@ class Data(object):
         self.data['criticalHit'] = False
         if damageFactor == 0:
             self.data['hitEffect'] = HIT_EFFECT_CODES[3]
+            self.data['isAlive'] = bool(vehicle.isCrewActive)
         self.hitShell(attackerID, effectsIndex, damageFactor)
 
     def onHealthChanged(self, vehicle, newHealth, attackerID, attackReasonID):
@@ -405,12 +435,12 @@ class Data(object):
             self.data['criticalHit'] = False
             self.data['shellKind'] = 'not_shell'
             self.data['splashHit'] = 'no-splash'
-            self.data['reloadGun'] = 0
+            self.data['reloadGun'] = 0.0
         else:
             self.data['reloadGun'] = self.timeReload(attackerID)
         self.data['attackerID'] = attackerID
         self.data['damage'] = self.data['oldHealth'] - max(0, newHealth)
-        self.data['isAlive'] = newHealth > 0
+        self.data['isAlive'] = (newHealth > 0) and bool(vehicle.isCrewActive)
         self.data['oldHealth'] = newHealth
         self.updateData()
         self.updateLabels()
@@ -421,7 +451,14 @@ data = Data()
 
 
 def getValueMacroes(section, value):
-    conf = readyConfig(section)#.copy()
+
+    def readColor(sec, m):
+        if m is not None:
+            for val in config.get('colors/' + sec):
+                if val['value'] > m:
+                    return '#' + val['color'][2:] if val['color'][:2] == '0x' else val['color']
+
+    conf = readyConfig(section)
     macro = {'c:team-dmg': conf['c_teamDmg'].get(value['teamDmg']),
              'team-dmg': conf['teamDmg'].get(value['teamDmg'], ''),
              'vtype': conf['vehicleClass'].get(value['attackerVehicleType'], 'not_vehicle'),
@@ -449,7 +486,24 @@ def getValueMacroes(section, value):
              'squad-num': value['squadnum'],
              'reloadGun': value['reloadGun'],
              'my-alive': 'alive' if value['isAlive'] else None,
-             'gun-caliber': value['caliber']
+             'gun-caliber': value['caliber'],
+             'wn8': value.get('wn8', None),
+             'xwn8': value.get('xwn8', None),
+             'eff': value.get('eff', None),
+             'xeff': value.get('xeff', None),
+             'wgr': value.get('wgr', None),
+             'xwgr': value.get('xwgr', None),
+             'xte': value.get('xte', None),
+             'c:wn8': readColor('wn8', value.get('wn8', None)),
+             'c:xwn8': readColor('x', value.get('xwn8', None)),
+             'c:eff': readColor('eff', value.get('eff', None)),
+             'c:xeff': readColor('x', value.get('xeff', None)),
+             'c:wgr': readColor('wgr', value.get('wgr', None)),
+             'c:xwgr': readColor('x', value.get('xwgr', None)),
+             'c:xte': readColor('x', value.get('xte', None)),
+             'fire-duration': value.get('fireDuration', None),
+             'diff-masses': value.get('diff-masses', None),
+             'nation': value.get('nation', None)
              }
     return macro
 
@@ -465,7 +519,7 @@ def shadow_value(section, macroes):
               'inner': parser(config.get(section + 'shadow/inner'), macroes),
               'knockout': parser(config.get(section + 'shadow/knockout'), macroes),
               'quality': parser(config.get(section + 'shadow/quality'), macroes)
-                           }
+              }
     return shadow
 
 
@@ -474,14 +528,15 @@ class Log(object):
     def __init__(self, section):
         self.listLog = []
         self.section = section
-        self.sumFireDmg = 0
-        self.dataLogFire = None
         self.numberLine = 0
         self.dictVehicle = {}
         self.dataLog = {}
         self.shadow = {}
         self._data = None
-        _data = userprefs.get('DamageLog/dLog', {'x': config.get(section + 'x'), 'y': config.get(section + 'y')})
+        if config.get('damageLog/saveLocationInBattle'):
+            _data = userprefs.get('DamageLog/dLog', {'x': config.get(section + 'x'), 'y': config.get(section + 'y')})
+        else:
+            _data = {'x': config.get(section + 'x'), 'y': config.get(section + 'y')}
         self.x = _data['x']
         self.y = _data['y']
         as_callback("dLog_mouseDown", self.mouse_down)
@@ -492,13 +547,11 @@ class Log(object):
         self.listLog = []
         self.listIndents = []
         self.section = section
-        self.sumFireDmg = 0
-        self.dataLogFire = None
         self.numberLine = 0
         self.dictVehicle = {}
         self.dataLog = {}
         self.shadow = {}
-        if None not in [self.x,  self.y]:
+        if None not in [self.x, self.y]:
             userprefs.set('DamageLog/dLog', {'x': self.x, 'y': self.y})
 
     def mouse_down(self, _data):
@@ -517,6 +570,7 @@ class Log(object):
 
     def addLine(self, attackerID, attackReasonID):
         self.dataLog['number'] = len(self.listLog) + 1
+        self.dataLog['fireDuration'] = BigWorld.time() - beginFire if attackReasonID == 1 else None
         macroes = getValueMacroes(self.section, self.dataLog)
         self.listLog.insert(0, parser(config.get(self.section + 'formatHistory'), macroes))
         self.shadow = shadow_value(self.section, macroes)
@@ -534,28 +588,35 @@ class Log(object):
             attackReasonID = data.data['attackReasonID']
             if attackerID in self.dictVehicle:
                 if (attackReasonID in self.dictVehicle[attackerID] and
-                   ('time' in self.dictVehicle[attackerID][attackReasonID]) and
-                   ('damage' in self.dictVehicle[attackerID][attackReasonID]) and
-                   ((BigWorld.serverTime() - self.dictVehicle[attackerID][attackReasonID]['time']) < 1)):
+                        ('time' in self.dictVehicle[attackerID][attackReasonID]) and
+                        ('damage' in self.dictVehicle[attackerID][attackReasonID]) and
+                        ((BigWorld.serverTime() - self.dictVehicle[attackerID][attackReasonID]['time']) < 1)):
                     self.dictVehicle[attackerID][attackReasonID]['time'] = BigWorld.serverTime()
                     self.dictVehicle[attackerID][attackReasonID]['damage'] += data.data['damage']
-                    self.dataLog['damage'] = self.dictVehicle[attackerID][attackReasonID]['damage']
+                    key = self.dictVehicle[attackerID][attackReasonID]
+                    self.dataLog['damage'] = key['damage']
                     self.dataLog['dmgRatio'] = self.dataLog['damage'] * 100 // data.data['maxHealth']
                     self.dataLog['number'] = len(self.listLog)
-                    numberLine = self.dictVehicle[attackerID][attackReasonID]['numberLine']
+                    if (attackReasonID == 1) and (key['beginFire'] is not None):
+                        self.dataLog['fireDuration'] = BigWorld.time() - key['beginFire']
+                    else:
+                        self.dataLog['fireDuration'] = None
+                    numberLine = key['numberLine']
                     macroes = getValueMacroes(self.section, self.dataLog)
                     self.listLog[numberLine] = parser(config.get(self.section + 'formatHistory'), macroes)
                     self.shadow = shadow_value(self.section, macroes)
                 else:
                     self.dictVehicle[attackerID][attackReasonID] = {'time': BigWorld.serverTime(),
                                                                     'damage': data.data['damage'],
-                                                                    'numberLine': 0}
+                                                                    'numberLine': 0,
+                                                                    'beginFire': beginFire if attackReasonID == 1 else None}
                     self.addLine(attackerID, attackReasonID)
             else:
                 self.dictVehicle[attackerID] = {}
                 self.dictVehicle[attackerID][attackReasonID] = {'time': BigWorld.serverTime(),
                                                                 'damage': data.data['damage'],
-                                                                'numberLine': 0}
+                                                                'numberLine': 0,
+                                                                'beginFire': beginFire if attackReasonID == 1 else None}
                 self.addLine(attackerID, attackReasonID)
         else:
             if config.get(self.section + 'showHitNoDamage') or data.data['isDamage']:
@@ -568,14 +629,16 @@ class Log(object):
 class LastHit(object):
 
     def __init__(self, section):
-        self.dataFire = None
         self.section = section
         self.strLastHit = ''
         self.timerLastHit = None
         self.dictVehicle = {}
         self.shadow = {}
         self._data = None
-        _data = userprefs.get('DamageLog/lastHit', {'x': config.get(section + 'x'), 'y': config.get(section + 'y')})
+        if config.get('damageLog/saveLocationInBattle'):
+            _data = userprefs.get('DamageLog/lastHit', {'x': config.get(section + 'x'), 'y': config.get(section + 'y')})
+        else:
+            _data = {'x': config.get(section + 'x'), 'y': config.get(section + 'y')}
         self.x = _data['x']
         self.y = _data['y']
         as_callback("lastHit_mouseDown", self.mouse_down)
@@ -585,7 +648,6 @@ class LastHit(object):
             self.timerLastHit.stop()
 
     def reset(self, section):
-        self.dataFire = None
         self.section = section
         self.strLastHit = ''
         self.timerLastHit = None
@@ -609,7 +671,7 @@ class LastHit(object):
             self.y += (_data['y'] - self._data['y'])
             as_event('ON_LAST_HIT')
 
-    def hideLastHit (self):
+    def hideLastHit(self):
         self.strLastHit = ''
         if (self.timerLastHit is not None) and self.timerLastHit.isStarted:
             self.timerLastHit.stop()
@@ -623,20 +685,29 @@ class LastHit(object):
             attackReasonID = data.data['attackReasonID']
             if attackerID in self.dictVehicle:
                 if (attackReasonID in self.dictVehicle[attackerID] and
-                   ('time' in self.dictVehicle[attackerID][attackReasonID]) and
-                   ('damage' in self.dictVehicle[attackerID][attackReasonID]) and
-                   ((BigWorld.serverTime() - self.dictVehicle[attackerID][attackReasonID]['time']) < 1)):
+                        ('time' in self.dictVehicle[attackerID][attackReasonID]) and
+                        ('damage' in self.dictVehicle[attackerID][attackReasonID]) and
+                        ((BigWorld.serverTime() - self.dictVehicle[attackerID][attackReasonID]['time']) < 1)):
                     self.dictVehicle[attackerID][attackReasonID]['time'] = BigWorld.serverTime()
                     self.dictVehicle[attackerID][attackReasonID]['damage'] += data.data['damage']
-                    dataLog['damage'] = self.dictVehicle[attackerID][attackReasonID]['damage']
+                    key = self.dictVehicle[attackerID][attackReasonID]
+                    dataLog['damage'] = key['damage']
                     dataLog['dmgRatio'] = dataLog['damage'] * 100 // data.data['maxHealth']
+                    if (attackReasonID == 1) and (key['beginFire'] is not None):
+                        dataLog['fireDuration'] = BigWorld.time() - key['beginFire']
+                    else:
+                        dataLog['fireDuration'] = None
                 else:
                     self.dictVehicle[attackerID][attackReasonID] = {'time': BigWorld.serverTime(),
-                                                                    'damage': data.data['damage']}
+                                                                    'damage': data.data['damage'],
+                                                                    'beginFire': beginFire if attackReasonID == 1 else None}
+                    dataLog['fireDuration'] = BigWorld.time() - beginFire if attackReasonID == 1 else None
             else:
                 self.dictVehicle[attackerID] = {}
                 self.dictVehicle[attackerID][attackReasonID] = {'time': BigWorld.serverTime(),
-                                                                'damage': data.data['damage']}
+                                                                'damage': data.data['damage'],
+                                                                'beginFire': beginFire if attackReasonID == 1 else None}
+                dataLog['fireDuration'] = BigWorld.time() - beginFire if attackReasonID == 1 else None
             macroes = getValueMacroes(self.section, dataLog)
             self.strLastHit = parser(config.get(self.section + 'formatLastHit'), macroes)
         else:
@@ -720,9 +791,10 @@ def showDamageFromExplosion(self, attackerID, center, effectsIndex, damageFactor
 
 @registerEvent(DamagePanel, 'as_setFireInVehicleS')
 def as_setFireInVehicleS(self, isInFire):
-    global on_fire
+    global on_fire, beginFire
     if isInFire:
         on_fire = 100
+        beginFire = BigWorld.time()
     else:
         on_fire = 0
     as_event('ON_FIRE')
@@ -737,15 +809,25 @@ def destroyGUI(self):
     _logAlt.reset(_logAlt.section)
     _lastHit.reset(_lastHit.section)
 
+
 @registerEvent(PlayerAvatar, 'handleKey')
 def handleKey(self, isDown, key, mods):
     global isDownAlt
-    if (key == Keys.KEY_LALT) and isDown and not isDownAlt:
-        isDownAlt = True
-        as_event('ON_HIT')
-    elif not ((key == Keys.KEY_LALT) and isDown) and isDownAlt:
-        isDownAlt = False
-        as_event('ON_HIT')
+    hotkey = config.get('hotkeys/damageLogAltMode')
+    if hotkey['enabled'] and (key == hotkey['keyCode']):
+        if isDown:
+            if hotkey['onHold']:
+                if not isDownAlt:
+                    isDownAlt = True
+                    as_event('ON_HIT')
+            else:
+                isDownAlt = not isDownAlt
+                as_event('ON_HIT')
+        else:
+            if hotkey['onHold']:
+                if isDownAlt:
+                    isDownAlt = False
+                    as_event('ON_HIT')
 
 
 def dLog():
@@ -753,10 +835,7 @@ def dLog():
 
 
 def dLog_shadow(setting):
-    if (setting in _logAlt.shadow) and (setting in _log.shadow):
-        return _logAlt.shadow[setting] if isDownAlt else _log.shadow[setting]
-    else:
-        return None
+    return _logAlt.shadow.get(setting, None) if isDownAlt else _log.shadow.get(setting, None)
 
 
 def lastHit():
@@ -764,13 +843,9 @@ def lastHit():
 
 
 def lastHit_shadow(setting):
-    if setting in _lastHit.shadow:
-        return _lastHit.shadow[setting]
-    else:
-        return None
+    return _lastHit.shadow.get(setting, None)
 
 
 def fire():
     return on_fire
-
 

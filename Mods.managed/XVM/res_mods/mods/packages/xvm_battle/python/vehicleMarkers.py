@@ -1,4 +1,4 @@
-""" XVM (c) www.modxvm.com 2013-2016 """
+""" XVM (c) www.modxvm.com 2013-2017 """
 
 #####################################################################
 # imports
@@ -236,8 +236,7 @@ class VehicleMarkers(object):
         try:
             if self.active:
                 self.call(XVM_BATTLE_COMMAND.AS_RESPONSE_BATTLE_GLOBAL_DATA, *shared.getGlobalBattleData())
-                if self.vehiclesData:
-                    self.call('BC_setVehiclesData', self.vehiclesData)
+                g_eventBus.handleEvent(events.HasCtxEvent(XVM_BATTLE_EVENT.VM_INVALIDATE_ARENA_INFO))
         except Exception, ex:
             err(traceback.format_exc())
         #debug('vm:respondGlobalBattleData: {:>8.3f} s'.format(time.clock() - s))

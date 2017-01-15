@@ -1,4 +1,4 @@
-""" XFW wrapper for SSL lib using tlslite (c) www.modxvm.com 2014-2016 """
+""" XFW wrapper for SSL lib using tlslite (c) www.modxvm.com 2014-2017 """
 
 CERT_NONE = 0
 CERT_REQUIRED = 1
