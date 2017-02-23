@@ -81,14 +81,13 @@ def _as_xmqp_event(accountDBID, data, targets=TARGETS.ALL):
         return
 
     event = data['event']
-    del data['event']
     data = None if not data else unicode_to_ascii(data)
 
     if targets & TARGETS.BATTLE:
         as_xfw_cmd(XVM_BATTLE_COMMAND.AS_XMQP_EVENT, accountDBID, event, data)
 
     if targets & TARGETS.VMM:
-        if g_markers.active:
+        if g_markers.enabled:
             g_markers.call(XVM_BATTLE_COMMAND.AS_XMQP_EVENT, accountDBID, event, data)
 
 # battle init

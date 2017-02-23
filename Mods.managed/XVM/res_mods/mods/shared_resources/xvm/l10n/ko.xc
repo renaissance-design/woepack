@@ -170,7 +170,7 @@
     "NormalTooltipHeader": "전차",
     "NormalTooltipBody": "",
     "NonElite": "풀업 아닌거만",
-    "NonEliteTooltipHeader": "",
+    "NonEliteTooltipHeader": "전차",
     "NonEliteTooltipBody": "",
     "CompleteCrew": "100% 승무원만",
     "CompleteCrewTooltipHeader": "100% 승무원만",

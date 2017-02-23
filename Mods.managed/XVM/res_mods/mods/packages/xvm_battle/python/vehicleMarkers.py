@@ -34,13 +34,12 @@ import shared
 #####################################################################
 # initialization/finalization
 
-def onConfigLoaded(self, e=None):
+def onConfigLoaded(e=None):
     g_markers.enabled = config.get('markers/enabled', True)
     g_markers.respondConfig()
 
-def onArenaInfoInvalidated(self, e=None):
-    for vehicleID, vData in BigWorld.player().arena.vehicles.iteritems():
-        g_markers.updatePlayerState(vehicleID, INV.ALL)
+def onArenaInfoInvalidated(e=None):
+    g_markers.updatePlayerStates()
 
 g_eventBus.addListener(XVM_EVENT.CONFIG_LOADED, onConfigLoaded)
 g_eventBus.addListener(XVM_BATTLE_EVENT.ARENA_INFO_INVALIDATED, onArenaInfoInvalidated)
@@ -138,6 +137,7 @@ class VehicleMarkers(object):
     manager = None
     vehiclesData = None
     sessionProvider = dependency.descriptor(IBattleSessionProvider)
+    pending_commands = []
 
     @property
     def active(self):
@@ -153,6 +153,7 @@ class VehicleMarkers(object):
         self.playerVehicleID = self.sessionProvider.getArenaDP().getPlayerVehicleID()
 
     def destroy(self):
+        self.pending_commands = []
         self.initialized = False
         self.guiType = None
         self.playerVehicleID = None
@@ -202,6 +203,8 @@ class VehicleMarkers(object):
         try:
             if self.manager and self.initialized:
                 self.manager.as_xvm_cmdS(*args)
+            elif self.enabled:
+                self.pending_commands.append(args)
         except Exception, ex:
             err(traceback.format_exc())
 
@@ -236,10 +239,17 @@ class VehicleMarkers(object):
         try:
             if self.active:
                 self.call(XVM_BATTLE_COMMAND.AS_RESPONSE_BATTLE_GLOBAL_DATA, *shared.getGlobalBattleData())
-                g_eventBus.handleEvent(events.HasCtxEvent(XVM_BATTLE_EVENT.VM_INVALIDATE_ARENA_INFO))
+                self.process_pending_commands()
+                self.updatePlayerStates()
         except Exception, ex:
             err(traceback.format_exc())
         #debug('vm:respondGlobalBattleData: {:>8.3f} s'.format(time.clock() - s))
+
+    def process_pending_commands(self):
+        for args in self.pending_commands:
+            #debug('pending_command: ' + str(args))
+            self.call(*args)
+        self.pending_commands = []
 
     def onKeyEvent(self, event):
         try:
@@ -248,6 +258,10 @@ class VehicleMarkers(object):
                     self.call(XVM_COMMAND.AS_ON_KEY_EVENT, event.key, event.isKeyDown())
         except Exception, ex:
             err(traceback.format_exc())
+
+    def updatePlayerStates(self):
+        for vehicleID, vData in BigWorld.player().arena.vehicles.iteritems():
+            g_markers.updatePlayerState(vehicleID, INV.ALL)
 
     def updatePlayerState(self, vehicleID, targets, userData=None):
         try:
@@ -261,10 +275,13 @@ class VehicleMarkers(object):
                         if entity and hasattr(entity, 'publicInfo'):
                             data['marksOnGun'] = entity.publicInfo.marksOnGun
 
-                if targets & INV.FRAGS:
+                if targets & (INV.ALL_VINFO | INV.ALL_VSTATS):
                     arenaDP = self.sessionProvider.getArenaDP()
-                    vStatsVO = arenaDP.getVehicleStats(vehicleID)
-                    data['frags'] = vStatsVO.frags
+                    if targets & INV.ALL_VSTATS:
+                        vStatsVO = arenaDP.getVehicleStats(vehicleID)
+
+                    if targets & INV.FRAGS:
+                        data['frags'] = vStatsVO.frags
 
                 if data:
                     self.call(XVM_BATTLE_COMMAND.AS_UPDATE_PLAYER_STATE, vehicleID, data)

@@ -26,6 +26,7 @@ wd = wd[0:wd.rfind('\\')]
 wd = wd[0:wd.rfind('\\')]
 
 import xfw
+import xfw.console
 xfw.XFW_WORK_DIR = wd
 
 # get path of "./res_mods/0.9.10" etc.

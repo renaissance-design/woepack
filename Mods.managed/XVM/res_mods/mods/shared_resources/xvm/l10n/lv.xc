@@ -170,7 +170,7 @@
     "NormalTooltipHeader": "Tanks",
     "NormalTooltipBody": "",
     "NonElite": "Nav elites",
-    "NonEliteTooltipHeader": "",
+    "NonEliteTooltipHeader": "Tanks",
     "NonEliteTooltipBody": "",
     "CompleteCrew": "Visa apkalpe",
     "CompleteCrewTooltipHeader": "Visa apkalpe",

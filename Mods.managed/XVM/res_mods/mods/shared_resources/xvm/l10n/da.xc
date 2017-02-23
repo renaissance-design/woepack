@@ -171,7 +171,7 @@
     "NormalTooltipBody": "Vis/skjul normale (ikke-premium) køretøjer.",
     "NonElite": "Ikke elite",
     "NonEliteTooltipHeader": "Ikke-Elite Køretøjer",
-    "NonEliteTooltipBody": "",
+    "NonEliteTooltipBody": "Vis/skjul køretøjer med fuld besætning.",
     "CompleteCrew": "Fuld besætning",
     "CompleteCrewTooltipHeader": "Fuld besætning",
     "CompleteCrewTooltipBody": "Vis/skjul køretøjer med fuld besætning.",

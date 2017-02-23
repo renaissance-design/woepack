@@ -170,7 +170,7 @@
     "NormalTooltipHeader": "Kendaraan",
     "NormalTooltipBody": "",
     "NonElite": "Non elite",
-    "NonEliteTooltipHeader": "",
+    "NonEliteTooltipHeader": "Kendaraan",
     "NonEliteTooltipBody": "",
     "CompleteCrew": "Drop semua krew",
     "CompleteCrewTooltipHeader": "Drop semua krew",

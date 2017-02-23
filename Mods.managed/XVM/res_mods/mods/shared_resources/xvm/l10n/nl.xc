@@ -170,7 +170,7 @@
     "NormalTooltipHeader": "Voertuig",
     "NormalTooltipBody": "",
     "NonElite": "Niet elite",
-    "NonEliteTooltipHeader": "",
+    "NonEliteTooltipHeader": "Voertuig",
     "NonEliteTooltipBody": "",
     "CompleteCrew": "Volledige bemanning",
     "CompleteCrewTooltipHeader": "Volledige bemanning",

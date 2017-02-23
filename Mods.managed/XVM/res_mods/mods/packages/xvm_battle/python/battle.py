@@ -46,7 +46,6 @@ import xmqp_events
 
 def start():
     g_eventBus.addListener(XFWCOMMAND.XFW_CMD, g_battle.onXfwCommand)
-    g_eventBus.addListener(XVM_BATTLE_EVENT.VM_INVALIDATE_ARENA_INFO, g_battle.onVMInvalidateArenaInfo)
     g_eventBus.addListener(events.AppLifeCycleEvent.INITIALIZED, g_battle.onAppInitialized)
     g_eventBus.addListener(events.AppLifeCycleEvent.DESTROYED, g_battle.onAppDestroyed)
 
@@ -58,7 +57,6 @@ g_eventBus.addListener(XVM_BATTLE_EVENT.XMQP_MESSAGE, xmqp_events.onXmqpMessage)
 @registerEvent(game, 'fini')
 def fini():
     g_eventBus.removeListener(XFWCOMMAND.XFW_CMD, g_battle.onXfwCommand)
-    g_eventBus.removeListener(XVM_BATTLE_EVENT.VM_INVALIDATE_ARENA_INFO, g_battle.onVMInvalidateArenaInfo)
     g_eventBus.removeListener(events.AppLifeCycleEvent.INITIALIZED, g_battle.onAppInitialized)
     g_eventBus.removeListener(events.AppLifeCycleEvent.DESTROYED, g_battle.onAppDestroyed)
     g_eventBus.removeListener(XVM_BATTLE_EVENT.XMQP_CONNECTED, xmqp_events.onXmqpConnected)
@@ -165,9 +163,7 @@ def _DynSquadFunctional_updateVehiclesInfo(self, updated, arenaDP):
         if BigWorld.player().arena.guiType == constants.ARENA_GUI_TYPE.RANDOM:
             for flags, vo in updated:
                 if flags & INVALIDATE_OP.PREBATTLE_CHANGED and vo.squadIndex > 0:
-                    for vInfoVO in arenaDP.getVehiclesInfoIterator():
-                        if vInfoVO.team == vo.team and vInfoVO.squadIndex == vo.squadIndex:
-                            g_battle.updatePlayerState(vInfoVO.vehicleID, INV.SQUAD_INDEX) # | INV.PLAYER_STATUS
+                    g_battle.updatePlayerState(vo.vehicleID, INV.SQUAD_INDEX) # | INV.PLAYER_STATUS
     except Exception, ex:
         err(traceback.format_exc())
 
@@ -406,9 +402,6 @@ class Battle(object):
             return (None, True)
 
         return (None, False)
-
-    def onVMInvalidateArenaInfo(self, e=None):
-        self.invalidateArenaInfo()
 
     # misc
 

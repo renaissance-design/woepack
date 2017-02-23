@@ -170,7 +170,7 @@
     "NormalTooltipHeader": "ტექნიკა",
     "NormalTooltipBody": "",
     "NonElite": "არა ელიტური",
-    "NonEliteTooltipHeader": "",
+    "NonEliteTooltipHeader": "ტექნიკა",
     "NonEliteTooltipBody": "",
     "CompleteCrew": "მთლიანი ეკიპაჯი",
     "CompleteCrewTooltipHeader": "მთლიანი ეკიპაჯი",

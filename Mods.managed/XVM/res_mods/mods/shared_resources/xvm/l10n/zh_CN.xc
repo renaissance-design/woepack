@@ -199,7 +199,7 @@
     "Not ready": "",
     "Hide with honors": "",
     "Started": "",
-    "Incomplete": "",
+    "Incomplete": "完整乘员",
     "XVM config reloaded": "",
     "Config file xvm.xc was not found, using the built-in config": "",
     "Error loading XVM config": ""

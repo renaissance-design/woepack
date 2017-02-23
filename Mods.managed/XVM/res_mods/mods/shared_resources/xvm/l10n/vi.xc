@@ -170,7 +170,7 @@
     "NormalTooltipHeader": "Xe",
     "NormalTooltipBody": "",
     "NonElite": "Chưa tinh nhuệ",
-    "NonEliteTooltipHeader": "",
+    "NonEliteTooltipHeader": "Xe",
     "NonEliteTooltipBody": "",
     "CompleteCrew": "Đủ kíp lái",
     "CompleteCrewTooltipHeader": "Đủ kíp lái",

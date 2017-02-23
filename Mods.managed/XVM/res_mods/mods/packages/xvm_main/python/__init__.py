@@ -5,10 +5,10 @@
 
 XFW_MOD_INFO = {
     # mandatory
-    'VERSION':       '0.9.17.0.3',
+    'VERSION':       '0.9.17.1',
     'URL':           'http://www.modxvm.com/',
     'UPDATE_URL':    'http://www.modxvm.com/en/download-xvm/',
-    'GAME_VERSIONS': ['0.9.17.0.3'],
+    'GAME_VERSIONS': ['0.9.17.1'],
     # optional
 }
 
@@ -50,6 +50,7 @@ import config
 import filecache
 import svcmsg
 import utils
+import vehinfo_wn8
 from xvm import g_xvm
 
 
@@ -128,9 +129,9 @@ g_replayCtrl._BattleReplay__replayCtrl.clientVersionDiffersCallback = onClientVe
 # LOBBY
 
 @overrideMethod(ProfileTechniqueWindow, 'requestData')
-def ProfileTechniqueWindow_RequestData(base, self, data):
-    if data.vehicleId:
-        base(self, data)
+def ProfileTechniqueWindow_RequestData(base, self, vehicleId):
+    if vehicleId:
+        base(self, vehicleId)
 
 
 # PRE-BATTLE
@@ -185,3 +186,6 @@ except Exception, ex:
 
 # load config
 config.load(events.HasCtxEvent(XVM_EVENT.RELOAD_CONFIG, {'filename':XVM.CONFIG_FILE}))
+
+# load wn8 expected values
+vehinfo_wn8.init()

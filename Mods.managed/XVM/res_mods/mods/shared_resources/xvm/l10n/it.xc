@@ -170,7 +170,7 @@
     "NormalTooltipHeader": "Veicolo",
     "NormalTooltipBody": "",
     "NonElite": "Non elite",
-    "NonEliteTooltipHeader": "",
+    "NonEliteTooltipHeader": "Veicolo",
     "NonEliteTooltipBody": "",
     "CompleteCrew": "Con equipaggio",
     "CompleteCrewTooltipHeader": "Con equipaggio",

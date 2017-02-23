@@ -133,8 +133,8 @@ def _onTotalEfficiencyUpdated(self, diff):
             as_event('ON_TOTAL_EFFICIENCY')
 
 
-@registerEvent(BattleRibbonsPanel, '_BattleRibbonsPanel__addBattleEfficiencyEvent')
-def addBattleEfficiencyEvent(self, ribbonType = '', leftFieldStr = '', vehName = '', vehType = '', rightFieldStr = ''):
+@registerEvent(BattleRibbonsPanel, '_addRibbon')
+def _addRibbon(self, ribbonID, ribbonType='', leftFieldStr='', vehName='', vehType='', rightFieldStr=''):
     global ribbonTypes, numberDamagesDealt
     if player is not None:
         if hasattr(player.inputHandler.ctrl, 'curVehicleID'):
@@ -147,11 +147,13 @@ def addBattleEfficiencyEvent(self, ribbonType = '', leftFieldStr = '', vehName =
                 ribbonTypes[ribbonType] = (totalAssist - ribbonTypes['assistSpot']) if totalAssist else 0
             if ribbonType in ['assistSpot']:
                 ribbonTypes[ribbonType] = (totalAssist - ribbonTypes['assistTrack']) if totalAssist else 0
-            if ribbonType in ['spotted', 'kill', 'teamKill', 'crits']:
+            if ribbonType in ['spotted', 'crits']:
                 if leftFieldStr:
                     ribbonTypes[ribbonType][1] = ribbonTypes[ribbonType][0] + int(leftFieldStr[1:])
                 else:
                     ribbonTypes[ribbonType][1] += 1
+            if ribbonType in ['kill', 'teamKill']:
+                ribbonTypes[ribbonType][1] += 1
             if ribbonType in ['damage', 'ram', 'burn']:
                 numberDamagesDealt += 1
             as_event('ON_TOTAL_EFFICIENCY')
